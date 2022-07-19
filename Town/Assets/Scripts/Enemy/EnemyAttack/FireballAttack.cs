@@ -11,7 +11,7 @@ public class FireballAttack : MonoBehaviour, IEnemyAttack
     private int attackTimer = 0;
     private float bulletSpeed = 5f;
 
-    public void Attack()
+    public void attack()
     {
         if (attackTimer % 500 == 0)
         {

@@ -20,14 +20,14 @@ public class FollowPlayerMove : MonoBehaviour, IEnemyMove
         enemyPosition = transform.position;
     }
 
-    public void Move()
+    public void move()
     {
-        if (playerCheck.DistanceFromPlayer(player, enemy) <= playerMaxDistance)
+        if (playerCheck.distanceFromPlayer(player, enemy) <= playerMaxDistance)
         {
             animator.SetTrigger("Run");
             Vector3 newPos = Vector3.MoveTowards(enemy.transform.position, player.transform.position, speed * Time.deltaTime);
             transform.position = new Vector3(newPos.x, enemyPosition.y, newPos.z);
-            transform.rotation = playerCheck.RotateFacingPlayer(player, enemy, turnSmoothTime, turnSmoothVelocity);
+            transform.rotation = playerCheck.rotateFacingPlayer(player, enemy, turnSmoothTime, turnSmoothVelocity);
         }
         else
         {

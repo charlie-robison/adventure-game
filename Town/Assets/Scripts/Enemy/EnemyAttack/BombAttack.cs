@@ -16,7 +16,7 @@ public class BombAttack : MonoBehaviour, IEnemyAttack
     private GameObject currentRightBomb;
     private GameObject currentLeftBomb;
 
-    public void Attack()
+    public void attack()
     {
         if (Time.time > timer && !isAttacking)
         {
@@ -29,7 +29,7 @@ public class BombAttack : MonoBehaviour, IEnemyAttack
         timer = Time.time + 0.1f;
     }
 
-    public void ThrowRightBomb()
+    public void throwRightBomb()
     {
         float enemyAngleY = (enemy.transform.eulerAngles.y + 90f) * Mathf.Deg2Rad;
         float enemyAngleX = enemy.transform.eulerAngles.x * Mathf.Deg2Rad;
@@ -42,7 +42,7 @@ public class BombAttack : MonoBehaviour, IEnemyAttack
         currentRightBomb.GetComponent<Rigidbody>().velocity = new Vector3(-1 * bombSpeed * Mathf.Cos(enemyAngleY), -1 * bombSpeed * Mathf.Sin(enemyAngleX), bombSpeed * Mathf.Sin(enemyAngleY));
     }
 
-    public void ThrowLeftBomb()
+    public void throwLeftBomb()
     {
         float enemyAngleY = (enemy.transform.eulerAngles.y + 90f) * Mathf.Deg2Rad;
         float enemyAngleX = enemy.transform.eulerAngles.x * Mathf.Deg2Rad;
@@ -57,7 +57,7 @@ public class BombAttack : MonoBehaviour, IEnemyAttack
         currentLeftBomb.GetComponent<Rigidbody>().velocity = new Vector3(-1 * bombSpeed * Mathf.Cos(enemyAngleY), -1 * bombSpeed * Mathf.Sin(enemyAngleX), bombSpeed * Mathf.Sin(enemyAngleY));
     }
 
-    public void FinishAttack()
+    public void finishAttack()
     {
         isAttacking = false;
         animator.ResetTrigger("Attack");

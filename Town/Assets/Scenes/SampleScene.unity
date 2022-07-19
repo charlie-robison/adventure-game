@@ -4572,6 +4572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crate
       objectReference: {fileID: 0}
+    - target: {fileID: 3029468639285424369, guid: 6590632d5dabb47f2bcaea6aeed8998c, type: 3}
+      propertyPath: m_TagString
+      value: Crate
+      objectReference: {fileID: 0}
     - target: {fileID: 7008688147054223707, guid: 6590632d5dabb47f2bcaea6aeed8998c, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -4582,7 +4586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7008688147054223707, guid: 6590632d5dabb47f2bcaea6aeed8998c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.68773913
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7008688147054223707, guid: 6590632d5dabb47f2bcaea6aeed8998c, type: 3}
       propertyPath: m_LocalPosition.z

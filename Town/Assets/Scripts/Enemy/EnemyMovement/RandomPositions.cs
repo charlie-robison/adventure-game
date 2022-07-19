@@ -11,7 +11,7 @@ public class RandomPositions : MonoBehaviour, IEnemyMove
     private Vector3 lastPos;
     private Vector3 nextPos;
 
-    public void Move()
+    public void move()
     {
         if (moveTimer % 10000 == 0)
         {

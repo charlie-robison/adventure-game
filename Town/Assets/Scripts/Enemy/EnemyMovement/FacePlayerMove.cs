@@ -12,11 +12,11 @@ public class FacePlayerMove : MonoBehaviour, IEnemyMove
     private float turnSmoothTime = 0.05f;
     private float turnSmoothVelocity;
 
-    public void Move()
+    public void move()
     {
-        if (playerCheck.DistanceFromPlayer(player, enemy) <= maxDistance)
+        if (playerCheck.distanceFromPlayer(player, enemy) <= maxDistance)
         {
-            transform.rotation = playerCheck.RotateFacingPlayer(player, enemy, turnSmoothTime, turnSmoothVelocity);
+            transform.rotation = playerCheck.rotateFacingPlayer(player, enemy, turnSmoothTime, turnSmoothVelocity);
         }
     }
 }

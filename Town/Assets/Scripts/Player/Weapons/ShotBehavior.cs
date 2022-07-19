@@ -17,7 +17,7 @@ public class ShotBehavior : MonoBehaviour {
 		source.GenerateImpulse(Camera.main.transform.forward);
 	}
 
-	void Explode()
+	void explode()
 	{
 		Destroy(projectile);
 		GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
@@ -29,15 +29,23 @@ public class ShotBehavior : MonoBehaviour {
 		if (col.CompareTag("Enemy"))
 		{
 			Destroy(col.gameObject);
+			Destroy(projectile);
 		}
+
+		if (col.CompareTag("Crate"))
+        {
+			Destroy(col.gameObject);
+			Destroy(projectile);
+			col.gameObject.GetComponent<Crate>().spawnItems();
+        }
 	}
 
 	// Update is called once per frame
-	void Update () 
+	void Update() 
 	{
 		if (transform.position == targetPosition)
 		{
-			Explode();
+			explode();
 		}
 		else
 		{

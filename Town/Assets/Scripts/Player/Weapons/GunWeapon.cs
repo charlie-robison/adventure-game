@@ -15,20 +15,20 @@ public class GunWeapon : MonoBehaviour, IPlayerWeapon
 
     private float shootRateTimestamp;
 
-    public void WeaponAttack()
+    public void weaponAttack()
     {
         // Checks if the current time is greater than the shoot buffer time.
         if (Time.time > shootRateTimestamp)
         {
             // Shoots the bullet.
-            ShootBullet();
+            shootBullet();
 
             // Sets the shoot buffer time.
             shootRateTimestamp = Time.time + shootRate;
         }
     }
 
-    void ShootBullet()
+    void shootBullet()
     {
         // Creates the ray.
         Vector2 centerOfScreen = new Vector2(Screen.width / 2f, Screen.height / 2f);
