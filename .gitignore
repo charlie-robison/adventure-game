@@ -61,6 +61,7 @@ sysinfo.txt
 *.unitypackage
 *.app
 .DS_Store
+*.log
 
 # Crashlytics generated file
 crashlytics-build.properties
