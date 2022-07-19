@@ -59,7 +59,7 @@ public class FollowTarget : MonoBehaviour
     {
         if (aimCamera.activeInHierarchy)
         {
-            cameraAngularVelocity = 0.04f;
+            cameraAngularVelocity = 0.1f;
         }
         else
         {

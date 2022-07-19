@@ -26,7 +26,7 @@ public class ShotBehavior : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.tag == "Enemy")
+		if (col.CompareTag("Enemy"))
 		{
 			Destroy(col.gameObject);
 		}
