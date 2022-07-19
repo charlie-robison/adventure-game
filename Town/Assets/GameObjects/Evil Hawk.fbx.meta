@@ -96,21 +96,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0.22340216
-        functionName: ThrowRightBomb
+        functionName: throwRightBomb
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.7216557
-        functionName: ThrowLeftBomb
+        functionName: throwLeftBomb
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 1
-        functionName: FinishAttack
+        functionName: finishAttack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

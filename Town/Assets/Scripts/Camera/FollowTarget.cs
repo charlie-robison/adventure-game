@@ -29,12 +29,12 @@ public class FollowTarget : MonoBehaviour
         controls.Gameplay.Disable();
     }
 
-    void FollowPlayer()
+    void followPlayer()
     {
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2.09f, player.transform.position.z);
     }
 
-    void RotatePlayer()
+    void rotatePlayer()
     {
         if (aimCamera.activeInHierarchy)
         {
@@ -46,7 +46,7 @@ public class FollowTarget : MonoBehaviour
         }
     }
 
-    void RotateTarget()
+    void rotateTarget()
     {
         if (targetDirection.magnitude >= 0.1f)
         {
@@ -55,7 +55,7 @@ public class FollowTarget : MonoBehaviour
         }
     }
 
-    void CheckAngularVelocity()
+    void checkAngularVelocity()
     {
         if (aimCamera.activeInHierarchy)
         {
@@ -70,9 +70,9 @@ public class FollowTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckAngularVelocity();
-        RotatePlayer();
-        FollowPlayer();
-        RotateTarget();
+        checkAngularVelocity();
+        rotatePlayer();
+        followPlayer();
+        rotateTarget();
     }
 }

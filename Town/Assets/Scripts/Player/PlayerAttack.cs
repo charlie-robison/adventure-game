@@ -28,15 +28,15 @@ public class PlayerAttack : MonoBehaviour
         controls.Gameplay.Disable();
     }
 
-    void Attack()
+    void attack()
     {
         if (currentWeapon != null && shotBullet)
         {
-            currentWeapon.WeaponAttack();
+            currentWeapon.weaponAttack();
         }
     }
 
-    void CheckWeapon()
+    void checkWeapon()
     {
         if (gunHolster.transform.childCount > 0)
         {
@@ -60,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Attack();
-        CheckWeapon();
+        attack();
+        checkWeapon();
     }
 }
