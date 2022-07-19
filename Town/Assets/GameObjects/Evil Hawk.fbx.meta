@@ -11,7 +11,7 @@ ModelImporter:
     second: ThrowBomb-Animation
   - first:
       74: 5427894501795160956
-    second: Run-Animatiom
+    second: Run-Animation
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -96,21 +96,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0.22340216
-        functionName: throwRightBomb
+        functionName: ThrowRightBomb
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.7216557
-        functionName: throwLeftBomb
+        functionName: ThrowLeftBomb
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 1
-        functionName: finishAttack
+        functionName: FinishAttack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -121,7 +121,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Run-Animatiom
+      name: Run-Animation
       takeName: metarig|metarigAction
       internalID: 0
       firstFrame: 180

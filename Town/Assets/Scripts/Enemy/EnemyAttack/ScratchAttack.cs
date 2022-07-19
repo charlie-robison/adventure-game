@@ -12,10 +12,10 @@ public class ScratchAttack : MonoBehaviour, IEnemyAttack
     private PlayerCheck playerCheck = new PlayerCheck();
     private float attackCounter = 0f;
 
-    public void attack()
+    public void Attack()
     {
         // Checks if enemy is close enough to player for scratch attack.
-        if (playerCheck.distanceFromPlayer(player, enemy) <= 2f)
+        if (playerCheck.DistanceFromPlayer(player, enemy) <= 2f)
         {
             if (Time.time > attackCounter)
             {
@@ -27,14 +27,14 @@ public class ScratchAttack : MonoBehaviour, IEnemyAttack
         }
     }
 
-    public void resetScratch()
+    public void ResetScratch()
     {
         animator.ResetTrigger("Scratch");
         enemy.GetComponent<Enemy>().stopMove = false;
         hitPoint.isTrigger = false;
     }
 
-    public void enableHitPoint()
+    public void EnableHitPoint()
     {
         hitPoint.isTrigger = true;
     }

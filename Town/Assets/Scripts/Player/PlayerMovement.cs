@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         controls.Gameplay.Disable();
     }
 
-    void movePlayer()
+    void MovePlayer()
     {
         // Increases the speed if button was pressed.
         if (speedIncreased)
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 /* Adds a jump force if the button is pressed. */
-    void jump()
+    void Jump()
     {
         playerVelocity.y += gravity * Time.deltaTime;
 
@@ -111,8 +111,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePlayer();
-        jump();
+        MovePlayer();
+        Jump();
 
         controller.Move(playerVelocity * Time.deltaTime);
     }

@@ -15,23 +15,23 @@ public class Enemy : MonoBehaviour
         enemyAttack = enemy.GetComponent<IEnemyAttack>();
     }
     
-    void attack() 
+    void Attack() 
     {
-        enemyAttack.attack();
+        enemyAttack.Attack();
     }
 
-    void move()
+    void Move()
     {
         if (!stopMove)
         {
-            enemyMove.move();
+            enemyMove.Move();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        attack();
-        move();
+        Attack();
+        Move();
     }
 }

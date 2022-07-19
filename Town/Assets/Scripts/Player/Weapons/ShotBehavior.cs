@@ -17,10 +17,10 @@ public class ShotBehavior : MonoBehaviour {
 		source.GenerateImpulse(Camera.main.transform.forward);
 	}
 
-	void explode()
+	void Explode()
 	{
 		Destroy(projectile);
-		GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation) as GameObject;
+		GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
 		Destroy(newExplosion, 1f);
 	}
 
@@ -37,7 +37,7 @@ public class ShotBehavior : MonoBehaviour {
 	{
 		if (transform.position == targetPosition)
 		{
-			explode();
+			Explode();
 		}
 		else
 		{

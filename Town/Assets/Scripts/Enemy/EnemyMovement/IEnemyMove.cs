@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IEnemyMove
 {
-    public void move();
+    public void Move();
 }

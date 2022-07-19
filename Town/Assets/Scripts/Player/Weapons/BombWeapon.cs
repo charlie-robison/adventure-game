@@ -15,7 +15,7 @@ public class BombWeapon : MonoBehaviour, IPlayerWeapon
         rb.useGravity = false;
     }
 
-    public void weaponAttack()
+    public void WeaponAttack()
     {
         transform.parent = null;
         launchedBomb = true;

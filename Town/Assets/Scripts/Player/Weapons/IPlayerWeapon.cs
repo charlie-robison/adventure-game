@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPlayerWeapon
 {
-    public void weaponAttack();
+    public void WeaponAttack();
 }

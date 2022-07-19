@@ -6,37 +6,37 @@ public class PlayerAnimations : MonoBehaviour
 {
     public Animator animator;
 
-    public void setRunAnimation()
+    public void SetRunAnimation()
     {
         animator.SetTrigger("Run");
     }
 
-    public void resetRunAnimation()
+    public void ResetRunAnimation()
     {
         animator.ResetTrigger("Run");
     }
 
-    public void setJumpAnimation()
+    public void SetJumpAnimation()
     {
         animator.SetTrigger("Jump");
     }
 
-    public void resetJumpAnimation()
+    public void ResetJumpAnimation()
     {
         animator.ResetTrigger("Jump");
     }
 
-    public void setShootAnimation()
+    public void SetShootAnimation()
     {
         animator.SetTrigger("Shoot");
     }
 
-    public void resetShootAnimation()
+    public void ResetShootAnimation()
     {
         animator.ResetTrigger("Shoot");
     }
 
-    public void setAnimationSpeed(float speed)
+    public void SetAnimationSpeed(float speed)
     {
         animator.speed = speed;    
     }
