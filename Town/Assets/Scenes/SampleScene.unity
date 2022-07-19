@@ -5281,6 +5281,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
+      propertyPath: numberOfPossibleItems
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
+      propertyPath: possibleItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7017985348870481174, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: m_Name
       value: Wood-Crate

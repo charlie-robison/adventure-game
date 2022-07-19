@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{C103B707-B573-1655-5822-60892744D82B}|">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="89b80cc0-e98d-45a7-99d8-c47194f56673" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerMovement.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/Item.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="9" Column="29" />
-      <File FileName="Assets/Scripts/PlayerCheck.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/ItemSystem/PlayerInventory.cs" Line="22" Column="6" />
+      <File FileName="Assets/Scripts/ItemSystem/Item.cs" Line="23" Column="10" />
+      <File FileName="Assets/Scripts/ItemSystem/ItemProperties.cs" Line="31" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,6 +27,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d86e65ba-48c0-408b-83a0-917ca5c3ed58" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

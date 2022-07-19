@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 8793004730464055613}
   - component: {fileID: 8793004730464055612}
   - component: {fileID: 7768298555757471858}
+  - component: {fileID: 8219752831998630392}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,6 +152,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunHolster: {fileID: 0}
   weapon: {fileID: 0}
+--- !u!114 &8219752831998630392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793004730464055614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4640361d377440f192710f0d5466e57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8793004731430560169
 GameObject:
   m_ObjectHideFlags: 0
