@@ -18,7 +18,7 @@ public class WeaponInventoryUI : MonoBehaviour
         currentSlot = weaponItemSlots.transform.GetChild(0).gameObject;
     }
 
-    void fillSlots()
+    public void fillSlots()
     {
         int i = 0;
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
@@ -55,9 +55,8 @@ public class WeaponInventoryUI : MonoBehaviour
                 }
 
                 // Sets the item display for the item.
-                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject());
+                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject(), itemDisplay.transform.position, itemDisplay.transform.rotation);
                 newItemDisplay.transform.parent = itemDisplay.transform;
-                newItemDisplay.transform.position = Vector3.zero;
 
                 i++;
             }
@@ -66,7 +65,7 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Update()
     {
-        fillSlots();
+        // fillSlots();
         currentSlot.transform.GetChild(2).gameObject.SetActive(true);
     }
 }

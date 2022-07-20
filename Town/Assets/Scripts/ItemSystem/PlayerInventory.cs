@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public WeaponInventoryUI weaponInventory;
+
     // Holds all items for the player.
     // Items are stored with their name as the key, and their quantity as the value.
     private Dictionary<string, int> weaponItems;
@@ -41,6 +43,9 @@ public class PlayerInventory : MonoBehaviour
             // Adds the item quantity to the existing key.
             weaponItems[item.getItemName()] += item.getItemQuantity();
         }
+
+        // Updates inventory UI.
+        weaponInventory.fillSlots();
     }
 
     public void removeWeaponItem(ItemProperties item)
@@ -50,6 +55,9 @@ public class PlayerInventory : MonoBehaviour
         {
             // Removes 1 from the item.
             weaponItems[item.getItemName()]--;
+
+            // Updates inventory UI.
+            weaponInventory.fillSlots();
         }
     }
 }
