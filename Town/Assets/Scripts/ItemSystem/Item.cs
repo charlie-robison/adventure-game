@@ -8,13 +8,22 @@ public class Item : MonoBehaviour
     public string itemName;
     public int itemQuantity;
     public float itemPrice;
+    public int itemPower;
 
     private ItemProperties item;
     private ItemTypes itemType;
 
     void Start()
     {
-        item = new ItemProperties(itemName, itemQuantity, itemPrice, itemObject);
+        // Checks the item type and creates the correct item accordingly.
+        if (itemType == ItemTypes.WeaponItem)
+        {
+            item = new WeaponItemProperties(itemPower, itemName, itemQuantity, itemPrice, itemObject);
+        }
+        else
+        {
+            item = new ItemProperties(itemName, itemQuantity, itemPrice, itemObject);
+        }
     }
 
     void OnTriggerEnter(Collider col)

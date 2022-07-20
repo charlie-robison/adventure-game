@@ -1,14 +1,32 @@
-﻿<Properties StartupConfiguration="{C103B707-B573-1655-5822-60892744D82B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/Item.cs">
+﻿<Properties StartupConfiguration="{058A8F5B-D81D-C90D-B5D1-70703C72DE1D}|Unit Tests">
+  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/WeaponItemProperties.cs">
     <Files>
-      <File FileName="Assets/Scripts/ItemSystem/PlayerInventory.cs" Line="22" Column="6" />
+      <File FileName="Assets/Scripts/ItemSystem/PlayerInventory.cs" Line="25" Column="46" />
       <File FileName="Assets/Scripts/ItemSystem/Item.cs" Line="23" Column="10" />
-      <File FileName="Assets/Scripts/ItemSystem/ItemProperties.cs" Line="31" Column="6" />
+      <File FileName="Assets/Scripts/ItemSystem/ItemProperties.cs" Line="10" Column="44" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/WeaponInventoryUI.cs" Line="33" Column="115" />
+      <File FileName="Assets/Scripts/ItemSystem/WeaponItemProperties.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Town" expanded="True" selected="True" />
+          <Node name="Town" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="ItemSystem" expanded="True">
+                    <Node name="UI" expanded="True" />
+                    <Node name="ItemProperties.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -16,17 +34,11 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="Unity" selected="True" />
+          <Node name="Town" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3088c9d7-55eb-4cc7-bafc-ee79236d5b81" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

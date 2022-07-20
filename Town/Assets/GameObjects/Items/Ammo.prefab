@@ -131,3 +131,4 @@ MonoBehaviour:
   itemName: Ammo
   itemQuantity: 5
   itemPrice: 100
+  itemPower: 50
