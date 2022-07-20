@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        item = new ItemProperties(itemName, itemQuantity, itemPrice);
+        item = new ItemProperties(itemName, itemQuantity, itemPrice, itemObject);
     }
 
     void OnTriggerEnter(Collider col)
