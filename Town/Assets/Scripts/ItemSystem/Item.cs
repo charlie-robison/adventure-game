@@ -21,9 +21,12 @@ public class Item : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            // Checks the type of item.
             if (itemType == ItemTypes.WeaponItem)
             {
                 Destroy(itemObject);
+
+                // Adds the item to the player inventory.
                 col.gameObject.GetComponent<PlayerInventory>().addWeaponItem(item);
                 print(item.getItemName() + ": " + col.gameObject.GetComponent<PlayerInventory>().getWeaponItems()[item.getItemName()]);
             }
