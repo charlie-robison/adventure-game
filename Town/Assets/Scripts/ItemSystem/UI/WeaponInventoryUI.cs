@@ -9,6 +9,7 @@ public class WeaponInventoryUI : MonoBehaviour
     public GameObject player;
     public GameObject weaponItemSlots;
     public GameObject currentSlot;
+    public int currentSlotIndex;
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, ItemProperties> allItems;
@@ -27,7 +28,7 @@ public class WeaponInventoryUI : MonoBehaviour
             fillSlots();
         }
 
-        currentSlot = weaponItemSlots.transform.GetChild(0).gameObject;
+        currentSlot = null;
     }
 
     public void fillSlots()
@@ -80,6 +81,10 @@ public class WeaponInventoryUI : MonoBehaviour
     void Update()
     {
         // fillSlots();
-        currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+        if (currentSlot != null)
+        {
+            currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+        }
     }
 }
