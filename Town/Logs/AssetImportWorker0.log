@@ -433,3 +433,732 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001900 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.681 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2682ms)
+		BeginReloadAssembly (264ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (36ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (62ms)
+		EndReloadAssembly (2178ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (342ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (1471ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (112ms)
+				ProcessInitializeOnLoadAttributes (1197ms)
+				ProcessInitializeOnLoadMethodAttributes (122ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3948 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (120.4 KB). Loaded Objects now: 4533.
+Memory consumption went from 350.9 MB to 350.7 MB.
+Total: 2.841583 ms (FindLiveObjects: 0.197792 ms CreateObjectMapping: 0.102292 ms MarkObjects: 2.455208 ms  DeleteObjects: 0.085625 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001819 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.627 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2629ms)
+		BeginReloadAssembly (263ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (41ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (60ms)
+		EndReloadAssembly (2122ms)
+			LoadAssemblies (107ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (341ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (1408ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (116ms)
+				ProcessInitializeOnLoadAttributes (1139ms)
+				ProcessInitializeOnLoadMethodAttributes (113ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.18 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3948 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (120.5 KB). Loaded Objects now: 4548.
+Memory consumption went from 351.1 MB to 351.0 MB.
+Total: 2.690041 ms (FindLiveObjects: 0.179667 ms CreateObjectMapping: 0.091542 ms MarkObjects: 2.323084 ms  DeleteObjects: 0.094500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001970 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.651 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2652ms)
+		BeginReloadAssembly (255ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (36ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (61ms)
+		EndReloadAssembly (2154ms)
+			LoadAssemblies (110ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (342ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (1438ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (115ms)
+				ProcessInitializeOnLoadAttributes (1172ms)
+				ProcessInitializeOnLoadMethodAttributes (112ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3948 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (120.5 KB). Loaded Objects now: 4563.
+Memory consumption went from 351.4 MB to 351.2 MB.
+Total: 2.690292 ms (FindLiveObjects: 0.203000 ms CreateObjectMapping: 0.097375 ms MarkObjects: 2.303417 ms  DeleteObjects: 0.085500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 247.147046 seconds.
+  path: Assets/UI/Slot1.prefab
+  artifactKey: Guid(72c3f7f395a314c348df6b8ec2202099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Slot1.prefab using Guid(72c3f7f395a314c348df6b8ec2202099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98e91341ac2b6b47624de70b3af9d9ab') in 0.134692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.239739 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc10e49d93c4a6362778939d6cb383a') in 0.020196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.139803 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3806af8eea73ae899740e1dba1c8b80') in 0.003787 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.484630 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cf0ab7ca03127b376a07b8f2f88c426') in 0.017088 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.797483 seconds.
+  path: Assets/UI/Slot1.prefab
+  artifactKey: Guid(72c3f7f395a314c348df6b8ec2202099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Slot1.prefab using Guid(72c3f7f395a314c348df6b8ec2202099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d4a2310335274513e817e57855a326e') in 0.022310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.214669 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b421013f9fd20e72b379042baa0510b8') in 0.018323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.181686 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '236e5a328a385cf21c95cd5a8e2d4398') in 0.017474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.262307 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f82a54660cc0def5c40704904280215e') in 0.017784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.210871 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c7cea2011a3e60230a59a47745150d6') in 0.018462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.403203 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14bfdbbf433f7e2c972842c93965f451') in 0.018081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.615870 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf56cc4fc5fca669705f5283eff23b87') in 0.018648 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.993210 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f133df68f26aea1ee6637b54dfa1585') in 0.019314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.380557 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e63049f0f7ed941d578e526308d2343c') in 0.018424 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.036869 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aac0a237fc774013f57a20d6438d6e0') in 0.018374 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.794622 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbad2875126036000819985794d2ff59') in 0.018984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.009359 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0838d92ddf2b141ebcbc0dad94c6c2b') in 0.018243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.784267 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7b022a1b9879987665b8b1c49fb706a') in 0.018889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.645902 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb8933cf224326a14866f11d887b0659') in 0.019212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.472161 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f61e3cbba261ab3005fe0c9f18629ab') in 0.018497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.609194 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcb953a91b4db6a35c6e65c7479e9651') in 0.018963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.417699 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '154fe82ad313591a6bf135b89f4fb89a') in 0.019905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.647935 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca24f752fb47bac9357642222c953fa4') in 0.019358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.402380 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c4a3c57aea12b6f939a6152eea2158') in 0.018906 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.038273 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7d59af0e1211d1cef67604d3eeb63c8') in 0.020363 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.843137 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3aa2145f459cd5b689a7ba2da88ea64b') in 0.019483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.614871 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d2086941a242147955662a3c85ae637') in 0.019979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.035894 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d83a9dd62c0ab8c594ba10a711fd8c8') in 0.019448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.836051 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ca8d404c4a251dfa06bf84211ea4693') in 0.020011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.805476 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bad08d4c31584b44201546081ec503ac') in 0.020472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.960098 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77704999cc312579fc7c14928ead0d94') in 0.019406 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.810073 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c574d03250bf8e3a8526245b3a382b7') in 0.020020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.442951 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e9fa4b7b664093aac092d2a2619124') in 0.019436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.448681 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f521613436683bd74223fe252e2cd2c2') in 0.019217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.224180 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56751f1461274e569ffa81cd96a3e908') in 0.019366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.822138 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24d5eae9e1993b0d7ec377bf48a7ffab') in 0.018826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.364722 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '655e26d7d754017aa5d25b1ba12b4a5e') in 0.020482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.019642 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a8443d0769b0eecded735214362ab52') in 0.019886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.265667 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '858f39a3bd3b949d502e2ce072850a29') in 0.020199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.562834 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c75dca4738eb65f985ec4e40708ea794') in 0.020191 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.193826 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a06d6e454d8a444e4d03a3cb8582c374') in 0.020156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.821784 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ccc71b370580487fd343ef03e7e8b13') in 0.020194 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.465026 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bcc864d00b9881c6f1490eb7bfacf2e') in 0.020250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.605250 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1803e2aa2b881af1477de279e0108635') in 0.020625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 87.092045 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff27db099523c8d22b183db0f7861890') in 0.022760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.268134 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c729b4ea732df8751405e5847f2dbee3') in 0.024041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.859925 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67da3152a17dc0005314c32eaf80f881') in 0.023739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.827077 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '542a6da044239c067f8c46c3f3f8c8a9') in 0.021250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.034057 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cb4e887c5fe16c399f43228a2c8059e') in 0.022039 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.787182 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8cca0e48496127f501045aa164a37bd') in 0.021805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.447072 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56429b0c3aa1db6cb270e20d39264921') in 0.021668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.441331 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e8eae6bc19123281dd783432f7cf0f3') in 0.022898 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.620289 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc2b8fa5861e829266182424b6b9aebd') in 0.021833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.423645 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e03355481f26274a9191bd720b1d156') in 0.022949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.212813 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d1c39d1be51ae4d93b13628ffbf23ff') in 0.021321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.303612 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad0a7320b7733c3359bba00b59729873') in 0.023418 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.091565 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '178dcaaa4b1c590d9a27fa33cb0ef4e2') in 0.022903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.204313 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b08d67424a7850631e35cf73b3d0a9d2') in 0.022073 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.505440 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee2202548d2d1276dfcf5161d7373dfd') in 0.022744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.409957 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c662049dcc45dafecfe22c830e20cae') in 0.021147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.387161 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65bb9f5ab417141d3e2b29b639d406b7') in 0.021725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.202182 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c693eb488d155da7d125308156fb9945') in 0.021336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.605126 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba8f2be958f0f2be34e13040815f8f52') in 0.022682 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.557506 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b69cf2fdb7dce40f4d41a4223ad99c9') in 0.022417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.388332 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71e5727526a3a739ec9345eba11f0fa3') in 0.022822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.462863 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c510c84eaceceec3f114fa2f7676d26') in 0.022770 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.639095 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182e3eec8a166c891e9697eb87f8088c') in 0.022212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.403186 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f48efe92be59dde48c9e5aa01d12fef9') in 0.022059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.064715 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ccbd092eb1d6b940efe22f5f994036e') in 0.022439 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.388814 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a85522a7bcbaa5641bd0d61d7c2afac8') in 0.022013 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.025250 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cd436d844d67c9cdce11086ce69f733') in 0.022607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.600463 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1480bee7b5be8c0566ab441bf3543885') in 0.021004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.767333 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67e3b8a89748125882d2a73a35f0cb4f') in 0.023451 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001955 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.681 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2683ms)
+		BeginReloadAssembly (267ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (40ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (61ms)
+		EndReloadAssembly (2171ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (344ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (1447ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (117ms)
+				ProcessInitializeOnLoadAttributes (1176ms)
+				ProcessInitializeOnLoadMethodAttributes (113ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3948 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (120.4 KB). Loaded Objects now: 4578.
+Memory consumption went from 351.5 MB to 351.4 MB.
+Total: 3.269208 ms (FindLiveObjects: 0.286709 ms CreateObjectMapping: 0.098667 ms MarkObjects: 2.804708 ms  DeleteObjects: 0.077875 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 69.618588 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6141c64847c74f0eacb0af53439cc6ae') in 0.141959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.236814 seconds.
+  path: Assets/UI/Weapon-Items.prefab
+  artifactKey: Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Weapon-Items.prefab using Guid(00a9a7cb949d946b18d8ef736bbe6711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b408b11f23d281828a27f9e5ea8160c5') in 0.027535 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002331 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /Users/charlierobison/Desktop/Github/charlie-robison/Games/adventure-game/Town/Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.672 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2674ms)
+		BeginReloadAssembly (262ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (37ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (62ms)
+		EndReloadAssembly (2166ms)
+			LoadAssemblies (106ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (339ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (1460ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (113ms)
+				ProcessInitializeOnLoadAttributes (1190ms)
+				ProcessInitializeOnLoadMethodAttributes (117ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3948 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 21 unused Assets / (120.4 KB). Loaded Objects now: 4593.
+Memory consumption went from 351.8 MB to 351.7 MB.
+Total: 3.237667 ms (FindLiveObjects: 0.326000 ms CreateObjectMapping: 0.303125 ms MarkObjects: 2.496792 ms  DeleteObjects: 0.110667 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
