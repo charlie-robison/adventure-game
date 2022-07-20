@@ -8,16 +8,23 @@ public class PlayerInventory : MonoBehaviour
     // Items are stored with their name as the key, and their quantity as the value.
     private Dictionary<string, int> weaponItems;
     // private Dictionary<string, int> healingItems;
+    private Dictionary<string, ItemProperties> allItems;
 
     void Start()
     {
         weaponItems = new Dictionary<string, int>();
+        allItems = new Dictionary<string, ItemProperties>();
         // healingItems = new Dictionary<string, int>();
     }
 
     public Dictionary<string, int> getWeaponItems()
     {
         return weaponItems;
+    }
+
+    public Dictionary<string, ItemProperties> getAllItems()
+    {
+        return allItems;
     }
 
     public void addWeaponItem(ItemProperties item)
@@ -27,6 +34,7 @@ public class PlayerInventory : MonoBehaviour
         {
             // Adds the item and the quantity that it has.
             weaponItems.Add(item.getItemName(), item.getItemQuantity());
+            allItems.Add(item.getItemName(), item);
         }
         else
         {

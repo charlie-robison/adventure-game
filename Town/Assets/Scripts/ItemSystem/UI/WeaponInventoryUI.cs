@@ -11,6 +11,7 @@ public class WeaponInventoryUI : MonoBehaviour
     public GameObject currentSlot;
 
     private Dictionary<string, int> weaponItems;
+    private Dictionary<string, ItemProperties> allItems;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class WeaponInventoryUI : MonoBehaviour
     {
         int i = 0;
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
+        allItems = player.GetComponent<PlayerInventory>().getAllItems();
 
         // Checks if the player has any weapons.
         if (weaponItems != null)
@@ -28,6 +30,8 @@ public class WeaponInventoryUI : MonoBehaviour
             // Iterates through the entire dictionary.
             foreach (KeyValuePair<string, int> item in weaponItems)
             {
+                // Gets the properties for the item as well as the current slot and the power label for that slot.
+                ItemProperties itemProperties = allItems[item.Key];
                 GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
                 TMP_Text powerLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
 
@@ -36,7 +40,7 @@ public class WeaponInventoryUI : MonoBehaviour
                 slot.transform.GetChild(1).gameObject.SetActive(true);
 
                 // Sets the power label.
-                powerLabel.text = item.Key;
+                powerLabel.text = itemProperties.getItemQuantity().ToString();
                 i++;
             }
         }
