@@ -32,7 +32,7 @@ public class ItemProperties : MonoBehaviour
         return itemPrice;
     }
 
-    public GameObject getGameObject()
+    public GameObject getItemGameObject()
     {
         return itemObject;
     }

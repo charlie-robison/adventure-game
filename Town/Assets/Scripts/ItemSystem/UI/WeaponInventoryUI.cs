@@ -35,6 +35,7 @@ public class WeaponInventoryUI : MonoBehaviour
                 GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
                 TMP_Text powerLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
                 TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+                GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
 
                 // Enables enabled slot UI image.
                 slot.transform.GetChild(0).gameObject.SetActive(false);
@@ -52,6 +53,11 @@ public class WeaponInventoryUI : MonoBehaviour
                 {
                     quantityLabel.text = "x" + item.Value.ToString();
                 }
+
+                // Sets the item display for the item.
+                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject());
+                newItemDisplay.transform.parent = itemDisplay.transform;
+                newItemDisplay.transform.position = Vector3.zero;
 
                 i++;
             }

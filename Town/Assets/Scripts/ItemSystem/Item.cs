@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public GameObject itemObject;
+    public GameObject itemDisplay;
     public string itemName;
     public int itemQuantity;
     public float itemPrice;
@@ -18,7 +19,7 @@ public class Item : MonoBehaviour
         // Checks the item type and creates the correct item accordingly.
         if (itemType == ItemTypes.WeaponItem)
         {
-            item = new WeaponItemProperties(itemPower, itemName, itemQuantity, itemPrice, itemObject);
+            item = new WeaponItemProperties(itemPower, itemName, itemQuantity, itemPrice, itemDisplay);
         }
         else
         {
