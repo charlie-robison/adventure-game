@@ -6,16 +6,27 @@ using TMPro;
 
 public class WeaponInventoryUI : MonoBehaviour
 {
+    public GameControls controls;
     public GameObject player;
     public GameObject weaponItemSlots;
     public GameObject currentSlot;
-    public int currentSlotIndex;
+    public int currentSlotIndex = 0;
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, ItemProperties> allItems;
+    private Vector2 selectionDirection;
+    private float selectionTimer = 0f;
+
+    void Awake()
+    {
+        controls = new GameControls();
+        controls.Gameplay.Movement.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Movement.canceled += ctx => selectionDirection = Vector2.zero;
+    }
 
     void Start()
     {
+        // Initializes all the weapon slots by enabling the disable slot and disabling the enable and selection slots.
         for (int i = 0; i < weaponItemSlots.transform.childCount; i++)
         {
             GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
@@ -25,10 +36,77 @@ public class WeaponInventoryUI : MonoBehaviour
             slot.transform.GetChild(3).gameObject.SetActive(false);
             slot.transform.GetChild(4).gameObject.SetActive(false);
 
+            // Fills the slots from the weaponItems dictionary.
             fillSlots();
         }
 
         currentSlot = null;
+    }
+
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
+    }
+
+    void unselectSlots()
+    {
+        // Unselects all the slots.
+        for (int i = 0; i < weaponItemSlots.transform.childCount; i++)
+        {
+            GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
+            slot.transform.GetChild(2).gameObject.SetActive(false);
+        }
+    }
+
+    void updateCurrentSlot()
+    {
+        // Checks if the player can select the next or previous slot.
+        if (Time.time > selectionTimer)
+        {
+            // Selects the correct slot based on input.
+            if (selectionDirection.x == 1)
+            {
+                if (currentSlotIndex < 11)
+                {
+                    currentSlotIndex += 1;
+                }
+            }
+            else if (selectionDirection.x == -1)
+            {
+                if (currentSlotIndex > 0)
+                {
+                    currentSlotIndex -= 1;
+                }                
+            }
+            else if (selectionDirection.y == 1)
+            {
+                if (currentSlotIndex > 3)
+                {
+                    currentSlotIndex -= 4;
+                }
+            }
+            else if (selectionDirection.y == -1)
+            {
+                if (currentSlotIndex < 8)
+                {
+                    currentSlotIndex += 4;
+                }
+            }
+
+            // Sets currentSlot to the correct slot gameObject.
+            currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+
+            // Resets timer.
+            selectionTimer = Time.time + 0.15f;
+
+            // Unselects all slots.
+            unselectSlots();
+        }
     }
 
     public void fillSlots()
@@ -80,10 +158,11 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Update()
     {
-        // fillSlots();
+        updateCurrentSlot();
+
         if (currentSlot != null)
         {
-            currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            // Selects the current slot.
             currentSlot.transform.GetChild(2).gameObject.SetActive(true);
         }
     }
