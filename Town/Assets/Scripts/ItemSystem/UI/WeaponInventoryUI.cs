@@ -15,12 +15,24 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < weaponItemSlots.transform.childCount; i++)
+        {
+            GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
+            slot.transform.GetChild(0).gameObject.SetActive(true);
+            slot.transform.GetChild(1).gameObject.SetActive(false);
+            slot.transform.GetChild(2).gameObject.SetActive(false);
+            slot.transform.GetChild(3).gameObject.SetActive(false);
+            slot.transform.GetChild(4).gameObject.SetActive(false);
+
+            fillSlots();
+        }
+
         currentSlot = weaponItemSlots.transform.GetChild(0).gameObject;
     }
 
     public void fillSlots()
     {
-        int i = 0;
+        int slotIndex = 0;
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
         allItems = player.GetComponent<PlayerInventory>().getAllItems();
 
@@ -32,7 +44,7 @@ public class WeaponInventoryUI : MonoBehaviour
             {
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
                 WeaponItemProperties itemProperties = (WeaponItemProperties)allItems[item.Key];
-                GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
+                GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
                 TMP_Text powerLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
                 TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
                 GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
@@ -40,6 +52,8 @@ public class WeaponInventoryUI : MonoBehaviour
                 // Enables enabled slot UI image.
                 slot.transform.GetChild(0).gameObject.SetActive(false);
                 slot.transform.GetChild(1).gameObject.SetActive(true);
+                slot.transform.GetChild(3).gameObject.SetActive(true);
+                slot.transform.GetChild(4).gameObject.SetActive(true);
 
                 // Sets the power label.
                 powerLabel.text = itemProperties.getWeaponPower().ToString();
@@ -58,7 +72,7 @@ public class WeaponInventoryUI : MonoBehaviour
                 GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject(), itemDisplay.transform.position, itemDisplay.transform.rotation);
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
-                i++;
+                slotIndex++;
             }
         }
     }
