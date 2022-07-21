@@ -41,7 +41,7 @@ public class WeaponInventoryUI : MonoBehaviour
             fillSlots();
         }
 
-        currentSlot = null;
+        currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot()).gameObject;
     }
 
     void OnEnable()
@@ -80,9 +80,10 @@ public class WeaponInventoryUI : MonoBehaviour
     // Fills all the slots from the weapon items dictionary.
     public void fillSlots()
     {
-        int slotIndex = 0;
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
         allItems = player.GetComponent<PlayerInventory>().getAllItems();
+
+        int slotIndex = 0;
 
         // Checks if the player has any weapons.
         if (weaponItems != null)
@@ -127,13 +128,13 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Update()
     {
-        // Updates the current slot from user input.
-        updateCurrentSlot();
-
         if (currentSlot != null)
         {
             // Selects the current slot.
             currentSlot.transform.GetChild(2).gameObject.SetActive(true);
         }
+
+        // Updates the current slot from user input.
+        updateCurrentSlot();
     }
 }
