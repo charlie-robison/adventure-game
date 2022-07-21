@@ -128,7 +128,26 @@ public class WeaponInventoryUI : MonoBehaviour
                 newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
-                itemList[slotIndex] = item.Key;
+                bool canAddKey = true;
+
+                foreach (string itemName in itemList)
+                {
+                    if (itemName == null)
+                    {
+                        break;
+                    }
+
+                    if (itemName.Equals(item.Key))
+                    {
+                        canAddKey = false;
+                    }
+                }
+
+
+                if (canAddKey)
+                {
+                    itemList[slotIndex] = item.Key;
+                }
 
                 slotIndex++;
             }
