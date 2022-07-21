@@ -139,8 +139,21 @@ public class WeaponInventoryUI : MonoBehaviour
     {
         int currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots);
         ItemProperties itemInfo = allItems[itemList[currentSlotIndex]];
+
         TMP_Text itemLabel = weaponItemSlots.transform.GetChild(14).gameObject.GetComponent<TMP_Text>();
         itemLabel.text = itemInfo.getItemName();
+
+        GameObject itemDisplay = weaponItemSlots.transform.GetChild(13).gameObject;
+
+        // Destroys all child gameObjects of itemDisplay.
+        foreach(Transform child in itemDisplay.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        GameObject newItemDisplay = Instantiate(itemInfo.getItemGameObject());
+        newItemDisplay.transform.position = itemDisplay.transform.position;
+        newItemDisplay.transform.parent = itemDisplay.transform;
     }
 
     void Update()
