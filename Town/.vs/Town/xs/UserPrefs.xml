@@ -1,16 +1,16 @@
-﻿<Properties StartupConfiguration="{058A8F5B-D81D-C90D-B5D1-70703C72DE1D}|Unit Tests">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties>
+  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/UI/WeaponInventoryUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/UI/InventoryUISelection.cs">
     <Files>
       <File FileName="Assets/Scripts/ItemSystem/PlayerInventory.cs" Line="59" Column="37" />
       <File FileName="Assets/Scripts/ItemSystem/Item.cs" Line="23" Column="10" />
       <File FileName="Assets/Scripts/ItemSystem/ItemProperties.cs" Line="10" Column="44" />
       <File FileName="Assets/Scripts/ItemSystem/UI/WeaponInventoryUI.cs" Line="56" Column="28" />
       <File FileName="Assets/Scripts/ItemSystem/WeaponItemProperties.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUISelection.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +20,9 @@
               <Node name="Assets" expanded="True">
                 <Node name="Scripts" expanded="True">
                   <Node name="ItemSystem" expanded="True">
-                    <Node name="UI" expanded="True" />
+                    <Node name="UI" expanded="True">
+                      <Node name="WeaponInventoryUI.cs" selected="True" />
+                    </Node>
                   </Node>
                   <Node name="Player" expanded="True">
                     <Node name="Weapons" expanded="True" />
@@ -41,6 +43,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

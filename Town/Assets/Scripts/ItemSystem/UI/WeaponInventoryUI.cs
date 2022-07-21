@@ -10,10 +10,11 @@ public class WeaponInventoryUI : MonoBehaviour
     public GameObject player;
     public GameObject weaponItemSlots;
     public GameObject currentSlot;
-    public int currentSlotIndex = 0;
+    // public int currentSlotIndex = 0;
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, ItemProperties> allItems;
+    private InventoryUISelection invSelection = new InventoryUISelection();
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
 
@@ -53,65 +54,25 @@ public class WeaponInventoryUI : MonoBehaviour
         controls.Gameplay.Disable();
     }
 
-    // Unselects all slots.
-    void unselectSlots()
-    {
-        // Unselects all the slots.
-        for (int i = 0; i < weaponItemSlots.transform.childCount; i++)
-        {
-            GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
-            slot.transform.GetChild(2).gameObject.SetActive(false);
-        }
-    }
-
     // Updates the current slot from user input.
     void updateCurrentSlot()
     {
+        invSelection.setSelectionDirection(selectionDirection);
+
         // Checks if the player can select the next or previous slot.
         if (Time.time > selectionTimer)
         {
-            // Selects the correct slot based on input.
-            if (selectionDirection.x == 1)
-            {
-                if (currentSlotIndex < 11)
-                {
-                    currentSlotIndex += 1;
-                }
-            }
-            else if (selectionDirection.x == -1)
-            {
-                if (currentSlotIndex > 0)
-                {
-                    currentSlotIndex -= 1;
-                }                
-            }
-            else if (selectionDirection.y == 1)
-            {
-                if (currentSlotIndex > 3)
-                {
-                    currentSlotIndex -= 4;
-                }
-            }
-            else if (selectionDirection.y == -1)
-            {
-                if (currentSlotIndex < 8)
-                {
-                    currentSlotIndex += 4;
-                }
-            }
-
             // Checks if there was a slot change.
             if (Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f)
             {
                 // Sets currentSlot to the correct slot gameObject.
-                currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+                currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot()).gameObject;
 
                 // Resets timer.
                 selectionTimer = Time.time + 0.15f;
 
                 // Unselects all slots.
-                unselectSlots();
-                // currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+                invSelection.unselectSlots(weaponItemSlots);
             }
         }
     }
