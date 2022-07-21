@@ -154,6 +154,7 @@ public class WeaponInventoryUI : MonoBehaviour
         GameObject newItemDisplay = Instantiate(itemInfo.getItemGameObject());
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
+        newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 5f;
     }
 
     void Update()
