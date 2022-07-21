@@ -124,7 +124,8 @@ public class WeaponInventoryUI : MonoBehaviour
                 }
 
                 // Sets the item display for the item.
-                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject(), itemDisplay.transform.position, itemDisplay.transform.rotation);
+                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject());
+                newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
                 itemList[slotIndex] = item.Key;
@@ -154,7 +155,7 @@ public class WeaponInventoryUI : MonoBehaviour
         GameObject newItemDisplay = Instantiate(itemInfo.getItemGameObject());
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
-        newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 5f;
+        newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
     }
 
     void Update()
