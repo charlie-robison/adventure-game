@@ -28,8 +28,6 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Start()
     {
-        // itemList = new string[weaponItems.Count];
-
         // Initializes all the weapon slots by enabling the disable slot and disabling the enable and selection slots.
         for (int i = 0; i < 12; i++)
         {
@@ -65,8 +63,8 @@ public class WeaponInventoryUI : MonoBehaviour
         // Checks if the player can select the next or previous slot.
         if (Time.time > selectionTimer)
         {
-            // Checks if there was a slot change.
-            if (Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f)
+            // Checks if there was a slot change and if there is at least one item in the inventory.
+            if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && weaponItems.Count > 0)
             {
                 // Sets currentSlot to the correct slot gameObject.
                 currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot(weaponItemSlots)).gameObject;
@@ -76,7 +74,9 @@ public class WeaponInventoryUI : MonoBehaviour
 
                 // Unselects all slots.
                 invSelection.unselectSlots(weaponItemSlots);
-                // presentSelectedItemInfo();
+
+                // Displays the selected item info on the item info area.
+                presentSelectedItemInfo();
             }
         }
     }
@@ -90,8 +90,10 @@ public class WeaponInventoryUI : MonoBehaviour
         int slotIndex = 0;
 
         // Checks if the player has any weapons.
-        if (weaponItems != null)
+        if (weaponItems.Count > 0)
         {
+            itemList = new string[weaponItems.Count];
+
             // Iterates through the entire dictionary.
             foreach (KeyValuePair<string, int> item in weaponItems)
             {
@@ -125,13 +127,14 @@ public class WeaponInventoryUI : MonoBehaviour
                 GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject(), itemDisplay.transform.position, itemDisplay.transform.rotation);
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
-                // itemList[slotIndex] = item.Key;
+                itemList[slotIndex] = item.Key;
 
                 slotIndex++;
             }
         }
     }
 
+    // Displays the item info on the item info area of the inventory.
     void presentSelectedItemInfo()
     {
         int currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots);
@@ -142,6 +145,9 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Update()
     {
+        // Updates the current slot from user input.
+        updateCurrentSlot();
+
         if (currentSlot != null)
         {
             // Check if there is an item in the slot.
@@ -156,8 +162,5 @@ public class WeaponInventoryUI : MonoBehaviour
                 currentSlot.transform.GetChild(2).gameObject.SetActive(false);
             }
         }
-
-        // Updates the current slot from user input.
-        updateCurrentSlot();
     }
 }
