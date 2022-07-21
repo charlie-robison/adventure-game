@@ -144,8 +144,17 @@ public class WeaponInventoryUI : MonoBehaviour
     {
         if (currentSlot != null)
         {
-            // Selects the current slot.
-            currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+            // Check if there is an item in the slot.
+            if (currentSlot.transform.GetChild(1).gameObject.activeSelf)
+            {
+                // Selects the current slot.
+                currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+            }
+            else
+            {
+                // Unselects the current slot.
+                currentSlot.transform.GetChild(2).gameObject.SetActive(false);
+            }
         }
 
         // Updates the current slot from user input.
