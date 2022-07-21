@@ -14,6 +14,7 @@ public class WeaponInventoryUI : MonoBehaviour
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, ItemProperties> allItems;
+    private string[] itemList;
     private InventoryUISelection invSelection = new InventoryUISelection();
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
@@ -27,8 +28,10 @@ public class WeaponInventoryUI : MonoBehaviour
 
     void Start()
     {
+        // itemList = new string[weaponItems.Count];
+
         // Initializes all the weapon slots by enabling the disable slot and disabling the enable and selection slots.
-        for (int i = 0; i < weaponItemSlots.transform.childCount; i++)
+        for (int i = 0; i < 12; i++)
         {
             GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
             slot.transform.GetChild(0).gameObject.SetActive(true);
@@ -41,7 +44,7 @@ public class WeaponInventoryUI : MonoBehaviour
             fillSlots();
         }
 
-        currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot()).gameObject;
+        currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot(weaponItemSlots)).gameObject;
     }
 
     void OnEnable()
@@ -66,13 +69,14 @@ public class WeaponInventoryUI : MonoBehaviour
             if (Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f)
             {
                 // Sets currentSlot to the correct slot gameObject.
-                currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot()).gameObject;
+                currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot(weaponItemSlots)).gameObject;
 
                 // Resets timer.
                 selectionTimer = Time.time + 0.15f;
 
                 // Unselects all slots.
                 invSelection.unselectSlots(weaponItemSlots);
+                // presentSelectedItemInfo();
             }
         }
     }
@@ -121,9 +125,19 @@ public class WeaponInventoryUI : MonoBehaviour
                 GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject(), itemDisplay.transform.position, itemDisplay.transform.rotation);
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
+                // itemList[slotIndex] = item.Key;
+
                 slotIndex++;
             }
         }
+    }
+
+    void presentSelectedItemInfo()
+    {
+        int currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots);
+        ItemProperties itemInfo = allItems[itemList[currentSlotIndex]];
+        TMP_Text itemLabel = weaponItemSlots.transform.GetChild(14).gameObject.GetComponent<TMP_Text>();
+        itemLabel.text = itemInfo.getItemName();
     }
 
     void Update()

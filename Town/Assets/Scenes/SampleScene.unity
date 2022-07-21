@@ -5861,7 +5861,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5196259230042861456, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: field of view
-      value: 40
+      value: 23.89
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861456, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -5889,7 +5889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.70114905
+      value: 2.141149
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5897,7 +5897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9051394
+      value: -1.8451395
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6087,12 +6087,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: numberOfPossibleItems
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: possibleItems.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
+      propertyPath: possibleItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 8787269971179913603, guid: e3e81bcd006ac4d32b761c5d52b43d3d, type: 3}
     - target: {fileID: 7017985348870481174, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: m_Name
       value: Wood-Crate
