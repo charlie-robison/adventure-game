@@ -5549,6 +5549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory-Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4031492662422452181, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -293
+      objectReference: {fileID: 0}
     - target: {fileID: 4556491335389908990, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: player
       value: 
@@ -5557,12 +5561,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6122696960062677017, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 8793004732362285203}
     - target: {fileID: 6319358663429088878, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
+--- !u!114 &8228651340395214622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6122696960062677017, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
+  m_PrefabInstance: {fileID: 8228651340395214621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f321ff2312e41dd9bb8a559931ce2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8786491923584167992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5694,6 +5713,10 @@ PrefabInstance:
       propertyPath: weaponInventory
       value: 
       objectReference: {fileID: 6770113621877326974}
+    - target: {fileID: 8219752831998630392, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
+      propertyPath: healingInventory
+      value: 
+      objectReference: {fileID: 8228651340395214622}
     - target: {fileID: 8453788096576956057, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.92

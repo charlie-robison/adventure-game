@@ -116,4 +116,6 @@ MonoBehaviour:
   itemDesc: Heals you 20 hp.
   itemQuantity: 2
   itemPrice: 30
-  itemPower: 50
+  itemPower: 0
+  itemHealingPower: 25
+  itemType: 1

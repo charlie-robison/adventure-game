@@ -15,7 +15,7 @@ public class InventoryUI : MonoBehaviour
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
     private GameObject currentSlot;
-    private int currentSlotIndex = 0;
+    private int currentSlotIndex = -1;
 
     void Awake()
     {

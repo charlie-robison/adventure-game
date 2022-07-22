@@ -11,9 +11,10 @@ public class Item : MonoBehaviour
     public int itemQuantity;
     public float itemPrice;
     public int itemPower;
+    public int itemHealingPower;
+    public ItemTypes itemType;
 
     private ItemProperties item;
-    private ItemTypes itemType;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class Item : MonoBehaviour
         if (itemType == ItemTypes.WeaponItem)
         {
             item = new WeaponItemProperties(itemPower, itemName, itemDesc, itemQuantity, itemPrice, itemDisplay);
+        }
+        else if (itemType == ItemTypes.HealingItem)
+        {
+            item = new HealingItemProperties(itemHealingPower, itemName, itemDesc, itemQuantity, itemPrice, itemDisplay);
         }
         else
         {
@@ -40,6 +45,14 @@ public class Item : MonoBehaviour
                 // Adds the item to the player inventory.
                 col.gameObject.GetComponent<PlayerInventory>().addWeaponItem(item);
                 // print(item.getItemName() + ": " + col.gameObject.GetComponent<PlayerInventory>().getWeaponItems()[item.getItemName()]);
+            }
+            else if (itemType == ItemTypes.HealingItem)
+            {
+                Destroy(itemObject);
+
+                // Adds the item to the player inventory.
+                col.gameObject.GetComponent<PlayerInventory>().addHealingItem(item);
+                print(item.getItemName() + ": " + col.gameObject.GetComponent<PlayerInventory>().getHealingItems()[item.getItemName()]);
             }
         }
     }
