@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    /*
     public GameObject itemObject;
     public GameObject itemDisplay;
     public string itemName;
@@ -55,5 +56,5 @@ public class Item : MonoBehaviour
                 print(item.getItemName() + ": " + col.gameObject.GetComponent<PlayerInventory>().getHealingItems()[item.getItemName()]);
             }
         }
-    }
+    } */
 }

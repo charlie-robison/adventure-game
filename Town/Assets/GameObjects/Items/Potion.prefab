@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8787269971179913630}
   - component: {fileID: 8787269971179913629}
   - component: {fileID: 8787269971179913628}
-  - component: {fileID: 2697823515736356278}
+  - component: {fileID: 8316771429070248238}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Untagged
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2697823515736356278
+--- !u!114 &8316771429070248238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,15 +107,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8787269971179913603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24dbfd6181b384c8da7854a5c90d91b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cc3f4870b0b445bc830007add70a3bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemObject: {fileID: 8787269971179913603}
-  itemDisplay: {fileID: 8787269971179913603, guid: 71d71e79b0c0b4358ac9e2b2931a91c6, type: 3}
   itemName: Potion
-  itemDesc: Heals you 20 hp.
-  itemQuantity: 2
+  itemDesc: Restores health by 50 HP.
   itemPrice: 30
-  itemPower: 0
-  itemHealingPower: 25
-  itemType: 1
+  itemQuantity: 1
+  itemDisplay: {fileID: 8787269971179913603, guid: 71d71e79b0c0b4358ac9e2b2931a91c6, type: 3}
+  materialType: 0
+  materialTypePower: 50

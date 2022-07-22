@@ -10,7 +10,7 @@ public class HealingInventory : MonoBehaviour, IInventory
     public GameObject healingItemSlots;
 
     private Dictionary<string, int> healingItems;
-    private Dictionary<string, ItemProperties> allItems;
+    private Dictionary<string, IItem> allItems;
     private string[] itemList;
 
     // Fills the inventory slots.
@@ -30,7 +30,7 @@ public class HealingInventory : MonoBehaviour, IInventory
             foreach (KeyValuePair<string, int> item in healingItems)
             {
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
-                HealingItemProperties itemProperties = (HealingItemProperties)allItems[item.Key];
+                MaterialItem itemProperties = (MaterialItem)allItems[item.Key];
                 GameObject slot = healingItemSlots.transform.GetChild(slotIndex).gameObject;
                 TMP_Text quantityLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
                 GameObject itemDisplay = slot.transform.GetChild(4).gameObject;
@@ -52,7 +52,7 @@ public class HealingInventory : MonoBehaviour, IInventory
                 }
 
                 // Sets the item display for the item.
-                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject());
+                GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
                 newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
@@ -65,7 +65,7 @@ public class HealingInventory : MonoBehaviour, IInventory
 
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
-        HealingItemProperties itemInfo = (HealingItemProperties)allItems[itemList[currentSlotIndex]];
+        MaterialItem itemInfo = (MaterialItem)allItems[itemList[currentSlotIndex]];
 
         GameObject itemInfoUI = healingItemSlots.transform.GetChild(14).gameObject;
 
@@ -76,7 +76,7 @@ public class HealingInventory : MonoBehaviour, IInventory
         // Displays item information.
         itemNameLabel.text = itemInfo.getItemName();
         itemDescLabel.text = itemInfo.getItemDesc();
-        itemQuantityLabel.text = itemInfo.getHealingPower().ToString();
+        itemQuantityLabel.text = itemInfo.getMaterialTypePower().ToString();
 
         GameObject itemDisplay = healingItemSlots.transform.GetChild(13).gameObject;
 
@@ -87,7 +87,7 @@ public class HealingInventory : MonoBehaviour, IInventory
         }
 
         // Sets the item display.
-        GameObject newItemDisplay = Instantiate(itemInfo.getItemGameObject());
+        GameObject newItemDisplay = Instantiate(itemInfo.getItemDisplay());
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;

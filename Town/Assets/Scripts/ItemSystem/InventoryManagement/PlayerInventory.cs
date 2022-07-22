@@ -11,13 +11,13 @@ public class PlayerInventory : MonoBehaviour
     // Items are stored with their name as the key, and their quantity as the value.
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, int> healingItems;
-    private Dictionary<string, ItemProperties> allItems;
+    private Dictionary<string, IItem> allItems;
 
     void Start()
     {
         weaponItems = new Dictionary<string, int>();
         healingItems = new Dictionary<string, int>();
-        allItems = new Dictionary<string, ItemProperties>();
+        allItems = new Dictionary<string, IItem>();
     }
 
     public Dictionary<string, int> getWeaponItems()
@@ -30,12 +30,12 @@ public class PlayerInventory : MonoBehaviour
         return healingItems;
     }
 
-    public Dictionary<string, ItemProperties> getAllItems()
+    public Dictionary<string, IItem> getAllItems()
     {
         return allItems;
     }
 
-    public void addWeaponItem(ItemProperties item)
+    public void addWeaponItem(IItem item)
     {
         // Checks if this item is already a key.
         if (!weaponItems.ContainsKey(item.getItemName()))
@@ -54,7 +54,7 @@ public class PlayerInventory : MonoBehaviour
         weaponInventory.fillSlots();
     }
 
-    public void addHealingItem(ItemProperties item)
+    public void addHealingItem(IItem item)
     {
         // Checks if this item is already a key.
         if (!healingItems.ContainsKey(item.getItemName()))
@@ -73,7 +73,7 @@ public class PlayerInventory : MonoBehaviour
         healingInventory.fillSlots();
     }
 
-    public void removeWeaponItem(ItemProperties item)
+    public void removeWeaponItem(IItem item)
     {
         // Checks if the player possesses the item.
         if (weaponItems.ContainsKey(item.getItemName()) && weaponItems[item.getItemName()] > 0)
@@ -86,7 +86,7 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void removeHealingItem(ItemProperties item)
+    public void removeHealingItem(IItem item)
     {
         // Checks if the player possesses the item.
         if (healingItems.ContainsKey(item.getItemName()) && healingItems[item.getItemName()] > 0)

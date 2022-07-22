@@ -11,7 +11,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
     public GameObject weaponItemSlots;
 
     private Dictionary<string, int> weaponItems;
-    private Dictionary<string, ItemProperties> allItems;
+    private Dictionary<string, IItem> allItems;
     private string[] itemList;
 
     void Start()
@@ -37,7 +37,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
             foreach (KeyValuePair<string, int> item in weaponItems)
             {
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
-                WeaponItemProperties itemProperties = (WeaponItemProperties)allItems[item.Key];
+                WeaponItem itemProperties = (WeaponItem)allItems[item.Key];
                 GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
                 TMP_Text powerLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
                 TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
@@ -63,7 +63,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 }
 
                 // Sets the item display for the item.
-                GameObject newItemDisplay = Instantiate(itemProperties.getItemGameObject());
+                GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
                 newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
@@ -77,7 +77,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
     // Presents the selected item's info in the item info UI area.
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
-        WeaponItemProperties itemInfo = (WeaponItemProperties)allItems[itemList[currentSlotIndex]];
+        WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
 
         GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
 
@@ -99,7 +99,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         }
 
         // Sets the item display.
-        GameObject newItemDisplay = Instantiate(itemInfo.getItemGameObject());
+        GameObject newItemDisplay = Instantiate(itemInfo.getItemDisplay());
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;

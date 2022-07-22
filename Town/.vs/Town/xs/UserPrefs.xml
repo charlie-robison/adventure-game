@@ -1,24 +1,31 @@
-﻿<Properties StartupConfiguration="{C103B707-B573-1655-5822-60892744D82B}|">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+﻿<Properties>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2188f0db-9303-4e1a-b168-5393bbe08d94" />
+  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2188f0db-9303-4e1a-b168-5393bbe08d94" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/UI/InventoryUISelection.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/ItemManagement/IItem.cs">
     <Files>
-      <File FileName="Assets/Scripts/ItemSystem/PlayerInventory.cs" Line="59" Column="37" />
-      <File FileName="Assets/Scripts/ItemSystem/Item.cs" Line="23" Column="10" />
-      <File FileName="Assets/Scripts/ItemSystem/ItemProperties.cs" Line="10" Column="44" />
-      <File FileName="Assets/Scripts/ItemSystem/UI/WeaponInventoryUI.cs" Line="56" Column="6" />
-      <File FileName="Assets/Scripts/ItemSystem/WeaponItemProperties.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUISelection.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ItemSystem/ItemManagement/IItem.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Town" expanded="True" selected="True" />
+          <Node name="Town" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="ItemSystem" expanded="True">
+                    <Node name="UI" expanded="True">
+                      <Node name="InventoryUISelection.cs" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -26,10 +33,11 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="Unity" selected="True" />
+          <Node name="Town" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
