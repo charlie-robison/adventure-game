@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
 
                 // Adds the item to the player inventory.
                 col.gameObject.GetComponent<PlayerInventory>().addWeaponItem(item);
-                print(item.getItemName() + ": " + col.gameObject.GetComponent<PlayerInventory>().getWeaponItems()[item.getItemName()]);
+                // print(item.getItemName() + ": " + col.gameObject.GetComponent<PlayerInventory>().getWeaponItems()[item.getItemName()]);
             }
         }
     }

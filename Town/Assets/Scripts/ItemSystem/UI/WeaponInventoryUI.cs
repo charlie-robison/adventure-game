@@ -9,8 +9,7 @@ public class WeaponInventoryUI : MonoBehaviour
     public GameControls controls;
     public GameObject player;
     public GameObject weaponItemSlots;
-    public GameObject currentSlot;
-    // public int currentSlotIndex = 0;
+
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, ItemProperties> allItems;
@@ -18,6 +17,8 @@ public class WeaponInventoryUI : MonoBehaviour
     private InventoryUISelection invSelection = new InventoryUISelection();
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
+    private GameObject currentSlot;
+    private int currentSlotIndex = 0;
 
     void Awake()
     {
@@ -66,9 +67,11 @@ public class WeaponInventoryUI : MonoBehaviour
             // Checks if there was a slot change and if there is at least one item in the inventory.
             if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && weaponItems.Count > 0)
             {
-                // Sets currentSlot to the correct slot gameObject.
-                currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot(weaponItemSlots)).gameObject;
+                currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots);
 
+                // Sets currentSlot to the correct slot gameObject.
+                currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+                
                 // Resets timer.
                 selectionTimer = Time.time + 0.15f;
 
@@ -128,26 +131,7 @@ public class WeaponInventoryUI : MonoBehaviour
                 newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
-                bool canAddKey = true;
-
-                foreach (string itemName in itemList)
-                {
-                    if (itemName == null)
-                    {
-                        break;
-                    }
-
-                    if (itemName.Equals(item.Key))
-                    {
-                        canAddKey = false;
-                    }
-                }
-
-
-                if (canAddKey)
-                {
-                    itemList[slotIndex] = item.Key;
-                }
+                itemList[slotIndex] = item.Key;
 
                 slotIndex++;
             }
@@ -157,7 +141,6 @@ public class WeaponInventoryUI : MonoBehaviour
     // Displays the item info on the item info area of the inventory.
     void presentSelectedItemInfo()
     {
-        int currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots);
         ItemProperties itemInfo = allItems[itemList[currentSlotIndex]];
 
         TMP_Text itemLabel = weaponItemSlots.transform.GetChild(14).gameObject.GetComponent<TMP_Text>();
