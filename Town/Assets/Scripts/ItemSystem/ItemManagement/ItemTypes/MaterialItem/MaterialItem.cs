@@ -57,7 +57,7 @@ public class MaterialItem : MonoBehaviour, IItem
             Destroy(itemObject);
 
             // Adds the item to the player inventory.
-            col.gameObject.GetComponent<PlayerInventory>().addHealingItem(this);
+            col.gameObject.GetComponent<PlayerInventory>().addMaterialItem(this);
         }
     }
 }

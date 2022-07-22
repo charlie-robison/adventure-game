@@ -4,34 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class HealingInventory : MonoBehaviour, IInventory
+public class MaterialInventory : MonoBehaviour, IInventory
 {
     public GameObject player;
-    public GameObject healingItemSlots;
+    public GameObject materialItemSlots;
 
-    private Dictionary<string, int> healingItems;
+    private Dictionary<string, int> materialItems;
     private Dictionary<string, IItem> allItems;
     private string[] itemList;
 
     // Fills the inventory slots.
     public void fillSlots()
     {
-        healingItems = player.GetComponent<PlayerInventory>().getHealingItems();
+        materialItems = player.GetComponent<PlayerInventory>().getMaterialItems();
         allItems = player.GetComponent<PlayerInventory>().getAllItems();
 
         int slotIndex = 0;
 
         // Checks if the player has any weapons.
-        if (healingItems != null && healingItems.Count > 0)
+        if (materialItems != null && materialItems.Count > 0)
         {
-            itemList = new string[healingItems.Count];
+            itemList = new string[materialItems.Count];
 
             // Iterates through the entire dictionary.
-            foreach (KeyValuePair<string, int> item in healingItems)
+            foreach (KeyValuePair<string, int> item in materialItems)
             {
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
                 MaterialItem itemProperties = (MaterialItem)allItems[item.Key];
-                GameObject slot = healingItemSlots.transform.GetChild(slotIndex).gameObject;
+                GameObject slot = materialItemSlots.transform.GetChild(slotIndex).gameObject;
                 TMP_Text quantityLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
                 GameObject itemDisplay = slot.transform.GetChild(4).gameObject;
 
@@ -67,7 +67,7 @@ public class HealingInventory : MonoBehaviour, IInventory
     {
         MaterialItem itemInfo = (MaterialItem)allItems[itemList[currentSlotIndex]];
 
-        GameObject itemInfoUI = healingItemSlots.transform.GetChild(14).gameObject;
+        GameObject itemInfoUI = materialItemSlots.transform.GetChild(14).gameObject;
 
         TMP_Text itemNameLabel = itemInfoUI.transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
         TMP_Text itemDescLabel = itemInfoUI.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
@@ -78,7 +78,7 @@ public class HealingInventory : MonoBehaviour, IInventory
         itemDescLabel.text = itemInfo.getItemDesc();
         itemQuantityLabel.text = itemInfo.getMaterialTypePower().ToString();
 
-        GameObject itemDisplay = healingItemSlots.transform.GetChild(13).gameObject;
+        GameObject itemDisplay = materialItemSlots.transform.GetChild(13).gameObject;
 
         // Destroys all child gameObjects of itemDisplay.
         foreach (Transform child in itemDisplay.transform)
@@ -97,9 +97,9 @@ public class HealingInventory : MonoBehaviour, IInventory
     {
         int numberOfItems = 0;
 
-        if (healingItems != null)
+        if (materialItems != null)
         {
-            numberOfItems = healingItems.Count;
+            numberOfItems = materialItems.Count;
         }
 
         return numberOfItems;

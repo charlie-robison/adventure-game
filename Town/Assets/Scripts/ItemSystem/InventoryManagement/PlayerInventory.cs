@@ -5,18 +5,18 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public WeaponInventory weaponInventory;
-    public HealingInventory healingInventory;
+    public MaterialInventory materialInventory;
 
     // Holds all items for the player.
     // Items are stored with their name as the key, and their quantity as the value.
     private Dictionary<string, int> weaponItems;
-    private Dictionary<string, int> healingItems;
+    private Dictionary<string, int> materialItems;
     private Dictionary<string, IItem> allItems;
 
     void Start()
     {
         weaponItems = new Dictionary<string, int>();
-        healingItems = new Dictionary<string, int>();
+        materialItems = new Dictionary<string, int>();
         allItems = new Dictionary<string, IItem>();
     }
 
@@ -25,9 +25,9 @@ public class PlayerInventory : MonoBehaviour
         return weaponItems;
     }
 
-    public Dictionary<string, int> getHealingItems()
+    public Dictionary<string, int> getMaterialItems()
     {
-        return healingItems;
+        return materialItems;
     }
 
     public Dictionary<string, IItem> getAllItems()
@@ -54,23 +54,23 @@ public class PlayerInventory : MonoBehaviour
         weaponInventory.fillSlots();
     }
 
-    public void addHealingItem(IItem item)
+    public void addMaterialItem(IItem item)
     {
         // Checks if this item is already a key.
-        if (!healingItems.ContainsKey(item.getItemName()))
+        if (!materialItems.ContainsKey(item.getItemName()))
         {
             // Adds the item and the quantity that it has.
-            healingItems.Add(item.getItemName(), item.getItemQuantity());
+            materialItems.Add(item.getItemName(), item.getItemQuantity());
             allItems.Add(item.getItemName(), item);
         }
         else
         {
             // Adds the item quantity to the existing key.
-            healingItems[item.getItemName()] += item.getItemQuantity();
+            materialItems[item.getItemName()] += item.getItemQuantity();
         }
 
         // Updates inventory UI.
-        healingInventory.fillSlots();
+        materialInventory.fillSlots();
     }
 
     public void removeWeaponItem(IItem item)
@@ -86,16 +86,16 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void removeHealingItem(IItem item)
+    public void removeMaterialItem(IItem item)
     {
         // Checks if the player possesses the item.
-        if (healingItems.ContainsKey(item.getItemName()) && healingItems[item.getItemName()] > 0)
+        if (materialItems.ContainsKey(item.getItemName()) && materialItems[item.getItemName()] > 0)
         {
             // Removes 1 from the item.
-            healingItems[item.getItemName()]--;
+            materialItems[item.getItemName()]--;
 
             // Updates inventory UI.
-            healingInventory.fillSlots();
+            materialInventory.fillSlots();
         }
     }
 }
