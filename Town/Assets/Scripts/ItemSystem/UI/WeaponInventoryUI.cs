@@ -43,7 +43,8 @@ public class WeaponInventoryUI : MonoBehaviour
             fillSlots();
         }
 
-        currentSlot = weaponItemSlots.transform.GetChild(invSelection.getCurrentSlot(weaponItemSlots)).gameObject;
+        // Sets the current slot to the first slot.
+        currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
     }
 
     void OnEnable()
@@ -59,15 +60,14 @@ public class WeaponInventoryUI : MonoBehaviour
     // Updates the current slot from user input.
     void updateCurrentSlot()
     {
-        invSelection.setSelectionDirection(selectionDirection);
-
         // Checks if the player can select the next or previous slot.
         if (Time.time > selectionTimer)
         {
             // Checks if there was a slot change and if there is at least one item in the inventory.
             if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && weaponItems.Count > 0)
             {
-                currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots);
+                // Gets the current slot index.
+                currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots, selectionDirection);
 
                 // Sets currentSlot to the correct slot gameObject.
                 currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;

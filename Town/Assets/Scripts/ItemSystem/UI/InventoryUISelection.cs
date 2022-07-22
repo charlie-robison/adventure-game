@@ -13,12 +13,6 @@ public class InventoryUISelection : MonoBehaviour
         selectionDirection = Vector2.zero;
     }
 
-    // Sets the selectionDirection field.
-    public void setSelectionDirection(Vector2 newSelectionDirection)
-    {
-        selectionDirection = newSelectionDirection;
-    }
-
     // Unselects all slots for the given slots.
     public void unselectSlots(GameObject itemSlots)
     {
@@ -31,8 +25,11 @@ public class InventoryUISelection : MonoBehaviour
     }
 
     // Updates the current slot from user input.
-    public int getCurrentSlot(GameObject itemSlots)
+    public int getCurrentSlot(GameObject itemSlots, Vector2 newSelectionDirection)
     {
+        // Updates the selection direction.
+        selectionDirection = newSelectionDirection;
+
         // Selects the correct slot based on input.
         if (selectionDirection.x == 1)
         {
