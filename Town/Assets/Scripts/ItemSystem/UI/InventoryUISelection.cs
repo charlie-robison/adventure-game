@@ -24,7 +24,7 @@ public class InventoryUISelection : MonoBehaviour
         }
     }
 
-    // Updates the current slot from user input.
+    // Returns the current slot's index which is updated based on user input.
     public int getCurrentSlot(GameObject itemSlots, Vector2 newSelectionDirection)
     {
         // Updates the selection direction.

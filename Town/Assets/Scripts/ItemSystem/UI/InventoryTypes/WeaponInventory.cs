@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/** Implements a Weapon Inventory. */
 public class WeaponInventory : MonoBehaviour, IInventory
 {
     public GameObject player;
@@ -19,6 +20,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         allItems = player.GetComponent<PlayerInventory>().getAllItems();
     }
 
+    // Fills the inventory slots.
     public void fillSlots()
     {
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
@@ -72,6 +74,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         }
     }
 
+    // Presents the selected item's info in the item info UI area.
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
         WeaponItemProperties itemInfo = (WeaponItemProperties)allItems[itemList[currentSlotIndex]];
@@ -102,6 +105,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
     }
 
+    // Gets the number of items in the inventory.
     public int getItemCount()
     {
         int numberOfItems = 0;

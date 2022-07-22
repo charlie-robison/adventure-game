@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/** Handles the UI for an Inventory, such as setting up the inventory slots, updating the current slot,
+    and enabling/ disabling the item info section.*/
 public class InventoryUI : MonoBehaviour
 {
     public IInventory inventoryManagement;
@@ -38,6 +40,7 @@ public class InventoryUI : MonoBehaviour
         controls.Gameplay.Disable();
     }
 
+    // Sets up the initial state of all the slots and then fills them up.
     void setUpSlots()
     {
         // Initializes all the item slots by enabling the disable slot and disabling the enable and selection slots.
@@ -58,6 +61,7 @@ public class InventoryUI : MonoBehaviour
         currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
     }
 
+    // Updates the current slot index and assigns the appropriate gameObject to currentSlot.
     void updateCurrentSlot()
     {
         // Checks if the player can select the next or previous slot.
@@ -71,13 +75,9 @@ public class InventoryUI : MonoBehaviour
                 // Checks if the currentSlotIndex changed.
                 if (currentSlotIndex != newSlotIndex)
                 {
-                    // Sets the new current slot index.
+                    // Sets the next slot index and sets currentSlot to the correct slot gameObject.
                     currentSlotIndex = newSlotIndex;
-
-                    // Sets currentSlot to the correct slot gameObject.
                     currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
-
-                    // Resets timer.
                     selectionTimer = Time.time + 0.15f;
 
                     // Unselects all slots.
@@ -110,6 +110,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    // Enables the itemInfo section when applicable.
     void enableItemInfoSection()
     {
         // Checks if there are any items in the inventory.
@@ -126,7 +127,7 @@ public class InventoryUI : MonoBehaviour
         // Updates the current slot from user input.
         updateCurrentSlot();
 
-        // enables item info section if there are any items.
+        // Enables item info section if there are any items.
         enableItemInfoSection();
     }
 }
