@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class WeaponItemProperties : ItemProperties
 {
-    private int weaponPower;
+    public int weaponPower;
 
-    public WeaponItemProperties(int weaponPower, string itemName, string itemDesc, int itemQuantity, float itemPrice, GameObject itemObject)
+    public WeaponItemProperties(string itemName, string itemDesc, int itemQuantity, float itemPrice, GameObject itemObject)
         : base(itemName, itemDesc, itemQuantity, itemPrice, itemObject)
-    {
-        this.weaponPower = weaponPower;
-    }
+    { }
 
     public int getWeaponPower()
     {

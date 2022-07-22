@@ -9,12 +9,13 @@ public class WeaponInventoryUI : MonoBehaviour
     public GameControls controls;
     public GameObject player;
     public GameObject weaponItemSlots;
-
+    public int numberOfSlots;
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, ItemProperties> allItems;
     private string[] itemList;
     private InventoryUISelection invSelection = new InventoryUISelection();
+
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
     private GameObject currentSlot;
@@ -30,7 +31,7 @@ public class WeaponInventoryUI : MonoBehaviour
     void Start()
     {
         // Initializes all the weapon slots by enabling the disable slot and disabling the enable and selection slots.
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < numberOfSlots; i++)
         {
             GameObject slot = weaponItemSlots.transform.GetChild(i).gameObject;
             slot.transform.GetChild(0).gameObject.SetActive(true);

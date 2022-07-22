@@ -20,7 +20,7 @@ public class Item : MonoBehaviour
         // Checks the item type and creates the correct item accordingly.
         if (itemType == ItemTypes.WeaponItem)
         {
-            item = new WeaponItemProperties(itemPower, itemName, itemDesc, itemQuantity, itemPrice, itemDisplay);
+            item = new WeaponItemProperties(itemName, itemDesc, itemQuantity, itemPrice, itemDisplay);
         }
         else
         {
