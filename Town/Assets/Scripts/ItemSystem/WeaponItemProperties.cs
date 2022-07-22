@@ -6,9 +6,11 @@ public class WeaponItemProperties : ItemProperties
 {
     public int weaponPower;
 
-    public WeaponItemProperties(string itemName, string itemDesc, int itemQuantity, float itemPrice, GameObject itemObject)
+    public WeaponItemProperties(int weaponPower, string itemName, string itemDesc, int itemQuantity, float itemPrice, GameObject itemObject)
         : base(itemName, itemDesc, itemQuantity, itemPrice, itemObject)
-    { }
+    {
+        this.weaponPower = weaponPower;
+    }
 
     public int getWeaponPower()
     {

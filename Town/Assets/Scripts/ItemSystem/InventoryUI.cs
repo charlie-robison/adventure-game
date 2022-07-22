@@ -6,23 +6,36 @@ public class InventoryUI : MonoBehaviour
 {
     public IInventory inventoryManagement;
     public GameControls controls;
-    public GameObject player;
     public GameObject itemSlots;
     public int numberOfSlots;
 
-    private Dictionary<string, int> items;
-    private Dictionary<string, ItemProperties> allItems;
-    private string[] itemList;
-    private InventoryUISelection invSelection = new InventoryUISelection();
-
+    private readonly InventoryUISelection invSelection = new InventoryUISelection();
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
     private GameObject currentSlot;
     private int currentSlotIndex = 0;
 
+    void Awake()
+    {
+        controls = new GameControls();
+        controls.Gameplay.Movement.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
+        controls.Gameplay.Movement.canceled += ctx => selectionDirection = Vector2.zero;
+    }
+
     void Start()
     {
+        inventoryManagement = itemSlots.GetComponent<IInventory>();
         setUpSlots();
+    }
+
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
     }
 
     void setUpSlots()
@@ -37,8 +50,8 @@ public class InventoryUI : MonoBehaviour
             slot.transform.GetChild(3).gameObject.SetActive(false);
             slot.transform.GetChild(4).gameObject.SetActive(false);
 
-            // Fills the slots from the weaponItems dictionary.
-            inventoryManagement.fillSlots(items);
+            // Fills the slots with the items for the correct inventory.
+            inventoryManagement.fillSlots();
         }
 
         // Sets the current slot to the first slot.
@@ -51,7 +64,7 @@ public class InventoryUI : MonoBehaviour
         if (Time.time > selectionTimer)
         {
             // Checks if there was a slot change and if there is at least one item in the inventory.
-            if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && items.Count > 0)
+            if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && inventoryManagement.getItemCount() > 0)
             {
                 int newSlotIndex = invSelection.getCurrentSlot(itemSlots, selectionDirection);
 
@@ -75,9 +88,36 @@ public class InventoryUI : MonoBehaviour
                     itemInfoUI.SetActive(true);
 
                     // Displays the selected item info on the item info area.
-                    inventoryManagement.presentSelectedItemInfo(items);
+                    inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
                 }
             }
+        }
+
+        // Checks if the currentSlot is an actual slot.
+        if (currentSlot != null)
+        {
+            // Check if there is an item in the slot.
+            if (currentSlot.transform.GetChild(1).gameObject.activeSelf)
+            {
+                // Selects the current slot.
+                currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+            }
+            else
+            {
+                // Unselects the current slot.
+                currentSlot.transform.GetChild(2).gameObject.SetActive(false);
+            }
+        }
+    }
+
+    void enableItemInfoSection()
+    {
+        // Checks if there are any items in the inventory.
+        if (inventoryManagement.getItemCount() <= 0)
+        {
+            // Sets the item info section to not active.
+            GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
+            itemInfoUI.SetActive(false);
         }
     }
 
@@ -85,5 +125,8 @@ public class InventoryUI : MonoBehaviour
     {
         // Updates the current slot from user input.
         updateCurrentSlot();
+
+        // enables item info section if there are any items.
+        enableItemInfoSection();
     }
 }

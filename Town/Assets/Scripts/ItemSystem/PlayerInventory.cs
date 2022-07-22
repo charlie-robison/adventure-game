@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public WeaponInventoryUI weaponInventory;
+    public WeaponInventory weaponInventory;
 
     // Holds all items for the player.
     // Items are stored with their name as the key, and their quantity as the value.
