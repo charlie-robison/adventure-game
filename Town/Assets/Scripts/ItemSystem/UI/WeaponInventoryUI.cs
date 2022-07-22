@@ -78,6 +78,10 @@ public class WeaponInventoryUI : MonoBehaviour
                 // Unselects all slots.
                 invSelection.unselectSlots(weaponItemSlots);
 
+                // Sets the item info section to active.
+                GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
+                itemInfoUI.SetActive(true);
+
                 // Displays the selected item info on the item info area.
                 presentSelectedItemInfo();
             }
@@ -141,10 +145,15 @@ public class WeaponInventoryUI : MonoBehaviour
     // Displays the item info on the item info area of the inventory.
     void presentSelectedItemInfo()
     {
-        ItemProperties itemInfo = allItems[itemList[currentSlotIndex]];
+        WeaponItemProperties itemInfo = (WeaponItemProperties)allItems[itemList[currentSlotIndex]];
 
-        TMP_Text itemLabel = weaponItemSlots.transform.GetChild(14).gameObject.GetComponent<TMP_Text>();
-        itemLabel.text = itemInfo.getItemName();
+        GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
+
+        TMP_Text itemNameLabel = itemInfoUI.transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
+        TMP_Text itemPowerLabel = itemInfoUI.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+
+        itemNameLabel.text = itemInfo.getItemName();
+        itemPowerLabel.text = itemInfo.getWeaponPower().ToString();
 
         GameObject itemDisplay = weaponItemSlots.transform.GetChild(13).gameObject;
 
@@ -178,6 +187,13 @@ public class WeaponInventoryUI : MonoBehaviour
                 // Unselects the current slot.
                 currentSlot.transform.GetChild(2).gameObject.SetActive(false);
             }
+        }
+
+        if (weaponItems.Count <= 0)
+        {
+            // Sets the item info section to not active.
+            GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
+            itemInfoUI.SetActive(false);
         }
     }
 }
