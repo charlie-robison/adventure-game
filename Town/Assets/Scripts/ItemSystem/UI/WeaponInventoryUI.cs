@@ -66,24 +66,30 @@ public class WeaponInventoryUI : MonoBehaviour
             // Checks if there was a slot change and if there is at least one item in the inventory.
             if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && weaponItems.Count > 0)
             {
-                // Gets the current slot index.
-                currentSlotIndex = invSelection.getCurrentSlot(weaponItemSlots, selectionDirection);
+                int newSlotIndex = invSelection.getCurrentSlot(weaponItemSlots, selectionDirection);
 
-                // Sets currentSlot to the correct slot gameObject.
-                currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
-                
-                // Resets timer.
-                selectionTimer = Time.time + 0.15f;
+                // Checks if the currentSlotIndex changed.
+                if (currentSlotIndex != newSlotIndex)
+                {
+                    // Sets the new current slot index.
+                    currentSlotIndex = newSlotIndex;
 
-                // Unselects all slots.
-                invSelection.unselectSlots(weaponItemSlots);
+                    // Sets currentSlot to the correct slot gameObject.
+                    currentSlot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
 
-                // Sets the item info section to active.
-                GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
-                itemInfoUI.SetActive(true);
+                    // Resets timer.
+                    selectionTimer = Time.time + 0.15f;
 
-                // Displays the selected item info on the item info area.
-                presentSelectedItemInfo();
+                    // Unselects all slots.
+                    invSelection.unselectSlots(weaponItemSlots);
+
+                    // Sets the item info section to active.
+                    GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
+                    itemInfoUI.SetActive(true);
+
+                    // Displays the selected item info on the item info area.
+                    presentSelectedItemInfo();
+                }
             }
         }
     }
