@@ -150,9 +150,11 @@ public class WeaponInventoryUI : MonoBehaviour
         GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
 
         TMP_Text itemNameLabel = itemInfoUI.transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
+        TMP_Text itemDescLabel = itemInfoUI.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
         TMP_Text itemPowerLabel = itemInfoUI.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
 
         itemNameLabel.text = itemInfo.getItemName();
+        itemDescLabel.text = itemInfo.getItemDesc();
         itemPowerLabel.text = itemInfo.getWeaponPower().ToString();
 
         GameObject itemDisplay = weaponItemSlots.transform.GetChild(13).gameObject;

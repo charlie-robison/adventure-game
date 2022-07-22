@@ -6,8 +6,8 @@ public class WeaponItemProperties : ItemProperties
 {
     private int weaponPower;
 
-    public WeaponItemProperties(int weaponPower, string itemName, int itemQuantity, float itemPrice, GameObject itemObject)
-        : base(itemName, itemQuantity, itemPrice, itemObject)
+    public WeaponItemProperties(int weaponPower, string itemName, string itemDesc, int itemQuantity, float itemPrice, GameObject itemObject)
+        : base(itemName, itemDesc, itemQuantity, itemPrice, itemObject)
     {
         this.weaponPower = weaponPower;
     }

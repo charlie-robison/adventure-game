@@ -113,6 +113,7 @@ MonoBehaviour:
   itemObject: {fileID: 8787269971179913603}
   itemDisplay: {fileID: 8787269971179913603, guid: 71d71e79b0c0b4358ac9e2b2931a91c6, type: 3}
   itemName: Potion
+  itemDesc: Heals you 20 hp.
   itemQuantity: 2
   itemPrice: 30
   itemPower: 50

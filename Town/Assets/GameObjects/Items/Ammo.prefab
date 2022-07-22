@@ -130,6 +130,7 @@ MonoBehaviour:
   itemObject: {fileID: 8787269971179913603}
   itemDisplay: {fileID: 8787269971179913603, guid: aa254a15dcdd84e889d2274b20aa832b, type: 3}
   itemName: Ammo
+  itemDesc: Ammo for a blaster gun.
   itemQuantity: 5
   itemPrice: 100
   itemPower: 50
