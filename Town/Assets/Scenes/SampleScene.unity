@@ -3962,35 +3962,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0039999485
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03000012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7072302
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7069834
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.98
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1421071281399545645, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -5561,6 +5561,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 8793004732362285203}
+    - target: {fileID: 4556491335389908990, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
+      propertyPath: weaponHolster
+      value: 
+      objectReference: {fileID: 1204937169}
     - target: {fileID: 5716851975040768898, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: m_IsActive
       value: 1

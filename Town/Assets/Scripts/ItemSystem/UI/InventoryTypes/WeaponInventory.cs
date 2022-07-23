@@ -8,6 +8,7 @@ using TMPro;
 public class WeaponInventory : MonoBehaviour, IInventory
 {
     public GameObject player;
+    public GameObject weaponHolster;
     public GameObject weaponItemSlots;
 
     private Dictionary<string, int> weaponItems;
@@ -39,15 +40,16 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
                 WeaponItem itemProperties = (WeaponItem)allItems[item.Key];
                 GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
-                TMP_Text powerLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
-                TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
-                GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
+                TMP_Text powerLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+                TMP_Text quantityLabel = slot.transform.GetChild(5).gameObject.GetComponent<TMP_Text>();
+                GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
 
                 // Enables enabled slot UI image.
                 slot.transform.GetChild(0).gameObject.SetActive(false);
                 slot.transform.GetChild(1).gameObject.SetActive(true);
-                slot.transform.GetChild(3).gameObject.SetActive(true);
+                slot.transform.GetChild(3).gameObject.SetActive(false);
                 slot.transform.GetChild(4).gameObject.SetActive(true);
+                slot.transform.GetChild(5).gameObject.SetActive(true);
 
                 // Sets the power label.
                 powerLabel.text = itemProperties.getWeaponPower().ToString();
@@ -123,6 +125,42 @@ public class WeaponInventory : MonoBehaviour, IInventory
     public void useItem(int currentSlotIndex)
     {
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+        unEquipAllWeapons();
+        equipSelectedWeapon(currentSlotIndex);
+
+        // Adds the weapon to the player's weapon holster.
+        GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
+        newWeapon.transform.position = weaponHolster.transform.position;
+        newWeapon.transform.eulerAngles = new Vector3(-90f, 0f, 0f);
+        newWeapon.transform.parent = weaponHolster.transform;
+
         print("Equipped " + itemInfo.getItemName());
+    }
+
+    void unEquipAllWeapons()
+    {
+        int slotIndex = 0;
+
+        foreach (KeyValuePair<string, int> item in weaponItems)
+        {
+            WeaponItem itemInfo = (WeaponItem)allItems[item.Key];
+            GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
+            itemInfo.setIsEquipped(false);
+            slot.transform.GetChild(3).gameObject.SetActive(false);
+
+            slotIndex++;
+        }
+    }
+
+    void equipSelectedWeapon(int currentSlotIndex)
+    {
+        WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+        itemInfo.setIsEquipped(true);
+
+        if (itemInfo.getIsEquipped())
+        {
+            GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            slot.transform.GetChild(3).gameObject.SetActive(true);
+        }
     }
 }

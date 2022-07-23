@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObject: {fileID: 1797913037393651095}
+  weaponGameObject: {fileID: 1797913037393651095, guid: ee98ceda95fc54c80b2f7148af0be543, type: 3}
   itemName: Laser Auto Gun
   itemDesc: A powerful blaster that automatically shoots lasers.
   itemPrice: 500

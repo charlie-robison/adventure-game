@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponItem : MonoBehaviour, IItem
 {
     public GameObject itemObject;
+    public GameObject weaponGameObject;
 
     public string itemName;
     public string itemDesc;
@@ -14,6 +15,7 @@ public class WeaponItem : MonoBehaviour, IItem
 
     public int weaponPower;
     public float weaponFrequency;
+    private bool isEquipped = false;
 
     public string getItemName()
     {
@@ -48,6 +50,21 @@ public class WeaponItem : MonoBehaviour, IItem
     public float getWeaponFrequency()
     {
         return weaponFrequency;
+    }
+
+    public GameObject getWeaponGameObject()
+    {
+        return weaponGameObject;
+    }
+
+    public bool getIsEquipped()
+    {
+        return isEquipped;
+    }
+
+    public void setIsEquipped(bool newState)
+    {
+        isEquipped = newState;
     }
 
     void OnTriggerEnter(Collider col)

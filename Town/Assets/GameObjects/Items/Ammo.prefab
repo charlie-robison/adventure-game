@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObject: {fileID: 8787269971179913603}
+  weaponGameObject: {fileID: 8787269971179913603}
   itemName: Ammo
   itemDesc: Ammo for a blaster gun.
   itemPrice: 50
