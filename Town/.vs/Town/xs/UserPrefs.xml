@@ -1,15 +1,28 @@
-﻿<Properties StartupConfiguration="{C103B707-B573-1655-5822-60892744D82B}|">
+﻿<Properties StartupConfiguration="{058A8F5B-D81D-C90D-B5D1-70703C72DE1D}|Unit Tests">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="afb7196d-95b3-4272-bfbf-6d8f10769149" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/UI/InventoryUI.cs">
     <Files>
-      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUISelection.cs" Line="1" Column="1" />
-      <File FileName="Assets/GameControls.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUISelection.cs" Line="17" Column="82" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUI.cs" Line="148" Column="13" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryTypes/WeaponInventory.cs" Line="18" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Town" expanded="True" selected="True" />
+          <Node name="Town" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="ItemSystem" expanded="True">
+                    <Node name="UI" expanded="True">
+                      <Node name="InventoryTypes" expanded="True" />
+                      <Node name="InventoryUI.cs" selected="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
@@ -17,7 +30,7 @@
       </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="Unity" selected="True" />
+          <Node name="Town" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

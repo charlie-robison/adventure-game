@@ -13,7 +13,7 @@ public class MaterialInventory : MonoBehaviour, IInventory
     private Dictionary<string, IItem> allItems;
     private string[] itemList;
 
-    // Fills the inventory slots.
+    /** Fills the inventory slots. */
     public void fillSlots()
     {
         materialItems = player.GetComponent<PlayerInventory>().getMaterialItems();
@@ -63,6 +63,7 @@ public class MaterialInventory : MonoBehaviour, IInventory
         }
     }
 
+    /** Presents the selected item's info in the item info UI area. */
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
         MaterialItem itemInfo = (MaterialItem)allItems[itemList[currentSlotIndex]];
@@ -93,6 +94,7 @@ public class MaterialInventory : MonoBehaviour, IInventory
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
     }
 
+    /** Gets the number of items in the inventory. */
     public int getItemCount()
     {
         int numberOfItems = 0;
@@ -105,7 +107,7 @@ public class MaterialInventory : MonoBehaviour, IInventory
         return numberOfItems;
     }
 
-    // Uses the item selected.
+    /** Uses the item selected. */
     public void useItem(int currentSlotIndex)
     {
         MaterialItem itemInfo = (MaterialItem)allItems[itemList[currentSlotIndex]];
