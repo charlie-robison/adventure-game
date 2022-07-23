@@ -12,6 +12,7 @@ public class WeaponItem : MonoBehaviour, IItem
     public float itemPrice;
     public int itemQuantity;
     public GameObject itemDisplay;
+    public GameObject itemGameObject;
 
     public int weaponPower;
     public float weaponFrequency;
@@ -40,6 +41,11 @@ public class WeaponItem : MonoBehaviour, IItem
     public GameObject getItemDisplay()
     {
         return itemDisplay;
+    }
+
+    public GameObject getItemGameObject()
+    {
+        return itemGameObject;
     }
 
     public int getWeaponPower()

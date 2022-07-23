@@ -119,6 +119,12 @@ public class WeaponInventory : MonoBehaviour, IInventory
         return numberOfItems;
     }
 
+    /** Gets the inventory's items. */
+    public Dictionary<string, int> getItems()
+    {
+        return weaponItems;
+    }
+
     /** Uses the item selected. */
     public void useItem(int currentSlotIndex)
     {
@@ -145,6 +151,29 @@ public class WeaponInventory : MonoBehaviour, IInventory
         /* Modify player's attack frequency. */
 
         print("Equipped " + itemInfo.getItemName());
+    }
+
+    /** Drops the item selected. */
+    public void dropItem(int currentSlotIndex, int numberDropped)
+    {
+        WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+
+        // Checks if the number dropped is less than or equal to the amount of the item possessed.
+        if (numberDropped <= weaponItems[itemInfo.getItemName()])
+        {
+            for (int i = 0; i < numberDropped; i++)
+            {
+                player.GetComponent<PlayerInventory>().removeWeaponItem(itemInfo);
+
+                // Sets random positions for the dropped item around the player.
+                float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);
+                float randomZ = Random.Range(player.transform.position.z - 2f, player.transform.position.z + 2f);
+
+                // Drops items around the player.
+                GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
+                droppedItem.transform.position = new Vector3(randomX, 0f, randomZ);
+            }
+        }
     }
 
     /** Unequips all weapons. */

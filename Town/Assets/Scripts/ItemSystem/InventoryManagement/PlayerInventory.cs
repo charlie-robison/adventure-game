@@ -84,6 +84,12 @@ public class PlayerInventory : MonoBehaviour
             // Updates inventory UI.
             weaponInventory.fillSlots();
         }
+
+        // Removes item from inventory if there is 0 of it.
+        if (weaponItems[item.getItemName()] == 0)
+        {
+            weaponItems.Remove(item.getItemName());
+        }
     }
 
     public void removeMaterialItem(IItem item)
@@ -96,6 +102,12 @@ public class PlayerInventory : MonoBehaviour
 
             // Updates inventory UI.
             materialInventory.fillSlots();
+        }
+
+        // Removes item from inventory if there is 0 of it.
+        if (materialItems[item.getItemName()] == 0)
+        {
+            materialItems.Remove(item.getItemName());
         }
     }
 }

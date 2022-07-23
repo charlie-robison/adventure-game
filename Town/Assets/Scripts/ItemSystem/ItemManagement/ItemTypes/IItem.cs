@@ -9,4 +9,5 @@ public interface IItem
     public float getItemPrice();
     public int getItemQuantity();
     public GameObject getItemDisplay();
+    public GameObject getItemGameObject();
 }

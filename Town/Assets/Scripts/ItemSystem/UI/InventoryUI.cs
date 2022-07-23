@@ -63,7 +63,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     /** Unselects all slots. */
-    public void unselectSlots()
+    private void unselectSlots()
     {
         // Iterates through each slot and unselects it.
         for (int i = 0; i < numberOfSlots; i++)

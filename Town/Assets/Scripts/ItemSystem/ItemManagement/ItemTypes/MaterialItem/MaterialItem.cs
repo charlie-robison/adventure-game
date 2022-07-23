@@ -11,6 +11,7 @@ public class MaterialItem : MonoBehaviour, IItem
     public float itemPrice;
     public int itemQuantity;
     public GameObject itemDisplay;
+    public GameObject itemGameObject;
 
     public MaterialTypes materialType;
     public int materialTypePower;
@@ -38,6 +39,11 @@ public class MaterialItem : MonoBehaviour, IItem
     public GameObject getItemDisplay()
     {
         return itemDisplay;
+    }
+
+    public GameObject getItemGameObject()
+    {
+        return itemGameObject;
     }
 
     public MaterialTypes getMaterialType()

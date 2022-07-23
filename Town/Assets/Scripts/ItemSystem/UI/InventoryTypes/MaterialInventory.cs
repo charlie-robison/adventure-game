@@ -107,6 +107,12 @@ public class MaterialInventory : MonoBehaviour, IInventory
         return numberOfItems;
     }
 
+    /** Gets the inventory's items. */
+    public Dictionary<string, int> getItems()
+    {
+        return materialItems;
+    }
+
     /** Uses the item selected. */
     public void useItem(int currentSlotIndex)
     {
@@ -120,5 +126,19 @@ public class MaterialInventory : MonoBehaviour, IInventory
         {
             print("Player's speed increased by " + itemInfo.getMaterialTypePower());
         }
+        else if (itemInfo.getMaterialType() == MaterialTypes.StaminaType)
+        {
+            print("Player's stamina increased by " + itemInfo.getMaterialTypePower());
+        }
+        else if (itemInfo.getMaterialType() == MaterialTypes.TreasureType)
+        {
+            print(itemInfo.getItemName() + " cannot be used.");
+        }
+    }
+
+    /** Drops the item selected. */
+    public void dropItem(int currentSlotIndex, int numberDropped)
+    {
+
     }
 }
