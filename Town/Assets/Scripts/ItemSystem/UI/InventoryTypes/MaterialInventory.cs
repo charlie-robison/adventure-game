@@ -91,6 +91,8 @@ public class MaterialInventory : MonoBehaviour, IInventory
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
+
+        useItem(currentSlotIndex);
     }
 
     public int getItemCount()
@@ -103,5 +105,16 @@ public class MaterialInventory : MonoBehaviour, IInventory
         }
 
         return numberOfItems;
+    }
+
+    public void useItem(int currentSlotIndex)
+    {
+        MaterialItem itemInfo = (MaterialItem)allItems[itemList[currentSlotIndex]];
+
+        if (itemInfo.getMaterialType() == MaterialTypes.HealingType)
+        {
+            print("Healed player by " + itemInfo.getMaterialTypePower());
+        }
+        
     }
 }

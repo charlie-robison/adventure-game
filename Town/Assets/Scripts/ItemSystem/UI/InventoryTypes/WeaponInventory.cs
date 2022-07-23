@@ -103,6 +103,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
+
+        useItem(currentSlotIndex);
     }
 
     // Gets the number of items in the inventory.
@@ -116,5 +118,11 @@ public class WeaponInventory : MonoBehaviour, IInventory
         }
 
         return numberOfItems;
+    }
+
+    public void useItem(int currentSlotIndex)
+    {
+        WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+        print("Equipped " + itemInfo.getItemName());
     }
 }
