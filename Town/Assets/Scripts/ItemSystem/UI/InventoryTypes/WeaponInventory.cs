@@ -157,10 +157,9 @@ public class WeaponInventory : MonoBehaviour, IInventory
     public void dropItem(int currentSlotIndex, int numberDropped)
     {
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
-        print(weaponItems[itemInfo.getItemName()]);
 
         // Checks if the number dropped is less than or equal to the amount of the item possessed.
-        if (numberDropped <= weaponItems[itemInfo.getItemName()])
+        if (weaponItems.ContainsKey(itemInfo.getItemName()) && numberDropped <= weaponItems[itemInfo.getItemName()])
         {
             for (int i = 0; i < numberDropped; i++)
             {
