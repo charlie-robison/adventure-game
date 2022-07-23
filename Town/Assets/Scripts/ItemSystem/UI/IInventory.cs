@@ -13,5 +13,6 @@ public interface IInventory
     // Gets the number of items in the inventory.
     public int getItemCount();
 
+    // Uses the item selected.
     public void useItem(int currentSlotIndex);
 }

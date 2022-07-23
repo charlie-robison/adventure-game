@@ -16,12 +16,15 @@ public class InventoryUI : MonoBehaviour
     private float selectionTimer = 0f;
     private GameObject currentSlot;
     private int currentSlotIndex = -1;
+    private bool useSelectedItem = false;
 
     void Awake()
     {
         controls = new GameControls();
-        controls.Gameplay.Movement.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Movement.canceled += ctx => selectionDirection = Vector2.zero;
+        controls.Gameplay.ItemSelect.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
+        controls.Gameplay.ItemSelect.canceled += ctx => selectionDirection = Vector2.zero;
+        controls.Gameplay.ItemPress.performed += ctx => useSelectedItem = true;
+        controls.Gameplay.ItemPress.canceled += ctx => useSelectedItem = false;
     }
 
     void Start()
@@ -56,9 +59,6 @@ public class InventoryUI : MonoBehaviour
             // Fills the slots with the items for the correct inventory.
             inventoryManagement.fillSlots();
         }
-
-        // Sets the current slot to the first slot.
-        // currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
     }
 
     // Updates the current slot index and assigns the appropriate gameObject to currentSlot.
@@ -122,6 +122,15 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    // Checks if selected item was pressed and uses the item.
+    void useItem()
+    {
+        if (useSelectedItem)
+        {
+            inventoryManagement.useItem(currentSlotIndex);
+        }
+    }
+
     void Update()
     {
         // Updates the current slot from user input.
@@ -129,5 +138,8 @@ public class InventoryUI : MonoBehaviour
 
         // Enables item info section if there are any items.
         enableItemInfoSection();
+
+        // Checks if selected item was pressed and uses the item.
+        useItem();
     }
 }

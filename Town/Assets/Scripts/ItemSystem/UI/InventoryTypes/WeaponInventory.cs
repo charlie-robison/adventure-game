@@ -105,8 +105,6 @@ public class WeaponInventory : MonoBehaviour, IInventory
         newItemDisplay.transform.position = itemDisplay.transform.position;
         newItemDisplay.transform.parent = itemDisplay.transform;
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
-
-        useItem(currentSlotIndex);
     }
 
     // Gets the number of items in the inventory.
@@ -122,9 +120,13 @@ public class WeaponInventory : MonoBehaviour, IInventory
         return numberOfItems;
     }
 
+    // Uses the item selected.
     public void useItem(int currentSlotIndex)
     {
+        // Gets the item's info.
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+
+        // Unequips all weapons then equips the selected weapon.
         unEquipAllWeapons();
         equipSelectedWeapon(currentSlotIndex);
 
@@ -137,21 +139,26 @@ public class WeaponInventory : MonoBehaviour, IInventory
         print("Equipped " + itemInfo.getItemName());
     }
 
+    // Unequips all weapons.
     void unEquipAllWeapons()
     {
         int slotIndex = 0;
 
+        // Iterates through each weapon in the inventory and unequips it.
         foreach (KeyValuePair<string, int> item in weaponItems)
         {
             WeaponItem itemInfo = (WeaponItem)allItems[item.Key];
             GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
             itemInfo.setIsEquipped(false);
+
+            // Disables equip slot UI.
             slot.transform.GetChild(3).gameObject.SetActive(false);
 
             slotIndex++;
         }
     }
 
+    // Equips the selected item.
     void equipSelectedWeapon(int currentSlotIndex)
     {
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
@@ -160,6 +167,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
         if (itemInfo.getIsEquipped())
         {
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+
+            // Enables the equip slot UI.
             slot.transform.GetChild(3).gameObject.SetActive(true);
         }
     }
