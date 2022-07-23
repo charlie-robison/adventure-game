@@ -114,6 +114,9 @@ public class MaterialInventory : MonoBehaviour, IInventory
         {
             print("Healed player by " + itemInfo.getMaterialTypePower());
         }
-        
+        else if (itemInfo.getMaterialType() == MaterialTypes.SpeedType)
+        {
+            print("Player's speed increased by " + itemInfo.getMaterialTypePower());
+        }
     }
 }

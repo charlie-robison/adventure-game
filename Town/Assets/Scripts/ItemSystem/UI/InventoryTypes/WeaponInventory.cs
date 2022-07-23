@@ -130,17 +130,26 @@ public class WeaponInventory : MonoBehaviour, IInventory
         unEquipAllWeapons();
         equipSelectedWeapon(currentSlotIndex);
 
+        // Destroys all children in weaponHolster.
+        foreach (Transform child in weaponHolster.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         // Adds the weapon to the player's weapon holster.
         GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
         newWeapon.transform.position = weaponHolster.transform.position;
         newWeapon.transform.parent = weaponHolster.transform;
         newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
 
+        /* Modify player's power. */
+        /* Modify player's attack frequency. */
+
         print("Equipped " + itemInfo.getItemName());
     }
 
     // Unequips all weapons.
-    void unEquipAllWeapons()
+    private void unEquipAllWeapons()
     {
         int slotIndex = 0;
 
@@ -159,7 +168,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
     }
 
     // Equips the selected item.
-    void equipSelectedWeapon(int currentSlotIndex)
+    private void equipSelectedWeapon(int currentSlotIndex)
     {
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
         itemInfo.setIsEquipped(true);

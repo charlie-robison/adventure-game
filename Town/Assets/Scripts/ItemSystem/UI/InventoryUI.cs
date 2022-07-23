@@ -44,7 +44,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     // Sets up the initial state of all the slots and then fills them up.
-    void setUpSlots()
+    private void setUpSlots()
     {
         // Initializes all the item slots by enabling the disable slot and disabling the enable and selection slots.
         for (int i = 0; i < numberOfSlots; i++)
@@ -62,7 +62,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     // Updates the current slot index and assigns the appropriate gameObject to currentSlot.
-    void updateCurrentSlot()
+    private void updateCurrentSlot()
     {
         // Checks if the player can select the next or previous slot.
         if (Time.time > selectionTimer)
@@ -111,7 +111,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     // Enables the itemInfo section when applicable.
-    void enableItemInfoSection()
+    private void enableItemInfoSection()
     {
         // Checks if there are any items in the inventory.
         if (inventoryManagement.getItemCount() <= 0 || currentSlotIndex == -1)
@@ -123,7 +123,7 @@ public class InventoryUI : MonoBehaviour
     }
 
     // Checks if selected item was pressed and uses the item.
-    void useItem()
+    private void useItem()
     {
         if (useSelectedItem && inventoryManagement.getItemCount() > 0 && currentSlotIndex != -1)
         {
