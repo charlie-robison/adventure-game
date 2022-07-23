@@ -15,13 +15,13 @@ public class WeaponInventory : MonoBehaviour, IInventory
     private Dictionary<string, IItem> allItems;
     private string[] itemList;
 
-    void Start()
+    private void Start()
     {
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
         allItems = player.GetComponent<PlayerInventory>().getAllItems();
     }
 
-    // Fills the inventory slots.
+    /** Fills the inventory slots. */
     public void fillSlots()
     {
         weaponItems = player.GetComponent<PlayerInventory>().getWeaponItems();
@@ -76,11 +76,10 @@ public class WeaponInventory : MonoBehaviour, IInventory
         }
     }
 
-    // Presents the selected item's info in the item info UI area.
+    /** Presents the selected item's info in the item info UI area. */
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
-
         GameObject itemInfoUI = weaponItemSlots.transform.GetChild(14).gameObject;
 
         TMP_Text itemNameLabel = itemInfoUI.transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
@@ -107,7 +106,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         newItemDisplay.transform.localScale = newItemDisplay.transform.localScale * 3f;
     }
 
-    // Gets the number of items in the inventory.
+    /** Gets the number of items in the inventory. */
     public int getItemCount()
     {
         int numberOfItems = 0;
@@ -120,7 +119,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         return numberOfItems;
     }
 
-    // Uses the item selected.
+    /** Uses the item selected. */
     public void useItem(int currentSlotIndex)
     {
         // Gets the item's info.
@@ -148,7 +147,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         print("Equipped " + itemInfo.getItemName());
     }
 
-    // Unequips all weapons.
+    /** Unequips all weapons. */
     private void unEquipAllWeapons()
     {
         int slotIndex = 0;
@@ -156,29 +155,28 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Iterates through each weapon in the inventory and unequips it.
         foreach (KeyValuePair<string, int> item in weaponItems)
         {
+            // Gets the weapon and sets its equipped value to false.
             WeaponItem itemInfo = (WeaponItem)allItems[item.Key];
-            GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
             itemInfo.setIsEquipped(false);
 
             // Disables equip slot UI.
+            GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
             slot.transform.GetChild(3).gameObject.SetActive(false);
 
             slotIndex++;
         }
     }
 
-    // Equips the selected item.
+    /** Equips the selected weapon. */
     private void equipSelectedWeapon(int currentSlotIndex)
     {
+        // Gets the weapon and sets its equipped value to true.
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
         itemInfo.setIsEquipped(true);
 
-        if (itemInfo.getIsEquipped())
-        {
-            GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+        // Enables the equip slot UI.
+        GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+        slot.transform.GetChild(3).gameObject.SetActive(true);
 
-            // Enables the equip slot UI.
-            slot.transform.GetChild(3).gameObject.SetActive(true);
-        }
     }
 }

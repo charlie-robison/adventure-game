@@ -11,14 +11,14 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlots;
     public int numberOfSlots;
 
-    private readonly InventoryUISelection invSelection = new InventoryUISelection();
+    private InventorySelectionUpdater invSelectionUpdater;
     private Vector2 selectionDirection;
     private float selectionTimer = 0f;
     private GameObject currentSlot;
     private int currentSlotIndex = -1;
     private bool useSelectedItem = false;
 
-    void Awake()
+    private void Awake()
     {
         controls = new GameControls();
         controls.Gameplay.ItemSelect.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
@@ -27,8 +27,9 @@ public class InventoryUI : MonoBehaviour
         controls.Gameplay.ItemPress.canceled += ctx => useSelectedItem = false;
     }
 
-    void Start()
+    private void Start()
     {
+        invSelectionUpdater = new InventorySelectionUpdater();
         inventoryManagement = itemSlots.GetComponent<IInventory>();
         setUpSlots();
     }
@@ -43,7 +44,7 @@ public class InventoryUI : MonoBehaviour
         controls.Gameplay.Disable();
     }
 
-    // Sets up the initial state of all the slots and then fills them up.
+    /** Sets up the initial state of all the slots and then fills them up. */
     private void setUpSlots()
     {
         // Initializes all the item slots by enabling the disable slot and disabling the enable and selection slots.
@@ -61,7 +62,18 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // Updates the current slot index and assigns the appropriate gameObject to currentSlot.
+    /** Unselects all slots. */
+    public void unselectSlots()
+    {
+        // Iterates through each slot and unselects it.
+        for (int i = 0; i < numberOfSlots; i++)
+        {
+            GameObject slot = itemSlots.transform.GetChild(i).gameObject;
+            slot.transform.GetChild(2).gameObject.SetActive(false);
+        }
+    }
+
+    /** Updates the current slot index and assigns the appropriate gameObject to currentSlot. */
     private void updateCurrentSlot()
     {
         // Checks if the player can select the next or previous slot.
@@ -70,7 +82,7 @@ public class InventoryUI : MonoBehaviour
             // Checks if there was a slot change and if there is at least one item in the inventory.
             if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && inventoryManagement.getItemCount() > 0)
             {
-                int newSlotIndex = invSelection.getCurrentSlot(itemSlots, selectionDirection);
+                int newSlotIndex = invSelectionUpdater.getCurrentSlot(itemSlots, selectionDirection);
 
                 // Checks if the currentSlotIndex changed.
                 if (currentSlotIndex != newSlotIndex)
@@ -81,7 +93,7 @@ public class InventoryUI : MonoBehaviour
                     selectionTimer = Time.time + 0.15f;
 
                     // Unselects all slots.
-                    invSelection.unselectSlots(itemSlots);
+                    unselectSlots();
 
                     // Sets the item info section to active.
                     GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
@@ -110,7 +122,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // Enables the itemInfo section when applicable.
+    /** Enables the itemInfo section when applicable. */
     private void enableItemInfoSection()
     {
         // Checks if there are any items in the inventory.
@@ -122,16 +134,18 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    // Checks if selected item was pressed and uses the item.
-    private void useItem()
+    /** Checks if selected item was pressed and uses the item. */
+    private void useCurrentItem()
     {
+        // Checks if the selected item can be used.
         if (useSelectedItem && inventoryManagement.getItemCount() > 0 && currentSlotIndex != -1)
         {
+            // Uses the item.
             inventoryManagement.useItem(currentSlotIndex);
         }
     }
 
-    void Update()
+    private void Update()
     {
         // Updates the current slot from user input.
         updateCurrentSlot();
@@ -140,6 +154,6 @@ public class InventoryUI : MonoBehaviour
         enableItemInfoSection();
 
         // Checks if selected item was pressed and uses the item.
-        useItem();
+        useCurrentItem();
     }
 }

@@ -2,29 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUISelection : MonoBehaviour
+/** Updates the current slot index given the item slots and the user input. */
+public class InventorySelectionUpdater : MonoBehaviour
 {
     private int currentSlotIndex;
     private Vector2 selectionDirection;
 
-    public InventoryUISelection()
+    public InventorySelectionUpdater()
     {
         currentSlotIndex = 0;
         selectionDirection = Vector2.zero;
     }
 
-    // Unselects all slots for the given slots.
-    public void unselectSlots(GameObject itemSlots)
-    {
-        // Unselects all the slots.
-        for (int i = 0; i < 12; i++)
-        {
-            GameObject slot = itemSlots.transform.GetChild(i).gameObject;
-            slot.transform.GetChild(2).gameObject.SetActive(false);
-        }
-    }
-
-    // Returns the current slot's index which is updated based on user input.
+    /** Returns the current slot's index which is updated based on user input. */
     public int getCurrentSlot(GameObject itemSlots, Vector2 newSelectionDirection)
     {
         // Updates the selection direction.
