@@ -107,6 +107,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemDropPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""a50d062d-f8ab-48ef-94b9-77c8dc3923ee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -472,6 +481,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""ItemSelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74ae8cdb-73df-473d-a6fb-88529b7226b5"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemDropPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -489,6 +509,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
         m_Gameplay_ItemPress = m_Gameplay.FindAction("ItemPress", throwIfNotFound: true);
         m_Gameplay_ItemSelect = m_Gameplay.FindAction("ItemSelect", throwIfNotFound: true);
+        m_Gameplay_ItemDropPress = m_Gameplay.FindAction("ItemDropPress", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -557,6 +578,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Aim;
     private readonly InputAction m_Gameplay_ItemPress;
     private readonly InputAction m_Gameplay_ItemSelect;
+    private readonly InputAction m_Gameplay_ItemDropPress;
     public struct GameplayActions
     {
         private @GameControls m_Wrapper;
@@ -570,6 +592,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
         public InputAction @ItemPress => m_Wrapper.m_Gameplay_ItemPress;
         public InputAction @ItemSelect => m_Wrapper.m_Gameplay_ItemSelect;
+        public InputAction @ItemDropPress => m_Wrapper.m_Gameplay_ItemDropPress;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -606,6 +629,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @ItemSelect.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
                 @ItemSelect.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
                 @ItemSelect.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
+                @ItemDropPress.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
+                @ItemDropPress.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
+                @ItemDropPress.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -637,6 +663,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @ItemSelect.started += instance.OnItemSelect;
                 @ItemSelect.performed += instance.OnItemSelect;
                 @ItemSelect.canceled += instance.OnItemSelect;
+                @ItemDropPress.started += instance.OnItemDropPress;
+                @ItemDropPress.performed += instance.OnItemDropPress;
+                @ItemDropPress.canceled += instance.OnItemDropPress;
             }
         }
     }
@@ -652,5 +681,6 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnItemPress(InputAction.CallbackContext context);
         void OnItemSelect(InputAction.CallbackContext context);
+        void OnItemDropPress(InputAction.CallbackContext context);
     }
 }

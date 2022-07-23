@@ -40,6 +40,7 @@ public class PlayerInventory : MonoBehaviour
         // Checks if this item is already a key.
         if (!weaponItems.ContainsKey(item.getItemName()))
         {
+            print(item.getItemName());
             // Adds the item and the quantity that it has.
             weaponItems.Add(item.getItemName(), item.getItemQuantity());
             allItems.Add(item.getItemName(), item);

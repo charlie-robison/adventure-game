@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ItemDropPress",
+                    "type": "Button",
+                    "id": "a50d062d-f8ab-48ef-94b9-77c8dc3923ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -450,6 +459,17 @@
                     "action": "ItemSelect",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "74ae8cdb-73df-473d-a6fb-88529b7226b5",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ItemDropPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

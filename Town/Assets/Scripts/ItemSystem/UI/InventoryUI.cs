@@ -17,6 +17,7 @@ public class InventoryUI : MonoBehaviour
     private GameObject currentSlot;
     private int currentSlotIndex = -1;
     private bool useSelectedItem = false;
+    private bool dropSelectedItem = false;
 
     private void Awake()
     {
@@ -25,6 +26,8 @@ public class InventoryUI : MonoBehaviour
         controls.Gameplay.ItemSelect.canceled += ctx => selectionDirection = Vector2.zero;
         controls.Gameplay.ItemPress.performed += ctx => useSelectedItem = true;
         controls.Gameplay.ItemPress.canceled += ctx => useSelectedItem = false;
+        controls.Gameplay.ItemDropPress.performed += ctx => dropSelectedItem = true;
+        controls.Gameplay.ItemDropPress.canceled += ctx => dropSelectedItem = false;
     }
 
     private void Start()
@@ -145,6 +148,25 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    private void dropCurrentItem()
+    {
+        if (dropSelectedItem && inventoryManagement.getItemCount() > 0 && currentSlotIndex != -1)
+        {
+            dropSelectedItem = false;
+
+            inventoryManagement.dropItem(currentSlotIndex, 1);
+            setUpSlots();
+
+            foreach (GameObject slot in itemSlots.transform)
+            {
+                if (slot.transform.childCount > 0)
+                {
+                    Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(0));
+                }
+            }
+        }
+    }
+
     private void Update()
     {
         // Updates the current slot from user input.
@@ -155,5 +177,7 @@ public class InventoryUI : MonoBehaviour
 
         // Checks if selected item was pressed and uses the item.
         useCurrentItem();
+
+        dropCurrentItem();
     }
 }
