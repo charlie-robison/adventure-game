@@ -133,8 +133,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Adds the weapon to the player's weapon holster.
         GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
         newWeapon.transform.position = weaponHolster.transform.position;
-        newWeapon.transform.eulerAngles = new Vector3(-90f, 0f, 0f);
         newWeapon.transform.parent = weaponHolster.transform;
+        newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
 
         print("Equipped " + itemInfo.getItemName());
     }
