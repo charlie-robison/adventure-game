@@ -58,7 +58,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         // Sets the current slot to the first slot.
-        currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
+        // currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
     }
 
     // Updates the current slot index and assigns the appropriate gameObject to currentSlot.
@@ -114,7 +114,7 @@ public class InventoryUI : MonoBehaviour
     void enableItemInfoSection()
     {
         // Checks if there are any items in the inventory.
-        if (inventoryManagement.getItemCount() <= 0)
+        if (inventoryManagement.getItemCount() <= 0 || currentSlotIndex == -1)
         {
             // Sets the item info section to not active.
             GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
