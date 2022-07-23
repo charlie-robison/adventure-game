@@ -155,15 +155,21 @@ public class InventoryUI : MonoBehaviour
             dropSelectedItem = false;
 
             inventoryManagement.dropItem(currentSlotIndex, 1);
-            setUpSlots();
 
-            foreach (GameObject slot in itemSlots.transform)
+            for (int i = 0; i < numberOfSlots; i++)
             {
-                if (slot.transform.childCount > 0)
+                GameObject slot = itemSlots.transform.GetChild(i).gameObject;
+
+                if (slot.transform.GetChild(6).gameObject.transform.childCount > 0)
                 {
-                    Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(0));
+                    for (int j = 0; j < slot.transform.childCount; j++)
+                    {
+                        Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(j).gameObject);
+                    }
                 }
             }
+
+            // setUpSlots();
         }
     }
 
