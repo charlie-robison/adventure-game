@@ -169,9 +169,13 @@ public class InventoryUI : MonoBehaviour
     /** Checks if selected item was pressed and uses the item. */
     private void useCurrentItem()
     {
+        print(useSelectedItem);
+
         // Checks if the selected item can be used.
         if (useSelectedItem && inventoryManagement.getItemCount() > 0 && currentSlotIndex != -1)
         {
+            useSelectedItem = false;
+
             // Uses the item.
             inventoryManagement.useItem(currentSlotIndex);
         }

@@ -144,7 +144,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
 
         // Unequips all weapons then equips the selected weapon.
         unEquipAllWeapons();
-        equipSelectedWeapon(currentSlotIndex);
+
+        bool didEquip = equipSelectedWeapon(currentSlotIndex);
 
         // Destroys all children in weaponHolster.
         foreach (Transform child in weaponHolster.transform)
@@ -152,16 +153,21 @@ public class WeaponInventory : MonoBehaviour, IInventory
             Destroy(child.gameObject);
         }
 
-        // Adds the weapon to the player's weapon holster.
-        GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
-        newWeapon.transform.position = weaponHolster.transform.position;
-        newWeapon.transform.parent = weaponHolster.transform;
-        newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
+        // Checks if the weapon was equipped.
+        if (didEquip)
+        {
+            // Adds the weapon to the player's weapon holster.
+            GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
+            newWeapon.transform.position = weaponHolster.transform.position;
+            newWeapon.transform.parent = weaponHolster.transform;
+            newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
 
-        /* Modify player's power. */
-        /* Modify player's attack frequency. */
 
-        print("Equipped " + itemInfo.getItemName());
+            /* Modify player's power. */
+            /* Modify player's attack frequency. */
+
+            print("Equipped " + itemInfo.getItemName());
+        }
     }
 
     /** Drops the item selected. */
@@ -217,16 +223,29 @@ public class WeaponInventory : MonoBehaviour, IInventory
         }
     }
 
-    /** Equips the selected weapon. */
-    private void equipSelectedWeapon(int currentSlotIndex)
+    /** Equips the selected weapon. Returns true if equipped and false if unequipped. */
+    private bool equipSelectedWeapon(int currentSlotIndex)
     {
         // Gets the weapon and sets its equipped value to true.
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
-        itemInfo.setIsEquipped(true);
 
-        // Enables the equip slot UI.
-        GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
-        slot.transform.GetChild(3).gameObject.SetActive(true);
+        if (!itemInfo.getIsEquipped())
+        {
+            itemInfo.setIsEquipped(true);
 
+            // Enables the equip slot UI.
+            GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            slot.transform.GetChild(3).gameObject.SetActive(true);
+
+            return true;
+        }
+        else
+        {
+            print("Unequipped");
+            itemInfo.setIsEquipped(false);
+            unEquipAllWeapons();
+
+            return false;
+        }
     }
 }
