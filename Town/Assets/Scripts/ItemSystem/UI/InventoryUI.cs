@@ -61,6 +61,12 @@ public class InventoryUI : MonoBehaviour
             slot.transform.GetChild(2).gameObject.SetActive(false);
             slot.transform.GetChild(3).gameObject.SetActive(false);
             slot.transform.GetChild(4).gameObject.SetActive(false);
+            slot.transform.GetChild(5).gameObject.SetActive(false);
+
+            if (slot.transform.GetChild(6).gameObject.transform.childCount > 0)
+            {
+                Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject);
+            }
 
             // Fills the slots with the items for the correct inventory.
             inventoryManagement.fillSlots();
@@ -101,6 +107,8 @@ public class InventoryUI : MonoBehaviour
                     unselectSlots();
 
                     // Sets the item info section to active.
+                    GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
+                    bigItemDisplay.SetActive(false);
                     GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
                     itemInfoUI.SetActive(true);
 
@@ -134,7 +142,9 @@ public class InventoryUI : MonoBehaviour
         if (inventoryManagement.getItemCount() <= 0 || currentSlotIndex == -1)
         {
             // Sets the item info section to not active.
+            GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
             GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
+            bigItemDisplay.SetActive(false);
             itemInfoUI.SetActive(false);
         }
     }
@@ -169,14 +179,23 @@ public class InventoryUI : MonoBehaviour
             {
                 currentSlotIndex = -1;
             }
+            else if (inventoryManagement.getItemCount() == 1)
+            {
+                currentSlotIndex = 0;
+                currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            }
             else if (currentSlotIndex == 0)
             {
                 currentSlotIndex += 1;
+                currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
             }
             else
             {
                 currentSlotIndex -= 1;
+                currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
             }
+
+            previousItemCount = inventoryManagement.getItemCount();
 
             // Unselects all items.
             unselectSlots();
