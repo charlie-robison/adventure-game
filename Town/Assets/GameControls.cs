@@ -330,6 +330,17 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7035a768-41c8-4bed-8331-287cf712dc4f"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""e271274c-e889-4488-a64e-067f99e0768c"",
                     ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
