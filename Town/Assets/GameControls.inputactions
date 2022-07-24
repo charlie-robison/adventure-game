@@ -319,6 +319,17 @@
                 },
                 {
                     "name": "",
+                    "id": "dd9c4527-5902-43d1-9906-2f2465d12054",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d25e0dbd-324b-4872-8fef-95b250ca3a23",
                     "path": "<XInputController>/leftTrigger",
                     "interactions": "",

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FollowTarget : MonoBehaviour
 {
@@ -70,6 +71,8 @@ public class FollowTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Vector2 mousePos = Mouse.current.position.ReadValue();
+        // targetDirection = mousePos.normalized;
         checkAngularVelocity();
         rotatePlayer();
         followPlayer();
