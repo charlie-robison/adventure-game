@@ -65,7 +65,11 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 // Checks if there is already an item display gameObject for that slot.
                 if (itemDisplay.transform.childCount > 0)
                 {
-                    Destroy(itemDisplay.transform.GetChild(0).gameObject);
+                    // Destroys all of its children to prevent copies.
+                    foreach (Transform child in itemDisplay.transform)
+                    {
+                        Destroy(child.gameObject);
+                    }
                 }
 
                 // Sets the power label.
@@ -179,8 +183,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
         {
             for (int i = 0; i < numberDropped; i++)
             {
+                // Removes the item from the inventory.
                 player.GetComponent<PlayerInventory>().removeWeaponItem(itemInfo);
-                fillSlots();
 
                 // Sets random positions for the dropped item around the player.
                 float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);

@@ -91,7 +91,7 @@ public class InventoryUI : MonoBehaviour
         if (Time.time > selectionTimer)
         {
             // Checks if there was a slot change and if there is at least one item in the inventory.
-            if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && inventoryManagement.getItemCount() > 0)
+            if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && inventoryManagement.getItemCount() > 1)
             {
                 int newSlotIndex = invSelectionUpdater.getCurrentSlot(itemSlots, selectionDirection);
 
@@ -133,6 +133,23 @@ public class InventoryUI : MonoBehaviour
                 currentSlot.transform.GetChild(2).gameObject.SetActive(false);
             }
         }
+
+        // Checks if there is only one item in the inventory.
+        if (inventoryManagement.getItemCount() == 1)
+        {
+            // Sets the current selected slot to the 1st slot.
+            currentSlotIndex = 0;
+            currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
+
+            // Sets the item info section to active.
+            GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
+            bigItemDisplay.SetActive(true);
+            GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
+            itemInfoUI.SetActive(true);
+
+            // Displays the selected item info on the item info area.
+            inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
+        }
     }
 
     /** Enables the itemInfo section when applicable. */
@@ -172,37 +189,43 @@ public class InventoryUI : MonoBehaviour
             inventoryManagement.dropItem(currentSlotIndex, 1);
         }
 
+        // Checks if there is less items then there was before.
         if (previousItemCount > inventoryManagement.getItemCount())
         {
-            // Sets the currentSlotIndex if the number of types of items is less than before.
+            // Sets the currentSlotIndex to -1 if there are no items.
             if (inventoryManagement.getItemCount() <= 0)
             {
                 currentSlotIndex = -1;
             }
+            // Sets the currentSlotIndex to 0 if there is 1 item.
             else if (inventoryManagement.getItemCount() == 1)
             {
                 currentSlotIndex = 0;
             }
+            // Increments currentSlotIndex by 1 if the 1st slot was removed. 
             else if (currentSlotIndex == 0)
             {
                 currentSlotIndex += 1;
             }
+            // Decrements currentSlotIndex by 1.
             else
             {
                 currentSlotIndex -= 1;
             }
 
+            // Sets the previous item count to the current item count.
             previousItemCount = inventoryManagement.getItemCount();
 
             // Unselects all items.
             unselectSlots();
 
+            // Checks if there currentSlotIndex is valid.
             if (currentSlotIndex != -1)
             {
+                // Sets currentSlot and itemInfo for slot.
                 currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
                 inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
             }
-
 
             // Resets all inventory slots.
             setUpSlots();
