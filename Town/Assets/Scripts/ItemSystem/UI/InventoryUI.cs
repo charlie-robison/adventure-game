@@ -150,26 +150,20 @@ public class InventoryUI : MonoBehaviour
 
     private void dropCurrentItem()
     {
+        // Checks if selected item can be dropped.
         if (dropSelectedItem && inventoryManagement.getItemCount() > 0 && currentSlotIndex != -1)
         {
             dropSelectedItem = false;
 
+            // Drops the item.
             inventoryManagement.dropItem(currentSlotIndex, 1);
+        }
 
-            for (int i = 0; i < numberOfSlots; i++)
-            {
-                GameObject slot = itemSlots.transform.GetChild(i).gameObject;
+        if (inventoryManagement.getItemCount() <= 0)
+        {
+            currentSlotIndex = -1;
 
-                if (slot.transform.GetChild(6).gameObject.transform.childCount > 0)
-                {
-                    for (int j = 0; j < slot.transform.childCount; j++)
-                    {
-                        Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(j).gameObject);
-                    }
-                }
-            }
-
-            // setUpSlots();
+            setUpSlots();
         }
     }
 

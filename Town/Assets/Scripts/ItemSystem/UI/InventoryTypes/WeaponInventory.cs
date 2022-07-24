@@ -51,9 +51,6 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 slot.transform.GetChild(4).gameObject.SetActive(true);
                 slot.transform.GetChild(5).gameObject.SetActive(true);
 
-                // Sets the power label.
-                powerLabel.text = itemProperties.getWeaponPower().ToString();
-
                 // Sets the quantity label.
                 if (item.Value <= 0)
                 {
@@ -64,10 +61,18 @@ public class WeaponInventory : MonoBehaviour, IInventory
                     quantityLabel.text = "x" + item.Value.ToString();
                 }
 
-                // Sets the item display for the item.
-                GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
-                newItemDisplay.transform.position = itemDisplay.transform.position;
-                newItemDisplay.transform.parent = itemDisplay.transform;
+
+                // Checks if there is already an item display gameObject for that slot.
+                if (itemDisplay.transform.childCount <= 0)
+                {
+                    // Sets the power label.
+                    powerLabel.text = itemProperties.getWeaponPower().ToString();
+
+                    // Sets the item display for the item.
+                    GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
+                    newItemDisplay.transform.position = itemDisplay.transform.position;
+                    newItemDisplay.transform.parent = itemDisplay.transform;
+                }
 
                 itemList[slotIndex] = item.Key;
 
@@ -157,6 +162,15 @@ public class WeaponInventory : MonoBehaviour, IInventory
     public void dropItem(int currentSlotIndex, int numberDropped)
     {
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+        int numberOfItemRemaining = weaponItems[itemInfo.getItemName()] - numberDropped;
+
+        if (numberOfItemRemaining <= 0)
+        {
+            print("There is no more of this item!");
+            GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
+            Destroy(itemDisplay.transform.GetChild(0).gameObject);
+        }
 
         // Checks if the number dropped is less than or equal to the amount of the item possessed.
         if (weaponItems.ContainsKey(itemInfo.getItemName()) && numberDropped <= weaponItems[itemInfo.getItemName()])

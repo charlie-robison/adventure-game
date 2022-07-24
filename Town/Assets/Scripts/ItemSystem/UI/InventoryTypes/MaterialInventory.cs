@@ -139,6 +139,5 @@ public class MaterialInventory : MonoBehaviour, IInventory
     /** Drops the item selected. */
     public void dropItem(int currentSlotIndex, int numberDropped)
     {
-
     }
 }
