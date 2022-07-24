@@ -180,6 +180,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
             for (int i = 0; i < numberDropped; i++)
             {
                 player.GetComponent<PlayerInventory>().removeWeaponItem(itemInfo);
+                fillSlots();
 
                 // Sets random positions for the dropped item around the player.
                 float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);

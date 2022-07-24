@@ -83,7 +83,7 @@ public class PlayerInventory : MonoBehaviour
             weaponItems[item.getItemName()]--;
 
             // Updates inventory UI.
-            weaponInventory.fillSlots();
+            // weaponInventory.fillSlots();
         }
 
         // Removes item from inventory if there is 0 of it.
