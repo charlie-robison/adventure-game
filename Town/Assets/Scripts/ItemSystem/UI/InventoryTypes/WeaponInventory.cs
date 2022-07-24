@@ -63,16 +63,18 @@ public class WeaponInventory : MonoBehaviour, IInventory
 
 
                 // Checks if there is already an item display gameObject for that slot.
-                if (itemDisplay.transform.childCount <= 0)
+                if (itemDisplay.transform.childCount > 0)
                 {
-                    // Sets the power label.
-                    powerLabel.text = itemProperties.getWeaponPower().ToString();
-
-                    // Sets the item display for the item.
-                    GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
-                    newItemDisplay.transform.position = itemDisplay.transform.position;
-                    newItemDisplay.transform.parent = itemDisplay.transform;
+                    Destroy(itemDisplay.transform.GetChild(0).gameObject);
                 }
+
+                // Sets the power label.
+                powerLabel.text = itemProperties.getWeaponPower().ToString();
+
+                // Sets the item display for the item.
+                GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
+                newItemDisplay.transform.position = itemDisplay.transform.position;
+                newItemDisplay.transform.parent = itemDisplay.transform;
 
                 itemList[slotIndex] = item.Key;
 

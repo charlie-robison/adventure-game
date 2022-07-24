@@ -67,10 +67,10 @@ public class InventoryUI : MonoBehaviour
             {
                 Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject);
             }
-
-            // Fills the slots with the items for the correct inventory.
-            inventoryManagement.fillSlots();
         }
+
+        // Fills the slots with the items for the correct inventory.
+        inventoryManagement.fillSlots();
     }
 
     /** Unselects all slots. */
