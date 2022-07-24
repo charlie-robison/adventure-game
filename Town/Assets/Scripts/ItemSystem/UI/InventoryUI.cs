@@ -202,13 +202,9 @@ public class InventoryUI : MonoBehaviour
             {
                 currentSlotIndex = 0;
             }
-            // Increments currentSlotIndex by 1 if the 1st slot was removed. 
-            else if (currentSlotIndex == 0)
-            {
-                currentSlotIndex += 1;
-            }
+
             // Decrements currentSlotIndex by 1.
-            else
+            if (currentSlotIndex > inventoryManagement.getItemCount())
             {
                 currentSlotIndex -= 1;
             }
@@ -219,6 +215,9 @@ public class InventoryUI : MonoBehaviour
             // Unselects all items.
             unselectSlots();
 
+            // Resets all inventory slots.
+            setUpSlots();
+
             // Checks if there currentSlotIndex is valid.
             if (currentSlotIndex != -1)
             {
@@ -226,9 +225,6 @@ public class InventoryUI : MonoBehaviour
                 currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
                 inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
             }
-
-            // Resets all inventory slots.
-            setUpSlots();
         }
     }
 
