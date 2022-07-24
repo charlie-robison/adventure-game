@@ -18,6 +18,7 @@ public class InventoryUI : MonoBehaviour
     private int currentSlotIndex = -1;
     private bool useSelectedItem = false;
     private bool dropSelectedItem = false;
+    private int previousItemCount;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class InventoryUI : MonoBehaviour
     {
         invSelectionUpdater = new InventorySelectionUpdater();
         inventoryManagement = itemSlots.GetComponent<IInventory>();
+        previousItemCount = inventoryManagement.getItemCount();
         setUpSlots();
     }
 
@@ -153,16 +155,33 @@ public class InventoryUI : MonoBehaviour
         // Checks if selected item can be dropped.
         if (dropSelectedItem && inventoryManagement.getItemCount() > 0 && currentSlotIndex != -1)
         {
+            previousItemCount = inventoryManagement.getItemCount();
             dropSelectedItem = false;
 
             // Drops the item.
             inventoryManagement.dropItem(currentSlotIndex, 1);
         }
 
-        if (inventoryManagement.getItemCount() <= 0)
+        if (previousItemCount > inventoryManagement.getItemCount())
         {
-            currentSlotIndex = -1;
+            // Sets the currentSlotIndex if the number of types of items is less than before.
+            if (inventoryManagement.getItemCount() <= 0)
+            {
+                currentSlotIndex = -1;
+            }
+            else if (currentSlotIndex == 0)
+            {
+                currentSlotIndex += 1;
+            }
+            else
+            {
+                currentSlotIndex -= 1;
+            }
 
+            // Unselects all items.
+            unselectSlots();
+
+            // Resets all inventory slots.
             setUpSlots();
         }
     }

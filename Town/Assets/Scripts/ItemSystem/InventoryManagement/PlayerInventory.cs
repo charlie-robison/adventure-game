@@ -90,7 +90,7 @@ public class PlayerInventory : MonoBehaviour
         if (weaponItems[item.getItemName()] == 0)
         {
             weaponItems.Remove(item.getItemName());
-            weaponInventory.fillSlots();
+            // weaponInventory.fillSlots();
         }
     }
 
