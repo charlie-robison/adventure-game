@@ -95,8 +95,8 @@ public class InventoryUI : MonoBehaviour
             {
                 int newSlotIndex = invSelectionUpdater.getCurrentSlot(itemSlots, selectionDirection);
 
-                // Checks if the currentSlotIndex changed.
-                if (currentSlotIndex != newSlotIndex)
+                // Checks if the currentSlotIndex changed and that it does not exceed the item count.
+                if (currentSlotIndex != newSlotIndex && newSlotIndex < inventoryManagement.getItemCount())
                 {
                     // Sets the next slot index and sets currentSlot to the correct slot gameObject.
                     currentSlotIndex = newSlotIndex;
@@ -177,6 +177,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    /** Checks if the selected item was pressed to delete. */
     private void dropCurrentItem()
     {
         // Checks if selected item can be dropped.
@@ -203,22 +204,19 @@ public class InventoryUI : MonoBehaviour
                 currentSlotIndex = 0;
             }
 
-            // Decrements currentSlotIndex by 1.
-            if (currentSlotIndex > inventoryManagement.getItemCount())
+            // Decrements currentSlotIndex by 1 if the currentSlotIndex exceeds the item count. (Slot becomes invalid).
+            if (currentSlotIndex > (inventoryManagement.getItemCount() - 1))
             {
                 currentSlotIndex -= 1;
             }
 
-            // Sets the previous item count to the current item count.
             previousItemCount = inventoryManagement.getItemCount();
 
-            // Unselects all items.
+            // Unselects all items and resets all the slots.
             unselectSlots();
-
-            // Resets all inventory slots.
             setUpSlots();
 
-            // Checks if there currentSlotIndex is valid.
+            // Checks if the currentSlotIndex is valid.
             if (currentSlotIndex != -1)
             {
                 // Sets currentSlot and itemInfo for slot.
@@ -239,6 +237,7 @@ public class InventoryUI : MonoBehaviour
         // Checks if selected item was pressed and uses the item.
         useCurrentItem();
 
+        // Checks if the selected item was pressed to delete.
         dropCurrentItem();
     }
 }
