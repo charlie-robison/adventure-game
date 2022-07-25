@@ -11,9 +11,6 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlots;
     public int numberOfSlots;
 
-    private InventorySelectionUpdater invSelectionUpdater;
-    private Vector2 selectionDirection;
-    private float selectionTimer = 0f;
     private GameObject currentSlot;
     private int currentSlotIndex = -1;
     private bool useSelectedItem = false;
@@ -23,8 +20,6 @@ public class InventoryUI : MonoBehaviour
     private void Awake()
     {
         controls = new GameControls();
-        controls.UI.ItemSelect.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
-        controls.UI.ItemSelect.canceled += ctx => selectionDirection = Vector2.zero;
         controls.UI.ItemPress.performed += ctx => useSelectedItem = true;
         controls.UI.ItemPress.canceled += ctx => useSelectedItem = false;
         controls.UI.ItemDropPress.performed += ctx => dropSelectedItem = true;
@@ -33,7 +28,6 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
-        invSelectionUpdater = new InventorySelectionUpdater();
         inventoryManagement = itemSlots.GetComponent<IInventory>();
         previousItemCount = inventoryManagement.getItemCount();
         setUpSlots();
@@ -83,41 +77,10 @@ public class InventoryUI : MonoBehaviour
             slot.transform.GetChild(2).gameObject.SetActive(false);
         }
     }
-
+    
     /** Updates the current slot index and assigns the appropriate gameObject to currentSlot. */
     private void updateCurrentSlot()
     {
-        // Checks if the player can select the next or previous slot.
-        if (Time.time > selectionTimer)
-        {
-            // Checks if there was a slot change and if there is at least one item in the inventory.
-            if ((Mathf.Abs(selectionDirection.x) > 0.1f || Mathf.Abs(selectionDirection.y) > 0.1f) && inventoryManagement.getItemCount() > 1)
-            {
-                int newSlotIndex = invSelectionUpdater.getCurrentSlot(itemSlots, selectionDirection);
-
-                // Checks if the currentSlotIndex changed and that it does not exceed the item count.
-                if (currentSlotIndex != newSlotIndex && newSlotIndex < inventoryManagement.getItemCount())
-                {
-                    // Sets the next slot index and sets currentSlot to the correct slot gameObject.
-                    currentSlotIndex = newSlotIndex;
-                    currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
-                    selectionTimer = Time.time + 0.15f;
-
-                    // Unselects all slots.
-                    unselectSlots();
-
-                    // Sets the item info section to active.
-                    GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
-                    bigItemDisplay.SetActive(true);
-                    GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
-                    itemInfoUI.SetActive(true);
-
-                    // Displays the selected item info on the item info area.
-                    inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
-                }
-            }
-        }
-
         // Checks if the currentSlot is an actual slot.
         if (currentSlot != null)
         {
@@ -152,8 +115,8 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    /** Enables the itemInfo section when applicable. */
-    private void enableItemInfoSection()
+    /** Disables the itemInfo section when applicable. */
+    private void checkItemInfoSection()
     {
         // Checks if there are any items in the inventory.
         if (inventoryManagement.getItemCount() <= 0 || currentSlotIndex == -1)
@@ -228,6 +191,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    /** Selects a slot when the slot is touched. */
     public void selectSlot(int slotNumber)
     {
         if (slotNumber < inventoryManagement.getItemCount())
@@ -252,8 +216,8 @@ public class InventoryUI : MonoBehaviour
         // Updates the current slot from user input.
         updateCurrentSlot();
 
-        // Enables item info section if there are any items.
-        enableItemInfoSection();
+        // Disables item info section if there are any items.
+        checkItemInfoSection();
 
         // Checks if selected item was pressed and uses the item.
         useCurrentItem();
