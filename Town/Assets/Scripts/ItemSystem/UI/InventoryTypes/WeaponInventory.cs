@@ -179,9 +179,9 @@ public class WeaponInventory : MonoBehaviour, IInventory
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
         int numberOfItemRemaining = weaponItems[itemInfo.getItemName()] - numberDropped;
 
+        // Checks if there is no more of that item remaining.
         if (numberOfItemRemaining <= 0)
         {
-            print("There is no more of this item!");
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
             Destroy(itemDisplay.transform.GetChild(0).gameObject);

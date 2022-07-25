@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /** Handles the UI for an Inventory, such as setting up the inventory slots, updating the current slot,
-    and enabling/ disabling the item info section.*/
+    and enabling/ disabling the item info section. */
 public class InventoryUI : MonoBehaviour
 {
     public IInventory inventoryManagement;
