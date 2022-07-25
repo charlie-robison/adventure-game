@@ -91,9 +91,18 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ItemPress"",
+                    ""name"": ""Inventory"",
                     ""type"": ""Button"",
-                    ""id"": ""c35822b6-65d0-4852-bc44-2d5ef58096fe"",
+                    ""id"": ""8b18947b-b1b1-44c0-b532-961a134dce92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemDropPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""46c84f7c-a03d-47e2-aaa3-1faae7200d63"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -102,25 +111,16 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""ItemSelect"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""29ae0827-e1a9-446a-9293-e7ff209160cf"",
+                    ""id"": ""a46e07f1-410c-4327-8265-96c1c91c7c37"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ItemDropPress"",
+                    ""name"": ""ItemPress"",
                     ""type"": ""Button"",
-                    ""id"": ""a50d062d-f8ab-48ef-94b9-77c8dc3923ee"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""18deffd2-60bf-4e70-ab19-507edd1b7d4c"",
+                    ""id"": ""581c23db-af74-43a7-a17c-4427c882bef6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -383,139 +383,18 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ec820981-f4eb-48f5-8bf7-d1122e388e2c"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""id"": ""83152042-7bf2-424d-bc6d-ad449a5bdc4d"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ItemPress"",
+                    ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""96e1624b-cadc-4620-84a4-c794e4c729e7"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""ef3d2b47-9ec8-413b-b104-13e5eaf50fa0"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""38a35621-b437-4368-aa6d-7380bdaec412"",
-                    ""path"": ""<XInputController>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""09f168cf-9535-45db-9980-3aa15ffe2066"",
-                    ""path"": ""<XInputController>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d6ff9291-b54a-49fc-81d6-0d4d1eab7c8d"",
-                    ""path"": ""<XInputController>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""806d2233-3afc-41d3-82db-f0d13ab39a2d"",
-                    ""path"": ""<XInputController>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""e8e688c2-d843-4c4a-a057-4d1bd7537d5d"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ec5ae322-f0cb-47ce-b95b-56ce80eb8d44"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""8766d475-4236-4f82-96bf-d7703ffb0d4c"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""78e01f17-59b5-409a-bebc-0a1e00c1fd82"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""6b421f9e-1cf7-46de-93fa-c15449a6d67d"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ItemSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""74ae8cdb-73df-473d-a6fb-88529b7226b5"",
+                    ""id"": ""d1e3ff23-38a8-4793-a138-19098a728304"",
                     ""path"": ""<XInputController>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -526,7 +405,260 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d27cf490-527f-4f98-8498-81b96e596abf"",
+                    ""id"": ""66f884ca-8c31-437e-9ed9-e9d341fc0760"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemDropPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""5a80897b-91d7-41eb-96e3-0f67607f583c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""85745f4a-f602-494a-8b80-66f1b036bc96"",
+                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""6e9d9b91-3ce9-4ae3-bed8-70a76d11dafe"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""cd20e25e-214f-4455-b795-9c1381ad95d0"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e20e3df5-eefe-4952-9437-fab8134cd152"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a97539e6-bfb7-42ea-8dae-1deab8dde88a"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21728b0a-eb80-4742-8c66-dcfabe42c289"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""afb345be-23aa-49a4-a638-1d9b1edcb9c6"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""580a1656-8b63-4c2f-b239-1c3444895bae"",
+            ""actions"": [
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""be83d19d-f4c4-48d3-a6e5-ee55daeb7606"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemDropPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa4fad40-b29c-4e62-94ac-835b6511cb0a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemSelect"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""0a477172-84fc-4655-ab17-1819f438551a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""5cd1a92b-e14d-4d92-ac28-0018d35840a8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1b7f7b20-73ad-469e-ae64-b5f8ffcedba6"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb2925e4-022e-44e5-be9d-13a3488e9a2a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c70e5c9c-8f63-4179-bdfd-795972917ce3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""57172c22-8eaf-4895-a846-633ef12ebc0a"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""2776f40c-67b0-47a2-a4d0-368c71a2d9be"",
+                    ""path"": ""<XInputController>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5eda1002-549e-47bc-998a-d5b9a6d03879"",
+                    ""path"": ""<XInputController>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""099090d7-1b7d-48fb-b0ed-8707de87e4ba"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""840c89b6-c2c9-43f2-8c9f-f2c7d4369475"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemSelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b00e9817-983d-46cd-ad95-fa9d253266de"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemDropPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88d57b44-a459-4a35-8622-722a14920811"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ItemDropPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3dd95c8b-85d3-48fe-b4e6-e38a904da8c0"",
                     ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -549,10 +681,16 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_Gameplay_Camera = m_Gameplay.FindAction("Camera", throwIfNotFound: true);
         m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
         m_Gameplay_Aim = m_Gameplay.FindAction("Aim", throwIfNotFound: true);
-        m_Gameplay_ItemPress = m_Gameplay.FindAction("ItemPress", throwIfNotFound: true);
-        m_Gameplay_ItemSelect = m_Gameplay.FindAction("ItemSelect", throwIfNotFound: true);
-        m_Gameplay_ItemDropPress = m_Gameplay.FindAction("ItemDropPress", throwIfNotFound: true);
         m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
+        m_Gameplay_ItemDropPress = m_Gameplay.FindAction("ItemDropPress", throwIfNotFound: true);
+        m_Gameplay_ItemSelect = m_Gameplay.FindAction("ItemSelect", throwIfNotFound: true);
+        m_Gameplay_ItemPress = m_Gameplay.FindAction("ItemPress", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
+        m_UI_ItemDropPress = m_UI.FindAction("ItemDropPress", throwIfNotFound: true);
+        m_UI_ItemSelect = m_UI.FindAction("ItemSelect", throwIfNotFound: true);
+        m_UI_ItemPress = m_UI.FindAction("ItemPress", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -619,10 +757,10 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Camera;
     private readonly InputAction m_Gameplay_Shoot;
     private readonly InputAction m_Gameplay_Aim;
-    private readonly InputAction m_Gameplay_ItemPress;
-    private readonly InputAction m_Gameplay_ItemSelect;
-    private readonly InputAction m_Gameplay_ItemDropPress;
     private readonly InputAction m_Gameplay_Inventory;
+    private readonly InputAction m_Gameplay_ItemDropPress;
+    private readonly InputAction m_Gameplay_ItemSelect;
+    private readonly InputAction m_Gameplay_ItemPress;
     public struct GameplayActions
     {
         private @GameControls m_Wrapper;
@@ -634,10 +772,10 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         public InputAction @Camera => m_Wrapper.m_Gameplay_Camera;
         public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
         public InputAction @Aim => m_Wrapper.m_Gameplay_Aim;
-        public InputAction @ItemPress => m_Wrapper.m_Gameplay_ItemPress;
-        public InputAction @ItemSelect => m_Wrapper.m_Gameplay_ItemSelect;
-        public InputAction @ItemDropPress => m_Wrapper.m_Gameplay_ItemDropPress;
         public InputAction @Inventory => m_Wrapper.m_Gameplay_Inventory;
+        public InputAction @ItemDropPress => m_Wrapper.m_Gameplay_ItemDropPress;
+        public InputAction @ItemSelect => m_Wrapper.m_Gameplay_ItemSelect;
+        public InputAction @ItemPress => m_Wrapper.m_Gameplay_ItemPress;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -668,18 +806,18 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Aim.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAim;
-                @ItemPress.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemPress;
-                @ItemPress.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemPress;
-                @ItemPress.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemPress;
-                @ItemSelect.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
-                @ItemSelect.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
-                @ItemSelect.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
-                @ItemDropPress.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
-                @ItemDropPress.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
-                @ItemDropPress.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
                 @Inventory.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInventory;
                 @Inventory.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInventory;
                 @Inventory.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnInventory;
+                @ItemDropPress.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
+                @ItemDropPress.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
+                @ItemDropPress.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemDropPress;
+                @ItemSelect.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
+                @ItemSelect.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
+                @ItemSelect.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemSelect;
+                @ItemPress.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemPress;
+                @ItemPress.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemPress;
+                @ItemPress.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnItemPress;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -705,22 +843,79 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
-                @ItemPress.started += instance.OnItemPress;
-                @ItemPress.performed += instance.OnItemPress;
-                @ItemPress.canceled += instance.OnItemPress;
-                @ItemSelect.started += instance.OnItemSelect;
-                @ItemSelect.performed += instance.OnItemSelect;
-                @ItemSelect.canceled += instance.OnItemSelect;
-                @ItemDropPress.started += instance.OnItemDropPress;
-                @ItemDropPress.performed += instance.OnItemDropPress;
-                @ItemDropPress.canceled += instance.OnItemDropPress;
                 @Inventory.started += instance.OnInventory;
                 @Inventory.performed += instance.OnInventory;
                 @Inventory.canceled += instance.OnInventory;
+                @ItemDropPress.started += instance.OnItemDropPress;
+                @ItemDropPress.performed += instance.OnItemDropPress;
+                @ItemDropPress.canceled += instance.OnItemDropPress;
+                @ItemSelect.started += instance.OnItemSelect;
+                @ItemSelect.performed += instance.OnItemSelect;
+                @ItemSelect.canceled += instance.OnItemSelect;
+                @ItemPress.started += instance.OnItemPress;
+                @ItemPress.performed += instance.OnItemPress;
+                @ItemPress.canceled += instance.OnItemPress;
             }
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private IUIActions m_UIActionsCallbackInterface;
+    private readonly InputAction m_UI_Inventory;
+    private readonly InputAction m_UI_ItemDropPress;
+    private readonly InputAction m_UI_ItemSelect;
+    private readonly InputAction m_UI_ItemPress;
+    public struct UIActions
+    {
+        private @GameControls m_Wrapper;
+        public UIActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
+        public InputAction @ItemDropPress => m_Wrapper.m_UI_ItemDropPress;
+        public InputAction @ItemSelect => m_Wrapper.m_UI_ItemSelect;
+        public InputAction @ItemPress => m_Wrapper.m_UI_ItemPress;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void SetCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterface != null)
+            {
+                @Inventory.started -= m_Wrapper.m_UIActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnInventory;
+                @ItemDropPress.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDropPress;
+                @ItemDropPress.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDropPress;
+                @ItemDropPress.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemDropPress;
+                @ItemSelect.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemSelect;
+                @ItemSelect.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemSelect;
+                @ItemSelect.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemSelect;
+                @ItemPress.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPress;
+                @ItemPress.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPress;
+                @ItemPress.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPress;
+            }
+            m_Wrapper.m_UIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
+                @ItemDropPress.started += instance.OnItemDropPress;
+                @ItemDropPress.performed += instance.OnItemDropPress;
+                @ItemDropPress.canceled += instance.OnItemDropPress;
+                @ItemSelect.started += instance.OnItemSelect;
+                @ItemSelect.performed += instance.OnItemSelect;
+                @ItemSelect.canceled += instance.OnItemSelect;
+                @ItemPress.started += instance.OnItemPress;
+                @ItemPress.performed += instance.OnItemPress;
+                @ItemPress.canceled += instance.OnItemPress;
+            }
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -730,9 +925,16 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnCamera(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
-        void OnItemPress(InputAction.CallbackContext context);
-        void OnItemSelect(InputAction.CallbackContext context);
-        void OnItemDropPress(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnItemDropPress(InputAction.CallbackContext context);
+        void OnItemSelect(InputAction.CallbackContext context);
+        void OnItemPress(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnInventory(InputAction.CallbackContext context);
+        void OnItemDropPress(InputAction.CallbackContext context);
+        void OnItemSelect(InputAction.CallbackContext context);
+        void OnItemPress(InputAction.CallbackContext context);
     }
 }

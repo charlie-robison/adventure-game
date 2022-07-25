@@ -13,18 +13,18 @@ public class UIManagement : MonoBehaviour
     {
         controls = new GameControls();
 
-        controls.Gameplay.Inventory.performed += ctx => enableInventory = !enableInventory;
+        controls.UI.Inventory.performed += ctx => enableInventory = !enableInventory;
     }
 
 
     void OnEnable()
     {
-        controls.Gameplay.Enable();
+        controls.UI.Enable();
     }
 
     void OnDisable()
     {
-        controls.Gameplay.Disable();
+        controls.UI.Disable();
     }
 
     void checkUI()

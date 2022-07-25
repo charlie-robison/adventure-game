@@ -23,12 +23,12 @@ public class InventoryUI : MonoBehaviour
     private void Awake()
     {
         controls = new GameControls();
-        controls.Gameplay.ItemSelect.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
-        controls.Gameplay.ItemSelect.canceled += ctx => selectionDirection = Vector2.zero;
-        controls.Gameplay.ItemPress.performed += ctx => useSelectedItem = true;
-        controls.Gameplay.ItemPress.canceled += ctx => useSelectedItem = false;
-        controls.Gameplay.ItemDropPress.performed += ctx => dropSelectedItem = true;
-        controls.Gameplay.ItemDropPress.canceled += ctx => dropSelectedItem = false;
+        controls.UI.ItemSelect.performed += ctx => selectionDirection = ctx.ReadValue<Vector2>();
+        controls.UI.ItemSelect.canceled += ctx => selectionDirection = Vector2.zero;
+        controls.UI.ItemPress.performed += ctx => useSelectedItem = true;
+        controls.UI.ItemPress.canceled += ctx => useSelectedItem = false;
+        controls.UI.ItemDropPress.performed += ctx => dropSelectedItem = true;
+        controls.UI.ItemDropPress.canceled += ctx => dropSelectedItem = false;
     }
 
     private void Start()
@@ -41,12 +41,12 @@ public class InventoryUI : MonoBehaviour
 
     void OnEnable()
     {
-        controls.Gameplay.Enable();
+        controls.UI.Enable();
     }
 
     void OnDisable()
     {
-        controls.Gameplay.Disable();
+        controls.UI.Disable();
     }
 
     /** Sets up the initial state of all the slots and then fills them up. */
