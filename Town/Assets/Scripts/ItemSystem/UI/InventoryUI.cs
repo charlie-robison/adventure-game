@@ -104,19 +104,26 @@ public class InventoryUI : MonoBehaviour
             currentSlotIndex = 0;
             currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
 
-            // Sets the item info section to active.
-            GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
-            bigItemDisplay.SetActive(true);
-            GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
-            itemInfoUI.SetActive(true);
-
-            // Displays the selected item info on the item info area.
-            inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
+            // Enables the item info section for the current item.
+            enableItemInfoSection();
         }
     }
 
+    /** Enables the itemInfo section for the current item. */
+    private void enableItemInfoSection()
+    {
+        // Sets the item info section to active.
+        GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
+        bigItemDisplay.SetActive(true);
+        GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
+        itemInfoUI.SetActive(true);
+
+        // Displays the selected item info on the item info area.
+        inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
+    }
+
     /** Disables the itemInfo section when applicable. */
-    private void checkItemInfoSection()
+    private void disableItemInfoSection()
     {
         // Checks if there are any items in the inventory.
         if (inventoryManagement.getItemCount() <= 0 || currentSlotIndex == -1)
@@ -186,7 +193,9 @@ public class InventoryUI : MonoBehaviour
             {
                 // Sets currentSlot and itemInfo for slot.
                 currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
-                inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
+
+                // Enables the item info section for the current item.
+                enableItemInfoSection();
             }
         }
     }
@@ -196,18 +205,15 @@ public class InventoryUI : MonoBehaviour
     {
         if (slotNumber < inventoryManagement.getItemCount())
         {
+            // Unselects all the slots.
             unselectSlots();
 
+            // Sets the current slot.
             currentSlotIndex = slotNumber;
             currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
 
-            // Sets the item info section to active.
-            GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
-            bigItemDisplay.SetActive(true);
-            GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
-            itemInfoUI.SetActive(true);
-
-            inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
+            // Enables the item info section for the current item.
+            enableItemInfoSection();
         }
     }
 
@@ -217,7 +223,7 @@ public class InventoryUI : MonoBehaviour
         updateCurrentSlot();
 
         // Disables item info section if there are any items.
-        checkItemInfoSection();
+        disableItemInfoSection();
 
         // Checks if selected item was pressed and uses the item.
         useCurrentItem();
