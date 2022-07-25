@@ -33,11 +33,13 @@ public class UIManagement : MonoBehaviour
         {
             Time.timeScale = 0f;
             inventoryCanvas.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1f;
             inventoryCanvas.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

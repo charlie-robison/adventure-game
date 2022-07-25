@@ -20,6 +20,11 @@ public class FollowTarget : MonoBehaviour
         controls.Gameplay.Camera.canceled += ctx => targetDirection = Vector2.zero;
     }
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void OnEnable()
     {
         controls.Gameplay.Enable();
@@ -60,11 +65,11 @@ public class FollowTarget : MonoBehaviour
     {
         if (aimCamera.activeInHierarchy)
         {
-            cameraAngularVelocity = 0.2f;
+            cameraAngularVelocity = 1f;
         }
         else
         {
-            cameraAngularVelocity = 0.2f;
+            cameraAngularVelocity = 1f;
         }
     }
 
