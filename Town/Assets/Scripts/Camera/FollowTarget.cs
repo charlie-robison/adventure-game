@@ -52,7 +52,7 @@ public class FollowTarget : MonoBehaviour
         if (targetDirection.magnitude >= 0.1f)
         {
             // Rotates the target about the x axis and y axis whenever the input is triggered.
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x + targetDirection.y * cameraAngularVelocity, transform.eulerAngles.y + (-1 * targetDirection.x * cameraAngularVelocity), transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x + (-1 * targetDirection.y * cameraAngularVelocity), transform.eulerAngles.y + targetDirection.x * cameraAngularVelocity, transform.eulerAngles.z);
         }
     }
 

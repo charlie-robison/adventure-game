@@ -296,7 +296,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""75920096-6c9a-4e54-8924-e45d616652e0"",
-                    ""path"": ""<XInputController>/rightStick/down"",
+                    ""path"": ""<XInputController>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -307,7 +307,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""4c21d44e-df2b-4cb5-8998-c30aa8a7d1f6"",
-                    ""path"": ""<XInputController>/rightStick/up"",
+                    ""path"": ""<XInputController>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -318,7 +318,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""left"",
                     ""id"": ""de13099a-03ba-46e6-856a-ba14610ce0c4"",
-                    ""path"": ""<XInputController>/rightStick/right"",
+                    ""path"": ""<XInputController>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -329,7 +329,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""right"",
                     ""id"": ""1065f2b0-447c-41d4-b156-54eb7f117381"",
-                    ""path"": ""<XInputController>/rightStick/left"",
+                    ""path"": ""<XInputController>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -347,61 +347,6 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""c55d2b97-0e07-49af-bc11-a05ade74a28a"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""f5f809a2-acba-44b0-824d-eda33bb19e5b"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""74e79779-88b6-4dec-a63e-1aa04cf777b3"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2ef2dfb6-08ba-4b6f-a43c-ac379aa7ca35"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f82545d7-dbbb-49a9-95f8-958a3810fdc0"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
