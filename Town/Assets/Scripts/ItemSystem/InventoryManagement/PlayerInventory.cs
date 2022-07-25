@@ -35,6 +35,14 @@ public class PlayerInventory : MonoBehaviour
         return allItems;
     }
 
+    public void setAllItems(string itemName, IItem item)
+    {
+        if (allItems.ContainsKey(itemName))
+        {
+            allItems[itemName] = item;
+        }
+    }
+
     public void addWeaponItem(IItem item)
     {
         // Checks if this item is already a key.

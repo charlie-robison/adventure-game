@@ -80,7 +80,10 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
-                itemList[slotIndex] = item.Key;
+                if (itemList[slotIndex] != item.Key)
+                {
+                    itemList[slotIndex] = item.Key;
+                }
 
                 slotIndex++;
             }
@@ -226,12 +229,18 @@ public class WeaponInventory : MonoBehaviour, IInventory
     /** Equips the selected weapon. Returns true if equipped and false if unequipped. */
     private bool equipSelectedWeapon(int currentSlotIndex)
     {
+        allItems = player.GetComponent<PlayerInventory>().getAllItems();
         // Gets the weapon and sets its equipped value to true.
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+
+        print(itemInfo.getIsEquipped());
 
         if (!itemInfo.getIsEquipped())
         {
             itemInfo.setIsEquipped(true);
+            
+            // allItems[itemList[currentSlotIndex]] = itemInfo;
+            player.GetComponent<PlayerInventory>().setAllItems(itemList[currentSlotIndex], itemInfo);
 
             // Enables the equip slot UI.
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
@@ -243,6 +252,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         {
             print("Unequipped");
             itemInfo.setIsEquipped(false);
+            player.GetComponent<PlayerInventory>().setAllItems(itemList[currentSlotIndex], itemInfo);
             unEquipAllWeapons();
 
             return false;
