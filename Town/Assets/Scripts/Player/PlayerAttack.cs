@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
 
     void attack()
     {
-        if (currentWeapon != null && shotBullet)
+        if (currentWeapon != null && shotBullet && Time.timeScale == 1f)
         {
             currentWeapon.weaponAttack();
         }

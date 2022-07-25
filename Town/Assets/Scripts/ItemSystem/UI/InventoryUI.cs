@@ -228,6 +228,11 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    public void selectSlot(int slotNumber)
+    {
+        print(slotNumber);
+    }
+
     private void Update()
     {
         // Updates the current slot from user input.

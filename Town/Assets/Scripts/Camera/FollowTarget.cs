@@ -73,9 +73,12 @@ public class FollowTarget : MonoBehaviour
     {
         // Vector2 mousePos = Mouse.current.position.ReadValue();
         // targetDirection = mousePos.normalized;
-        checkAngularVelocity();
-        rotatePlayer();
-        followPlayer();
-        rotateTarget();
+        if (Time.timeScale == 1f)
+        {
+            checkAngularVelocity();
+            rotatePlayer();
+            followPlayer();
+            rotateTarget();
+        }
     }
 }
