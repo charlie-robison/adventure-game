@@ -230,7 +230,21 @@ public class InventoryUI : MonoBehaviour
 
     public void selectSlot(int slotNumber)
     {
-        print(slotNumber);
+        if (slotNumber < inventoryManagement.getItemCount())
+        {
+            unselectSlots();
+
+            currentSlotIndex = slotNumber;
+            currentSlot = itemSlots.transform.GetChild(currentSlotIndex).gameObject;
+
+            // Sets the item info section to active.
+            GameObject bigItemDisplay = itemSlots.transform.GetChild(13).gameObject;
+            bigItemDisplay.SetActive(true);
+            GameObject itemInfoUI = itemSlots.transform.GetChild(14).gameObject;
+            itemInfoUI.SetActive(true);
+
+            inventoryManagement.presentSelectedItemInfo(currentSlotIndex);
+        }
     }
 
     private void Update()
