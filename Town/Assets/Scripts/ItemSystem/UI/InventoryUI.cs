@@ -74,7 +74,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < numberOfSlots; i++)
         {
             GameObject slot = itemSlots.transform.GetChild(i).gameObject;
-            slot.transform.GetChild(2).gameObject.SetActive(false);
+            slot.transform.GetChild(3).gameObject.SetActive(false);
         }
     }
     
@@ -88,12 +88,12 @@ public class InventoryUI : MonoBehaviour
             if (currentSlot.transform.GetChild(1).gameObject.activeSelf)
             {
                 // Selects the current slot.
-                currentSlot.transform.GetChild(2).gameObject.SetActive(true);
+                currentSlot.transform.GetChild(3).gameObject.SetActive(true);
             }
             else
             {
                 // Unselects the current slot.
-                currentSlot.transform.GetChild(2).gameObject.SetActive(false);
+                currentSlot.transform.GetChild(3).gameObject.SetActive(false);
             }
         }
 

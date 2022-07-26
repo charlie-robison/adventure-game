@@ -220,7 +220,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
 
             // Disables equip slot UI.
             GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
-            slot.transform.GetChild(3).gameObject.SetActive(false);
+            slot.transform.GetChild(2).gameObject.SetActive(false);
 
             slotIndex++;
         }
@@ -244,7 +244,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
 
             // Enables the equip slot UI.
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
-            slot.transform.GetChild(3).gameObject.SetActive(true);
+            slot.transform.GetChild(2).gameObject.SetActive(true);
 
             return true;
         }
