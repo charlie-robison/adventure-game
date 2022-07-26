@@ -163,7 +163,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
             GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
             newWeapon.transform.position = weaponHolster.transform.position;
             newWeapon.transform.parent = weaponHolster.transform;
-            newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
+            // newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
 
 
             /* Modify player's power. */
