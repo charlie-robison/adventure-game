@@ -8,6 +8,7 @@ public class MaterialInventory : MonoBehaviour, IInventory
 {
     public GameObject player;
     public GameObject materialItemSlots;
+    public int numberOfSlots;
 
     private Dictionary<string, int> materialItems;
     private Dictionary<string, IItem> allItems;

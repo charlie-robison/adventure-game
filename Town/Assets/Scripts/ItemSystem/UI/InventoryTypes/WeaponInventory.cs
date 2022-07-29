@@ -10,6 +10,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
     public GameObject player;
     public GameObject weaponHolster;
     public GameObject weaponItemSlots;
+    public int numberOfSlots;
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, IItem> allItems;
