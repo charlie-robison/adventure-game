@@ -1,13 +1,11 @@
 ﻿<Properties StartupConfiguration="{C103B707-B573-1655-5822-60892744D82B}|">
+  <MonoDevelop.Ide.ItemProperties.Boxophobic.Utils.Editor PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/PlayerMovement.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemSystem/UI/InventoryUI.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/PlayerMovement.cs" Line="9" Column="29" />
-      <File FileName="Assets/Scripts/PlayerCheck.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryUI.cs" Line="148" Column="10" />
+      <File FileName="Assets/Scripts/ItemSystem/UI/InventoryTypes/WeaponInventory.cs" Line="18" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,6 +23,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d86e65ba-48c0-408b-83a0-917ca5c3ed58" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5d69957e-f1a0-4023-9d13-79f905c8fff3" />
 </Properties>

@@ -17,6 +17,8 @@ public class AimCamera : MonoBehaviour
         controls = new GameControls();
         controls.Gameplay.Aim.performed += ctx => isAiming = true;
         controls.Gameplay.Aim.canceled += ctx => isAiming = false;
+        controls.Gameplay.Shoot.performed += ctx => isAiming = true;
+        controls.Gameplay.Shoot.canceled += ctx => isAiming = false;
     }
 
     void OnEnable()
