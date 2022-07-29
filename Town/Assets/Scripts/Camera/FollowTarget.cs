@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FollowTarget : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class FollowTarget : MonoBehaviour
         controls = new GameControls();
         controls.Gameplay.Camera.performed += ctx => targetDirection = ctx.ReadValue<Vector2>();
         controls.Gameplay.Camera.canceled += ctx => targetDirection = Vector2.zero;
+    }
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void OnEnable()
@@ -51,7 +57,7 @@ public class FollowTarget : MonoBehaviour
         if (targetDirection.magnitude >= 0.1f)
         {
             // Rotates the target about the x axis and y axis whenever the input is triggered.
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x + targetDirection.y * cameraAngularVelocity, transform.eulerAngles.y + (-1 * targetDirection.x * cameraAngularVelocity), transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x + (-1 * targetDirection.y * cameraAngularVelocity), transform.eulerAngles.y + targetDirection.x * cameraAngularVelocity, transform.eulerAngles.z);
         }
     }
 
@@ -59,20 +65,25 @@ public class FollowTarget : MonoBehaviour
     {
         if (aimCamera.activeInHierarchy)
         {
-            cameraAngularVelocity = 0.1f;
+            cameraAngularVelocity = 1f;
         }
         else
         {
-            cameraAngularVelocity = 0.2f;
+            cameraAngularVelocity = 1f;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkAngularVelocity();
-        rotatePlayer();
-        followPlayer();
-        rotateTarget();
+        // Vector2 mousePos = Mouse.current.position.ReadValue();
+        // targetDirection = mousePos.normalized;
+        if (Time.timeScale == 1f)
+        {
+            checkAngularVelocity();
+            rotatePlayer();
+            followPlayer();
+            rotateTarget();
+        }
     }
 }
