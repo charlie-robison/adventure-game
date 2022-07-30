@@ -33,14 +33,14 @@ public class MaterialInventory : MonoBehaviour, IInventory
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
                 MaterialItem itemProperties = (MaterialItem)allItems[item.Key];
                 GameObject slot = materialItemSlots.transform.GetChild(slotIndex).gameObject;
-                TMP_Text quantityLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
-                GameObject itemDisplay = slot.transform.GetChild(4).gameObject;
+                TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+                GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
 
                 // Enables enabled slot UI image.
                 slot.transform.GetChild(0).gameObject.SetActive(false);
                 slot.transform.GetChild(1).gameObject.SetActive(true);
-                slot.transform.GetChild(3).gameObject.SetActive(true);
                 slot.transform.GetChild(4).gameObject.SetActive(true);
+                slot.transform.GetChild(5).gameObject.SetActive(true);
 
                 // Sets the quantity label.
                 if (item.Value <= 0)
