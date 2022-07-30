@@ -16,7 +16,6 @@ public class WeaponItem : MonoBehaviour, IItem
 
     public int weaponPower;
     public float weaponFrequency;
-    private bool isEquipped = false;
 
     public string getItemName()
     {
@@ -61,16 +60,6 @@ public class WeaponItem : MonoBehaviour, IItem
     public GameObject getWeaponGameObject()
     {
         return weaponGameObject;
-    }
-
-    public bool getIsEquipped()
-    {
-        return isEquipped;
-    }
-
-    public void setIsEquipped(bool newState)
-    {
-        isEquipped = newState;
     }
 
     void OnTriggerEnter(Collider col)

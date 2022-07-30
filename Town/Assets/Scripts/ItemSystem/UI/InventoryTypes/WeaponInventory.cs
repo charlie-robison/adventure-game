@@ -184,6 +184,9 @@ public class WeaponInventory : MonoBehaviour, IInventory
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
             Destroy(itemDisplay.transform.GetChild(0).gameObject);
+
+            // Unequips the weapon if its equipped.
+            useItem(currentSlotIndex);
         }
 
         // Checks if the number dropped is less than or equal to the amount of the item possessed.
