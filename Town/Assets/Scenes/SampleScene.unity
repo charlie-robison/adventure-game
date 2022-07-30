@@ -5665,7 +5665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716851975040768898, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6122696960062677017, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: player
@@ -5677,7 +5677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319358663429088878, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6355409944831877102, guid: 5de80ee88bc2a414db75633592d2ec3e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument

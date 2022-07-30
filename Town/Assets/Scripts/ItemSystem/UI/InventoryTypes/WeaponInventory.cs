@@ -146,9 +146,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Gets the item's info.
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
 
-        // Unequips all weapons then equips the selected weapon.
-        unEquipAllWeapons();
-
+        // Equips the selected weapon.
         bool didEquip = equipSelectedWeapon(currentSlotIndex);
 
         // Destroys all children in weaponHolster.
@@ -215,10 +213,6 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Iterates through each weapon in the inventory and unequips it.
         foreach (KeyValuePair<string, int> item in weaponItems)
         {
-            // Gets the weapon and sets its equipped value to false.
-            WeaponItem itemInfo = (WeaponItem)allItems[item.Key];
-            itemInfo.setIsEquipped(false);
-
             // Disables equip slot UI.
             GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
             slot.transform.GetChild(2).gameObject.SetActive(false);
@@ -230,32 +224,22 @@ public class WeaponInventory : MonoBehaviour, IInventory
     /** Equips the selected weapon. Returns true if equipped and false if unequipped. */
     private bool equipSelectedWeapon(int currentSlotIndex)
     {
-        allItems = player.GetComponent<PlayerInventory>().getAllItems();
-        // Gets the weapon and sets its equipped value to true.
-        WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+        GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
 
-        print(itemInfo.getIsEquipped());
-
-        if (!itemInfo.getIsEquipped())
+        // Checks if the equipped UI is set to false.
+        if (!slot.transform.GetChild(2).gameObject.activeInHierarchy)
         {
-            itemInfo.setIsEquipped(true);
-            
-            // allItems[itemList[currentSlotIndex]] = itemInfo;
-            player.GetComponent<PlayerInventory>().setAllItems(itemList[currentSlotIndex], itemInfo);
+            // Unequips all other equipped weapons.
+            unEquipAllWeapons();
 
-            // Enables the equip slot UI.
-            GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            // Sets the equipped UI to true.
             slot.transform.GetChild(2).gameObject.SetActive(true);
-
             return true;
         }
         else
         {
-            print("Unequipped");
-            itemInfo.setIsEquipped(false);
-            player.GetComponent<PlayerInventory>().setAllItems(itemList[currentSlotIndex], itemInfo);
+            // Unequips all other equipped weapons.
             unEquipAllWeapons();
-
             return false;
         }
     }
