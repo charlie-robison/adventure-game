@@ -47,8 +47,6 @@ public class UIManagement : MonoBehaviour
             inventoryCanvas.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
 
-            print(currentInvIndex);
-
             // Checks if the player selected a different inventory.
             if (inventorySelectorDirection.magnitude >= 0.1f && timeInterval > switchTimer)
             {

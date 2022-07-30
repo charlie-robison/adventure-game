@@ -50,16 +50,18 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < numberOfSlots; i++)
         {
             GameObject slot = itemSlots.transform.GetChild(i).gameObject;
-            slot.transform.GetChild(0).gameObject.SetActive(true);
-            slot.transform.GetChild(1).gameObject.SetActive(false);
-            slot.transform.GetChild(2).gameObject.SetActive(false);
-            slot.transform.GetChild(3).gameObject.SetActive(false);
-            slot.transform.GetChild(4).gameObject.SetActive(false);
-            slot.transform.GetChild(5).gameObject.SetActive(false);
+            int slotChildren = slot.transform.childCount;
 
-            if (slot.transform.GetChild(6).gameObject.transform.childCount > 0)
+            slot.transform.GetChild(0).gameObject.SetActive(true);
+
+            for (int j = 1; j < slotChildren - 2; j++)
             {
-                Destroy(slot.transform.GetChild(6).gameObject.transform.GetChild(0).gameObject);
+                slot.transform.GetChild(j).gameObject.SetActive(false);
+            }
+
+            if (slot.transform.GetChild(slotChildren - 2).gameObject.transform.childCount > 0)
+            {
+                Destroy(slot.transform.GetChild(slotChildren - 2).gameObject.transform.GetChild(0).gameObject);
             }
         }
 
