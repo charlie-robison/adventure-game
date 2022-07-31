@@ -17,6 +17,13 @@ public class WeaponItem : MonoBehaviour, IItem
     public int weaponPower;
     public float weaponFrequency;
 
+    void Start()
+    {
+        itemGameObject = Instantiate(itemObject);
+        itemGameObject.transform.rotation = transform.rotation;
+        itemGameObject.SetActive(false);
+    }
+
     public string getItemName()
     {
         return itemName;
@@ -44,6 +51,7 @@ public class WeaponItem : MonoBehaviour, IItem
 
     public GameObject getItemGameObject()
     {
+        itemGameObject.SetActive(true);
         return itemGameObject;
     }
 
