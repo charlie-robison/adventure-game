@@ -19,8 +19,7 @@ public class WeaponItem : MonoBehaviour, IItem
 
     void Start()
     {
-        itemGameObject = Instantiate(itemObject);
-        itemGameObject.transform.rotation = transform.rotation;
+        itemGameObject = Instantiate(itemObject, transform.position, transform.rotation);
         itemGameObject.SetActive(false);
     }
 

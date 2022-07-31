@@ -183,6 +183,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         {
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
+            print(itemDisplay.transform.GetChild(0).gameObject.name);
             Destroy(itemDisplay.transform.GetChild(0).gameObject);
 
             // Destroys all children in weaponHolster.
@@ -212,7 +213,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
 
                 // Drops items around the player.
                 GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
-                droppedItem.transform.position = new Vector3(randomX, 0f, randomZ);
+                droppedItem.transform.position = new Vector3(randomX, droppedItem.transform.position.y, randomZ);
             }
         }
     }
