@@ -179,14 +179,23 @@ public class WeaponInventory : MonoBehaviour, IInventory
         int numberOfItemRemaining = weaponItems[itemInfo.getItemName()] - numberDropped;
 
         // Checks if there is no more of that item remaining.
-        if (numberOfItemRemaining <= 0)
+        if (numberOfItemRemaining == 0)
         {
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
             Destroy(itemDisplay.transform.GetChild(0).gameObject);
 
+            // Destroys all children in weaponHolster.
+            foreach (Transform child in weaponHolster.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
             // Unequips the weapon if its equipped.
-            useItem(currentSlotIndex);
+            if (slot.transform.GetChild(2).gameObject.activeInHierarchy)
+            {
+                unEquipAllWeapons();
+            }
         }
 
         // Checks if the number dropped is less than or equal to the amount of the item possessed.
