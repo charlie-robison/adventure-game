@@ -183,9 +183,19 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Checks if there is no more of that item remaining.
         if (numberOfItemRemaining == 0)
         {
+            // Deletes the current slot's item display.
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
             DestroyImmediate(itemDisplay.transform.GetChild(0).gameObject);
+
+            GameObject lastSlot = weaponItemSlots.transform.GetChild(getItemCount() - 1).gameObject;
+
+            // Deletes the last slot's item display if there is more than 0 items left and the lastSlot is not the same as the slot.
+            if (getItemCount() > 0 && lastSlot != slot)
+            {
+                GameObject lastItemDisplay = lastSlot.transform.GetChild(6).gameObject;
+                DestroyImmediate(lastItemDisplay.transform.GetChild(0).gameObject);
+            }
 
             // Destroys all children in weaponHolster.
             foreach (Transform child in weaponHolster.transform)
