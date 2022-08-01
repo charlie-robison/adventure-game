@@ -56,7 +56,19 @@ public class InventoryUI : MonoBehaviour
 
             for (int j = 1; j < slotChildren - 2; j++)
             {
-                slot.transform.GetChild(j).gameObject.SetActive(false);
+                GameObject currentUI = slot.transform.GetChild(j).gameObject;
+
+                if (currentUI.name == "Equipped-Slot-Image")
+                {
+                    if (!currentUI.activeInHierarchy)
+                    {
+                        currentUI.SetActive(false);
+                    }
+                }
+                else
+                {
+                    currentUI.SetActive(false);
+                }
             }
 
             if (slot.transform.GetChild(slotChildren - 2).gameObject.transform.childCount > 0)
