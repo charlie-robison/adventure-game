@@ -178,8 +178,6 @@ public class WeaponInventory : MonoBehaviour, IInventory
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
         int numberOfItemRemaining = weaponItems[itemInfo.getItemName()] - numberDropped;
 
-        print(numberOfItemRemaining);
-
         // Checks if there is no more of that item remaining.
         if (numberOfItemRemaining == 0)
         {
