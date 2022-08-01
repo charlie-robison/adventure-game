@@ -178,13 +178,14 @@ public class WeaponInventory : MonoBehaviour, IInventory
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
         int numberOfItemRemaining = weaponItems[itemInfo.getItemName()] - numberDropped;
 
+        print(numberOfItemRemaining);
+
         // Checks if there is no more of that item remaining.
         if (numberOfItemRemaining == 0)
         {
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
-            print(itemDisplay.transform.GetChild(0).gameObject.name);
-            Destroy(itemDisplay.transform.GetChild(0).gameObject);
+            DestroyImmediate(itemDisplay.transform.GetChild(0).gameObject);
 
             // Destroys all children in weaponHolster.
             foreach (Transform child in weaponHolster.transform)
@@ -195,7 +196,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
             // Unequips the weapon if its equipped.
             if (slot.transform.GetChild(2).gameObject.activeInHierarchy)
             {
-                unEquipAllWeapons();
+                // unEquipAllWeapons();
+                slot.transform.GetChild(2).gameObject.SetActive(false);
             }
         }
 
@@ -208,8 +210,8 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 player.GetComponent<PlayerInventory>().removeWeaponItem(itemInfo);
 
                 // Sets random positions for the dropped item around the player.
-                float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);
-                float randomZ = Random.Range(player.transform.position.z - 2f, player.transform.position.z + 2f);
+                float randomX = Random.Range(player.transform.position.x - 5f, player.transform.position.x + 5f);
+                float randomZ = Random.Range(player.transform.position.z - 5f, player.transform.position.z + 5f);
 
                 // Drops items around the player.
                 GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
