@@ -224,6 +224,9 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 // Drops items around the player.
                 GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
                 droppedItem.transform.position = new Vector3(randomX, droppedItem.transform.position.y, randomZ);
+
+                // Sets the item quantity to 1 since only one item is dropped.
+                droppedItem.GetComponent<IItem>().setItemQuantity(1);
             }
         }
     }

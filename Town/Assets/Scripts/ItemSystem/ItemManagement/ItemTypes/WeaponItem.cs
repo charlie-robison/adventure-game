@@ -43,6 +43,11 @@ public class WeaponItem : MonoBehaviour, IItem
         return itemQuantity;
     }
 
+    public void setItemQuantity(int newQuantity)
+    {
+        this.itemQuantity = newQuantity;
+    }
+
     public GameObject getItemDisplay()
     {
         return itemDisplay;
