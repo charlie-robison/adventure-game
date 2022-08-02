@@ -543,6 +543,15 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchInventory"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""3a08c28d-2415-4a85-aa7b-92b4a4df99b2"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -666,6 +675,39 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""3e000f32-7608-443a-b805-35594b008de1"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchInventory"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1aef9f36-8018-4b8b-a920-0beb64868e38"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7a3eca06-fe84-4066-b837-f233a8621be8"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -691,6 +733,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         m_UI_ItemDropPress = m_UI.FindAction("ItemDropPress", throwIfNotFound: true);
         m_UI_ItemSelect = m_UI.FindAction("ItemSelect", throwIfNotFound: true);
         m_UI_ItemPress = m_UI.FindAction("ItemPress", throwIfNotFound: true);
+        m_UI_SwitchInventory = m_UI.FindAction("SwitchInventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -867,6 +910,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_ItemDropPress;
     private readonly InputAction m_UI_ItemSelect;
     private readonly InputAction m_UI_ItemPress;
+    private readonly InputAction m_UI_SwitchInventory;
     public struct UIActions
     {
         private @GameControls m_Wrapper;
@@ -875,6 +919,7 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         public InputAction @ItemDropPress => m_Wrapper.m_UI_ItemDropPress;
         public InputAction @ItemSelect => m_Wrapper.m_UI_ItemSelect;
         public InputAction @ItemPress => m_Wrapper.m_UI_ItemPress;
+        public InputAction @SwitchInventory => m_Wrapper.m_UI_SwitchInventory;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -896,6 +941,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @ItemPress.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPress;
                 @ItemPress.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPress;
                 @ItemPress.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemPress;
+                @SwitchInventory.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSwitchInventory;
+                @SwitchInventory.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSwitchInventory;
+                @SwitchInventory.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSwitchInventory;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -912,6 +960,9 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
                 @ItemPress.started += instance.OnItemPress;
                 @ItemPress.performed += instance.OnItemPress;
                 @ItemPress.canceled += instance.OnItemPress;
+                @SwitchInventory.started += instance.OnSwitchInventory;
+                @SwitchInventory.performed += instance.OnSwitchInventory;
+                @SwitchInventory.canceled += instance.OnSwitchInventory;
             }
         }
     }
@@ -936,5 +987,6 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
         void OnItemDropPress(InputAction.CallbackContext context);
         void OnItemSelect(InputAction.CallbackContext context);
         void OnItemPress(InputAction.CallbackContext context);
+        void OnSwitchInventory(InputAction.CallbackContext context);
     }
 }

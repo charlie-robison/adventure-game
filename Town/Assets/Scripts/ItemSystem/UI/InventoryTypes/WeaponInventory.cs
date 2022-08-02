@@ -146,9 +146,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Gets the item's info.
         WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
 
-        // Unequips all weapons then equips the selected weapon.
-        unEquipAllWeapons();
-
+        // Equips the selected weapon.
         bool didEquip = equipSelectedWeapon(currentSlotIndex);
 
         // Destroys all children in weaponHolster.
@@ -164,7 +162,7 @@ public class WeaponInventory : MonoBehaviour, IInventory
             GameObject newWeapon = Instantiate(itemInfo.getWeaponGameObject());
             newWeapon.transform.position = weaponHolster.transform.position;
             newWeapon.transform.parent = weaponHolster.transform;
-            // newWeapon.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
+            newWeapon.transform.localEulerAngles = new Vector3(-90f, newWeapon.transform.eulerAngles.y, 0f);
 
 
             /* Modify player's power. */
@@ -181,11 +179,34 @@ public class WeaponInventory : MonoBehaviour, IInventory
         int numberOfItemRemaining = weaponItems[itemInfo.getItemName()] - numberDropped;
 
         // Checks if there is no more of that item remaining.
-        if (numberOfItemRemaining <= 0)
+        if (numberOfItemRemaining == 0)
         {
+            // Deletes the current slot's item display.
             GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(6).gameObject;
-            Destroy(itemDisplay.transform.GetChild(0).gameObject);
+            DestroyImmediate(itemDisplay.transform.GetChild(0).gameObject);
+
+            GameObject lastSlot = weaponItemSlots.transform.GetChild(getItemCount() - 1).gameObject;
+
+            // Deletes the last slot's item display if there is more than 0 items left and the lastSlot is not the same as the slot.
+            if (getItemCount() > 0 && lastSlot != slot)
+            {
+                GameObject lastItemDisplay = lastSlot.transform.GetChild(6).gameObject;
+                DestroyImmediate(lastItemDisplay.transform.GetChild(0).gameObject);
+            }
+
+            // Destroys all children in weaponHolster.
+            foreach (Transform child in weaponHolster.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            // Unequips the weapon if its equipped.
+            if (slot.transform.GetChild(2).gameObject.activeInHierarchy)
+            {
+                // unEquipAllWeapons();
+                slot.transform.GetChild(2).gameObject.SetActive(false);
+            }
         }
 
         // Checks if the number dropped is less than or equal to the amount of the item possessed.
@@ -197,12 +218,15 @@ public class WeaponInventory : MonoBehaviour, IInventory
                 player.GetComponent<PlayerInventory>().removeWeaponItem(itemInfo);
 
                 // Sets random positions for the dropped item around the player.
-                float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);
-                float randomZ = Random.Range(player.transform.position.z - 2f, player.transform.position.z + 2f);
+                float randomX = Random.Range(player.transform.position.x - 5f, player.transform.position.x + 5f);
+                float randomZ = Random.Range(player.transform.position.z - 5f, player.transform.position.z + 5f);
 
                 // Drops items around the player.
                 GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
-                droppedItem.transform.position = new Vector3(randomX, 0f, randomZ);
+                droppedItem.transform.position = new Vector3(randomX, droppedItem.transform.position.y, randomZ);
+
+                // Sets the item quantity to 1 since only one item is dropped.
+                droppedItem.GetComponent<IItem>().setItemQuantity(1);
             }
         }
     }
@@ -215,10 +239,6 @@ public class WeaponInventory : MonoBehaviour, IInventory
         // Iterates through each weapon in the inventory and unequips it.
         foreach (KeyValuePair<string, int> item in weaponItems)
         {
-            // Gets the weapon and sets its equipped value to false.
-            WeaponItem itemInfo = (WeaponItem)allItems[item.Key];
-            itemInfo.setIsEquipped(false);
-
             // Disables equip slot UI.
             GameObject slot = weaponItemSlots.transform.GetChild(slotIndex).gameObject;
             slot.transform.GetChild(2).gameObject.SetActive(false);
@@ -230,32 +250,22 @@ public class WeaponInventory : MonoBehaviour, IInventory
     /** Equips the selected weapon. Returns true if equipped and false if unequipped. */
     private bool equipSelectedWeapon(int currentSlotIndex)
     {
-        allItems = player.GetComponent<PlayerInventory>().getAllItems();
-        // Gets the weapon and sets its equipped value to true.
-        WeaponItem itemInfo = (WeaponItem)allItems[itemList[currentSlotIndex]];
+        GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
 
-        print(itemInfo.getIsEquipped());
-
-        if (!itemInfo.getIsEquipped())
+        // Checks if the equipped UI is set to false.
+        if (!slot.transform.GetChild(2).gameObject.activeInHierarchy)
         {
-            itemInfo.setIsEquipped(true);
-            
-            // allItems[itemList[currentSlotIndex]] = itemInfo;
-            player.GetComponent<PlayerInventory>().setAllItems(itemList[currentSlotIndex], itemInfo);
+            // Unequips all other equipped weapons.
+            unEquipAllWeapons();
 
-            // Enables the equip slot UI.
-            GameObject slot = weaponItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            // Sets the equipped UI to true.
             slot.transform.GetChild(2).gameObject.SetActive(true);
-
             return true;
         }
         else
         {
-            print("Unequipped");
-            itemInfo.setIsEquipped(false);
-            player.GetComponent<PlayerInventory>().setAllItems(itemList[currentSlotIndex], itemInfo);
+            // Unequips all other equipped weapons.
             unEquipAllWeapons();
-
             return false;
         }
     }

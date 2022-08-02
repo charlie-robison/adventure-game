@@ -33,14 +33,14 @@ public class MaterialInventory : MonoBehaviour, IInventory
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
                 MaterialItem itemProperties = (MaterialItem)allItems[item.Key];
                 GameObject slot = materialItemSlots.transform.GetChild(slotIndex).gameObject;
-                TMP_Text quantityLabel = slot.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
-                GameObject itemDisplay = slot.transform.GetChild(4).gameObject;
+                TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+                GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
 
                 // Enables enabled slot UI image.
                 slot.transform.GetChild(0).gameObject.SetActive(false);
                 slot.transform.GetChild(1).gameObject.SetActive(true);
-                slot.transform.GetChild(3).gameObject.SetActive(true);
                 slot.transform.GetChild(4).gameObject.SetActive(true);
+                slot.transform.GetChild(5).gameObject.SetActive(true);
 
                 // Sets the quantity label.
                 if (item.Value <= 0)
@@ -51,13 +51,25 @@ public class MaterialInventory : MonoBehaviour, IInventory
                 {
                     quantityLabel.text = "x" + item.Value.ToString();
                 }
+                // Checks if there is already an item display gameObject for that slot.
+                if (itemDisplay.transform.childCount > 0)
+                {
+                    // Destroys all of its children to prevent copies.
+                    foreach (Transform child in itemDisplay.transform)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                }
 
                 // Sets the item display for the item.
                 GameObject newItemDisplay = Instantiate(itemProperties.getItemDisplay());
                 newItemDisplay.transform.position = itemDisplay.transform.position;
                 newItemDisplay.transform.parent = itemDisplay.transform;
 
-                itemList[slotIndex] = item.Key;
+                if (itemList[slotIndex] != item.Key)
+                {
+                    itemList[slotIndex] = item.Key;
+                }
 
                 slotIndex++;
             }
@@ -140,5 +152,33 @@ public class MaterialInventory : MonoBehaviour, IInventory
     /** Drops the item selected. */
     public void dropItem(int currentSlotIndex, int numberDropped)
     {
+        MaterialItem itemInfo = (MaterialItem)allItems[itemList[currentSlotIndex]];
+        int numberOfItemRemaining = materialItems[itemInfo.getItemName()] - numberDropped;
+
+        // Checks if there is no more of that item remaining.
+        if (numberOfItemRemaining == 0)
+        {
+            GameObject slot = materialItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
+            Destroy(itemDisplay.transform.GetChild(0).gameObject);
+        }
+
+        // Checks if the number dropped is less than or equal to the amount of the item possessed.
+        if (materialItems.ContainsKey(itemInfo.getItemName()) && numberDropped <= materialItems[itemInfo.getItemName()])
+        {
+            for (int i = 0; i < numberDropped; i++)
+            {
+                // Removes the item from the inventory.
+                player.GetComponent<PlayerInventory>().removeMaterialItem(itemInfo);
+
+                // Sets random positions for the dropped item around the player.
+                float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);
+                float randomZ = Random.Range(player.transform.position.z - 2f, player.transform.position.z + 2f);
+
+                // Drops items around the player.
+                GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
+                droppedItem.transform.position = new Vector3(randomX, 0f, randomZ);
+            }
+        }
     }
 }

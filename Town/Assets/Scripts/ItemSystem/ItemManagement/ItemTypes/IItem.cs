@@ -8,6 +8,7 @@ public interface IItem
     public string getItemDesc();
     public float getItemPrice();
     public int getItemQuantity();
+    public void setItemQuantity(int newQuantity);
     public GameObject getItemDisplay();
     public GameObject getItemGameObject();
 }

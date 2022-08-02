@@ -16,7 +16,12 @@ public class WeaponItem : MonoBehaviour, IItem
 
     public int weaponPower;
     public float weaponFrequency;
-    private bool isEquipped = false;
+
+    void Start()
+    {
+        itemGameObject = Instantiate(itemObject, transform.position, transform.rotation);
+        itemGameObject.SetActive(false);
+    }
 
     public string getItemName()
     {
@@ -38,6 +43,11 @@ public class WeaponItem : MonoBehaviour, IItem
         return itemQuantity;
     }
 
+    public void setItemQuantity(int newQuantity)
+    {
+        this.itemQuantity = newQuantity;
+    }
+
     public GameObject getItemDisplay()
     {
         return itemDisplay;
@@ -45,6 +55,7 @@ public class WeaponItem : MonoBehaviour, IItem
 
     public GameObject getItemGameObject()
     {
+        itemGameObject.SetActive(true);
         return itemGameObject;
     }
 
@@ -61,16 +72,6 @@ public class WeaponItem : MonoBehaviour, IItem
     public GameObject getWeaponGameObject()
     {
         return weaponGameObject;
-    }
-
-    public bool getIsEquipped()
-    {
-        return isEquipped;
-    }
-
-    public void setIsEquipped(bool newState)
-    {
-        isEquipped = newState;
     }
 
     void OnTriggerEnter(Collider col)
