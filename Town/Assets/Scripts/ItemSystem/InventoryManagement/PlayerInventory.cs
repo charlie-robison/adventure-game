@@ -51,9 +51,11 @@ public class PlayerInventory : MonoBehaviour
             // Adds the item and the quantity that it has.
             weaponItems.Add(item.getItemName(), item.getItemQuantity());
             allItems.Add(item.getItemName(), item);
+            print("1st");
         }
         else
         {
+            print("2nd");
             // Adds the item quantity to the existing key.
             weaponItems[item.getItemName()] += item.getItemQuantity();
         }
@@ -92,8 +94,6 @@ public class PlayerInventory : MonoBehaviour
             // Updates inventory UI.
             weaponInventory.fillSlots();
         }
-
-        print("COUNT " + weaponItems[item.getItemName()]);
 
         // Removes item from inventory if there is 0 of it.
         if (weaponItems[item.getItemName()] == 0)

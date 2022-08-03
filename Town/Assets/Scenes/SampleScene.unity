@@ -5444,7 +5444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: possibleItems.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: possibleItems.Array.data[1]
@@ -5458,6 +5458,10 @@ PrefabInstance:
       propertyPath: possibleItems.Array.data[3]
       value: 
       objectReference: {fileID: 2534293190793296552, guid: 0cdaa888e12eb4f8388179039c21c436, type: 3}
+    - target: {fileID: 44840832206485875, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
+      propertyPath: possibleItems.Array.data[4]
+      value: 
+      objectReference: {fileID: 8880207222694782154, guid: 0f27c4b2f678747aaa3eef4d14165af9, type: 3}
     - target: {fileID: 7017985348870481174, guid: ed59d3076fda94fe5b159613f1bc315c, type: 3}
       propertyPath: m_Name
       value: Wood-Crate
