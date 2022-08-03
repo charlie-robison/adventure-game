@@ -6,6 +6,6 @@ public class ItemInventoryDisplay : MonoBehaviour
 {
     void Update()
     {
-        transform.Rotate(0f, 40f * Time.deltaTime, 0f);
+        transform.Rotate(0f, 0.07f, 0f);
     }
 }
