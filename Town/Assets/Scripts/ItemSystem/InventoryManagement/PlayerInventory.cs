@@ -99,6 +99,7 @@ public class PlayerInventory : MonoBehaviour
         if (weaponItems[item.getItemName()] == 0)
         {
             weaponItems.Remove(item.getItemName());
+            allItems.Remove(item.getItemName());
         }
     }
 
@@ -118,6 +119,7 @@ public class PlayerInventory : MonoBehaviour
         if (materialItems[item.getItemName()] == 0)
         {
             materialItems.Remove(item.getItemName());
+            allItems.Remove(item.getItemName());
         }
     }
 }
