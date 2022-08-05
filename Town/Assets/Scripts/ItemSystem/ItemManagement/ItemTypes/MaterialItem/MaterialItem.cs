@@ -16,6 +16,12 @@ public class MaterialItem : MonoBehaviour, IItem
     public MaterialTypes materialType;
     public int materialTypePower;
 
+    void Start()
+    {
+        itemGameObject = Instantiate(itemObject, transform.position, transform.rotation);
+        itemGameObject.SetActive(false);
+    }
+
     public string getItemName()
     {
         return itemName;
@@ -48,6 +54,7 @@ public class MaterialItem : MonoBehaviour, IItem
 
     public GameObject getItemGameObject()
     {
+        itemGameObject.SetActive(true);
         return itemGameObject;
     }
 

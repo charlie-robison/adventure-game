@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8787269971179913630}
   - component: {fileID: 8787269971179913629}
   - component: {fileID: 8787269971179913628}
-  m_Layer: 5
-  m_Name: Potion Display
+  - component: {fileID: 8316771429070248238}
+  m_Layer: 0
+  m_Name: MajorPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 202a99b065f634d239b6a2e9fcaa9dba, type: 2}
+  - {fileID: 2100000, guid: d4a060c651d3f482595e4b76ff24e8f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,3 +98,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8316771429070248238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787269971179913603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc3f4870b0b445bc830007add70a3bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemObject: {fileID: 8787269971179913603}
+  itemName: Major Potion
+  itemDesc: Heals the player by 200 hp.
+  itemPrice: 200
+  itemQuantity: 1
+  itemDisplay: {fileID: 8787269971179913603, guid: d6aee52dbecb8415d91852fc7e0f2760, type: 3}
+  itemGameObject: {fileID: 8787269971179913603}
+  materialType: 0
+  materialTypePower: 200

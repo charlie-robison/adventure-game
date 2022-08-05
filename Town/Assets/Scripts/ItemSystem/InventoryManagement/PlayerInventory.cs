@@ -51,11 +51,9 @@ public class PlayerInventory : MonoBehaviour
             // Adds the item and the quantity that it has.
             weaponItems.Add(item.getItemName(), item.getItemQuantity());
             allItems.Add(item.getItemName(), item);
-            print("1st");
         }
         else
         {
-            print("2nd");
             // Adds the item quantity to the existing key.
             weaponItems[item.getItemName()] += item.getItemQuantity();
         }

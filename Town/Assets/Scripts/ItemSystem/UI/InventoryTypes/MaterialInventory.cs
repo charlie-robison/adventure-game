@@ -51,6 +51,7 @@ public class MaterialInventory : MonoBehaviour, IInventory
                 {
                     quantityLabel.text = "x" + item.Value.ToString();
                 }
+
                 // Checks if there is already an item display gameObject for that slot.
                 if (itemDisplay.transform.childCount > 0)
                 {
@@ -158,9 +159,19 @@ public class MaterialInventory : MonoBehaviour, IInventory
         // Checks if there is no more of that item remaining.
         if (numberOfItemRemaining == 0)
         {
+            // Deletes the current slot item display.
             GameObject slot = materialItemSlots.transform.GetChild(currentSlotIndex).gameObject;
             GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
-            Destroy(itemDisplay.transform.GetChild(0).gameObject);
+            DestroyImmediate(itemDisplay.transform.GetChild(0).gameObject);
+
+            GameObject lastSlot = materialItemSlots.transform.GetChild(getItemCount() - 1).gameObject;
+
+            // Deletes the last slot's item display if there is more than 0 items left and the lastSlot is not the same as the slot.
+            if (getItemCount() > 0 && lastSlot != slot)
+            {
+                GameObject lastItemDisplay = lastSlot.transform.GetChild(5).gameObject;
+                DestroyImmediate(lastItemDisplay.transform.GetChild(0).gameObject);
+            }
         }
 
         // Checks if the number dropped is less than or equal to the amount of the item possessed.
@@ -172,12 +183,15 @@ public class MaterialInventory : MonoBehaviour, IInventory
                 player.GetComponent<PlayerInventory>().removeMaterialItem(itemInfo);
 
                 // Sets random positions for the dropped item around the player.
-                float randomX = Random.Range(player.transform.position.x - 2f, player.transform.position.x + 2f);
-                float randomZ = Random.Range(player.transform.position.z - 2f, player.transform.position.z + 2f);
+                float randomX = Random.Range(player.transform.position.x - 5f, player.transform.position.x + 5f);
+                float randomZ = Random.Range(player.transform.position.z - 5f, player.transform.position.z + 5f);
 
                 // Drops items around the player.
                 GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
-                droppedItem.transform.position = new Vector3(randomX, 0f, randomZ);
+                droppedItem.transform.position = new Vector3(randomX, droppedItem.transform.position.y, randomZ);
+
+                // Sets the item quantity to 1 since only one item is dropped.
+                droppedItem.GetComponent<IItem>().setItemQuantity(1);
             }
         }
     }
