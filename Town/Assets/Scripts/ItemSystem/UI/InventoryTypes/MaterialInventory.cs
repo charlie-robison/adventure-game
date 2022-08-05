@@ -148,6 +148,33 @@ public class MaterialInventory : MonoBehaviour, IInventory
         {
             print(itemInfo.getItemName() + " cannot be used.");
         }
+
+        int numberOfItemRemaining = materialItems[itemInfo.getItemName()] - 1;
+
+        // Checks if there is no more of that item remaining.
+        if (numberOfItemRemaining == 0)
+        {
+            // Deletes the current slot item display.
+            GameObject slot = materialItemSlots.transform.GetChild(currentSlotIndex).gameObject;
+            GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
+            DestroyImmediate(itemDisplay.transform.GetChild(0).gameObject);
+
+            GameObject lastSlot = materialItemSlots.transform.GetChild(getItemCount() - 1).gameObject;
+
+            // Deletes the last slot's item display if there is more than 0 items left and the lastSlot is not the same as the slot.
+            if (getItemCount() > 0 && lastSlot != slot)
+            {
+                GameObject lastItemDisplay = lastSlot.transform.GetChild(5).gameObject;
+                DestroyImmediate(lastItemDisplay.transform.GetChild(0).gameObject);
+            }
+        }
+
+        // Checks if the inventory contains the item.
+        if (materialItems.ContainsKey(itemInfo.getItemName()))
+        {
+            // Removes the item from the inventory.
+            player.GetComponent<PlayerInventory>().removeMaterialItem(itemInfo);
+        }
     }
 
     /** Drops the item selected. */
