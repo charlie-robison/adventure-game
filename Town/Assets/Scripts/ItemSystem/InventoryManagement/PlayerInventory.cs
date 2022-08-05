@@ -6,17 +6,20 @@ public class PlayerInventory : MonoBehaviour
 {
     public WeaponInventory weaponInventory;
     public MaterialInventory materialInventory;
+    public ClothingInventory clothingInventory;
 
     // Holds all items for the player.
     // Items are stored with their name as the key, and their quantity as the value.
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, int> materialItems;
+    private Dictionary<string, int> clothingItems;
     private Dictionary<string, IItem> allItems;
 
     void Start()
     {
         weaponItems = new Dictionary<string, int>();
         materialItems = new Dictionary<string, int>();
+        clothingItems = new Dictionary<string, int>();
         allItems = new Dictionary<string, IItem>();
     }
 
@@ -28,6 +31,11 @@ public class PlayerInventory : MonoBehaviour
     public Dictionary<string, int> getMaterialItems()
     {
         return materialItems;
+    }
+
+    public Dictionary<string, int> getClothingItems()
+    {
+        return clothingItems;
     }
 
     public Dictionary<string, IItem> getAllItems()
@@ -81,6 +89,25 @@ public class PlayerInventory : MonoBehaviour
         materialInventory.fillSlots();
     }
 
+    public void addClothingItem(IItem item)
+    {
+        // Checks if this item is already a key.
+        if (!clothingItems.ContainsKey(item.getItemName()))
+        {
+            // Adds the item and the quantity that it has.
+            clothingItems.Add(item.getItemName(), item.getItemQuantity());
+            allItems.Add(item.getItemName(), item);
+        }
+        else
+        {
+            // Adds the item quantity to the existing key.
+            clothingItems[item.getItemName()] += item.getItemQuantity();
+        }
+
+        // Updates inventory UI.
+        clothingInventory.fillSlots();
+    }
+
     public void removeWeaponItem(IItem item)
     {
         // Checks if the player possesses the item.
@@ -117,6 +144,26 @@ public class PlayerInventory : MonoBehaviour
         if (materialItems[item.getItemName()] == 0)
         {
             materialItems.Remove(item.getItemName());
+            allItems.Remove(item.getItemName());
+        }
+    }
+
+    public void removeClothingItem(IItem item)
+    {
+        // Checks if the player possesses the item.
+        if (clothingItems.ContainsKey(item.getItemName()) && clothingItems[item.getItemName()] > 0)
+        {
+            // Removes 1 from the item.
+            clothingItems[item.getItemName()]--;
+
+            // Updates inventory UI.
+            clothingInventory.fillSlots();
+        }
+
+        // Removes item from inventory if there is 0 of it.
+        if (clothingItems[item.getItemName()] == 0)
+        {
+            clothingItems.Remove(item.getItemName());
             allItems.Remove(item.getItemName());
         }
     }

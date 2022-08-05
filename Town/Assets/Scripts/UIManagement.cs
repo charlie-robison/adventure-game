@@ -51,7 +51,7 @@ public class UIManagement : MonoBehaviour
             if (inventorySelectorDirection.magnitude >= 0.1f && timeInterval > switchTimer)
             {
                 // Checks if the right arrow or left arrow was pressed.
-                if (inventorySelectorDirection.x == 1f && currentInvIndex < 5)
+                if (inventorySelectorDirection.x == 1f && currentInvIndex < 6)
                 {
                     // Sets the current inventory to false.
                     currentInventory.SetActive(false);
@@ -72,7 +72,7 @@ public class UIManagement : MonoBehaviour
                     currentInventory.SetActive(true);
                 }
 
-                switchTimer = timeInterval + 50f;
+                switchTimer = timeInterval + 90f;
             }
         }
         else
