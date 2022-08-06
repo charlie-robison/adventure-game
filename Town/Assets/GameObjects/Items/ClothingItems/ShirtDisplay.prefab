@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8787269971179913629}
   - component: {fileID: 8787269971179913628}
   m_Layer: 5
-  m_Name: Potion Display
+  m_Name: ShirtDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 202a99b065f634d239b6a2e9fcaa9dba, type: 2}
+  - {fileID: 2100000, guid: f6e3862d045fa45e4ba08c6cf5c9ee5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

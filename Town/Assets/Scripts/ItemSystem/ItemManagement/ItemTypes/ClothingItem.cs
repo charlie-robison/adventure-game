@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialItem : MonoBehaviour, IItem
+public class ClothingItem : MonoBehaviour, IItem
 {
     public GameObject itemObject;
 
@@ -13,8 +13,7 @@ public class MaterialItem : MonoBehaviour, IItem
     public GameObject itemDisplay;
     public GameObject itemGameObject;
 
-    public MaterialTypes materialType;
-    public int materialTypePower;
+    public int clothingDefense;
 
     void Start()
     {
@@ -58,14 +57,9 @@ public class MaterialItem : MonoBehaviour, IItem
         return itemGameObject;
     }
 
-    public MaterialTypes getMaterialType()
+    public int getClothingDefense()
     {
-        return materialType;
-    }
-
-    public int getMaterialTypePower()
-    {
-        return materialTypePower;
+        return clothingDefense;
     }
 
     void OnTriggerEnter(Collider col)
@@ -75,8 +69,8 @@ public class MaterialItem : MonoBehaviour, IItem
             Destroy(itemObject);
 
             // Adds the item to the player inventory.
-            col.gameObject.GetComponent<PlayerInventory>().addMaterialItem(this);
-        }
+            col.gameObject.GetComponent<PlayerInventory>().addClothingItem(this);
+        }    
     }
 }
 
