@@ -35,7 +35,7 @@ public class ClothingInventory : MonoBehaviour, IInventory
                 // Gets the properties for the item as well as the current slot and the labels for that slot.
                 ClothingItem itemProperties = (ClothingItem)allItems[item.Key];
                 GameObject slot = clothingItemSlots.transform.GetChild(slotIndex).gameObject;
-                TMP_Text quantityLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+                TMP_Text defenseLabel = slot.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
                 GameObject itemDisplay = slot.transform.GetChild(5).gameObject;
 
                 // Enables enabled slot UI image.
@@ -44,15 +44,8 @@ public class ClothingInventory : MonoBehaviour, IInventory
                 slot.transform.GetChild(4).gameObject.SetActive(true);
                 slot.transform.GetChild(5).gameObject.SetActive(true);
 
-                // Sets the quantity label.
-                if (item.Value <= 0)
-                {
-                    quantityLabel.text = "";
-                }
-                else
-                {
-                    quantityLabel.text = "x" + item.Value.ToString();
-                }
+                // Sets the defense label.
+                defenseLabel.text = itemProperties.getClothingDefense().ToString();
 
                 // Checks if there is already an item display gameObject for that slot.
                 if (itemDisplay.transform.childCount > 0)

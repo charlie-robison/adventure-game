@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 8296700075958710301}
   - component: {fileID: 7450366920149196367}
   m_Layer: 5
-  m_Name: Healing-Power-Background
+  m_Name: Material-Power-Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 814845576519791947}
   - component: {fileID: 593720412843630146}
   m_Layer: 5
-  m_Name: Healing-Items-Label
+  m_Name: Material-Items-Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,7 +730,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   materialItemSlots: {fileID: 6770113622818508891}
-  numberOfSlots: 0
 --- !u!1 &6791810199351833702
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +742,7 @@ GameObject:
   - component: {fileID: 3794136157137037005}
   - component: {fileID: 4027911237921541732}
   m_Layer: 5
-  m_Name: Item-Healing-Power-Label
+  m_Name: Item-Material-Power-Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

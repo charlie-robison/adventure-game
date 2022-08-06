@@ -93,7 +93,19 @@ public class MaterialInventory : MonoBehaviour, IInventory
         // Displays item information.
         itemNameLabel.text = itemInfo.getItemName();
         itemDescLabel.text = itemInfo.getItemDesc();
-        itemQuantityLabel.text = itemInfo.getMaterialTypePower().ToString();
+
+        // Sets the material power label section if the material item is not a Treasure Type.
+        if (itemInfo.getMaterialType() == MaterialTypes.TreasureType)
+        {
+            itemInfoUI.transform.GetChild(1).gameObject.SetActive(false);
+            itemInfoUI.transform.GetChild(4).gameObject.SetActive(false);
+        }
+        else
+        {
+            itemInfoUI.transform.GetChild(1).gameObject.SetActive(true);
+            itemInfoUI.transform.GetChild(4).gameObject.SetActive(true);
+            itemQuantityLabel.text = itemInfo.getMaterialTypePower().ToString();
+        }
 
         GameObject itemDisplay = materialItemSlots.transform.GetChild(13).gameObject;
 
