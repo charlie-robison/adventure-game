@@ -13,9 +13,9 @@ public class InventoryUI : MonoBehaviour
 
     private GameObject currentSlot;
     private int currentSlotIndex = -1;
+    private int previousItemCount;
     private bool useSelectedItem = false;
     private bool dropSelectedItem = false;
-    private int previousItemCount;
 
     private void Awake()
     {
