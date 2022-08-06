@@ -66,7 +66,6 @@ public class ClothingItem : MonoBehaviour, IItem
 
     public GameObject getItemGameObject()
     {
-        itemGameObject.SetActive(true);
         return itemGameObject;
     }
 

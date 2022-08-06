@@ -72,7 +72,6 @@ public class WeaponItem : MonoBehaviour, IItem
 
     public GameObject getItemGameObject()
     {
-        itemGameObject.SetActive(true);
         return itemGameObject;
     }
 

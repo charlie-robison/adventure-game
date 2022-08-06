@@ -174,7 +174,8 @@ public class ClothingInventory : MonoBehaviour, IInventory
                 float randomZ = Random.Range(player.transform.position.z - 5f, player.transform.position.z + 5f);
 
                 // Drops items around the player.
-                GameObject droppedItem = itemInfo.getItemGameObject();
+                GameObject droppedItem = Instantiate(itemInfo.getItemGameObject());
+                droppedItem.SetActive(true);
                 droppedItem.transform.position = new Vector3(randomX, droppedItem.transform.position.y, randomZ);
 
                 // Sets the item quantity to 1 since only one item is dropped.

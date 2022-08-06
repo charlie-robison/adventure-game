@@ -69,7 +69,6 @@ public class MaterialItem : MonoBehaviour, IItem
 
     public GameObject getItemGameObject()
     {
-        itemGameObject.SetActive(true);
         return itemGameObject;
     }
 
