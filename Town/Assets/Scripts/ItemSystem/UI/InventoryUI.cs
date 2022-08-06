@@ -6,10 +6,17 @@ using UnityEngine;
     and enabling/ disabling the item info section. */
 public class InventoryUI : MonoBehaviour
 {
-    public IInventory inventoryManagement;
-    public GameControls controls;
-    public GameObject itemSlots;
-    public int numberOfSlots;
+    [SerializeField]
+    private IInventory inventoryManagement;
+
+    [SerializeField]
+    private GameControls controls;
+
+    [SerializeField]
+    private GameObject itemSlots;
+
+    [SerializeField]
+    private int numberOfSlots;
 
     private GameObject currentSlot;
     private int currentSlotIndex = -1;

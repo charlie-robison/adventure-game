@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class ShotBehavior : MonoBehaviour {
 
-	public float bulletSpeed;
-	public GameObject projectile;
-	public GameObject explosion;
-	public Vector3 targetPosition;
-	Cinemachine.CinemachineImpulseSource source;
+	[SerializeField]
+	private float bulletSpeed;
+
+	[SerializeField]
+	private GameObject projectile;
+
+	[SerializeField]
+	private GameObject explosion;
+
+	[SerializeField]
+	private Vector3 targetPosition;
+
+	[SerializeField]
+	private Cinemachine.CinemachineImpulseSource source;
 
 	void Start()
 	{
@@ -23,6 +32,16 @@ public class ShotBehavior : MonoBehaviour {
 		GameObject newExplosion = Instantiate(explosion, transform.position, transform.rotation);
 		Destroy(newExplosion, 1f);
 	}
+
+	public void setTargetPosition(Vector3 newTargetPos)
+    {
+		targetPosition = newTargetPos;
+    }
+
+	public void setBulletSpeed(float newBulletSpeed)
+    {
+		bulletSpeed = newBulletSpeed;
+    }
 
 	void OnTriggerEnter(Collider col)
 	{

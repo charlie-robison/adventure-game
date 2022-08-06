@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class AimCamera : MonoBehaviour
 {
-    public GameControls controls;
-    public GameObject mainCamera;
-    public GameObject aimCamera;
-    public GameObject aimingCanvas;
+    [SerializeField]
+    private GameControls controls;
+
+    [SerializeField]
+    private GameObject mainCamera;
+
+    [SerializeField]
+    private GameObject aimCamera;
+
+    [SerializeField]
+    private GameObject aimingCanvas;
 
     private bool isAiming = false;
     private float aimUITimer = 0f;

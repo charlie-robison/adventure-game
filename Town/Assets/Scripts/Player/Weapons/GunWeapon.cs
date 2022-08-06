@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class GunWeapon : MonoBehaviour, IPlayerWeapon
 {
-    public GameObject projectile;
-    public GameObject spawner;
-    public float shootRate;
-    public float bulletSpeed;
+    [SerializeField]
+    private GameObject projectile;
 
-	public RaycastHit hitData;
-	public LayerMask enemyLayer;
-	public float maxDistance;
+    [SerializeField]
+    private GameObject spawner;
+
+    [SerializeField]
+    private float shootRate;
+
+    [SerializeField]
+    private float bulletSpeed;
+
+    [SerializeField]
+    private RaycastHit hitData;
+
+    [SerializeField]
+    private LayerMask enemyLayer;
+
+    [SerializeField]
+    private float maxDistance;
 
     private float shootRateTimestamp;
 
@@ -42,8 +54,8 @@ public class GunWeapon : MonoBehaviour, IPlayerWeapon
             GameObject newProjectile = Instantiate(projectile, spawner.transform.position, spawner.transform.rotation);
 
             // Sets final point and bullet speed for the projectile.
-            newProjectile.GetComponent<ShotBehavior>().targetPosition = hitData.point;
-            newProjectile.GetComponent<ShotBehavior>().bulletSpeed = bulletSpeed;
+            newProjectile.GetComponent<ShotBehavior>().setTargetPosition(hitData.point);
+            newProjectile.GetComponent<ShotBehavior>().setBulletSpeed(bulletSpeed);
             Destroy(newProjectile, 2f);
 		}
     }

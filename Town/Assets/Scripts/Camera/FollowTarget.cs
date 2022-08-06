@@ -5,10 +5,17 @@ using UnityEngine.InputSystem;
 
 public class FollowTarget : MonoBehaviour
 {
-    public GameControls controls;
-    public GameObject player;
-    public GameObject gunHolster;
-    public GameObject aimCamera;
+    [SerializeField]
+    private GameControls controls;
+
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject gunHolster;
+
+    [SerializeField]
+    private GameObject aimCamera;
 
     private Vector3 targetDirection;
     private float cameraAngularVelocity;

@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameControls controls;
-    public GameObject player;
-    public Transform camera;
-    public CharacterController controller;
-    public float speed = 4f;
-    public float jumpForce = 2f;
-    public float gravity = -9.8f;
-    public Vector3 playerVelocity;
+    [SerializeField]
+    private GameControls controls;
 
-    public float targetAngle;
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private Transform camera;
+
+    [SerializeField]
+    private CharacterController controller;
+
+    [SerializeField]
+    private float speed = 4f;
+
+    [SerializeField]
+    private float jumpForce = 2f;
+
+    [SerializeField]
+    private float gravity = -9.8f;
+
+    [SerializeField]
+    private Vector3 playerVelocity;
+
+    [SerializeField]
+    private float targetAngle;
 
     private Vector3 direction;
     private bool jumpButton = false;

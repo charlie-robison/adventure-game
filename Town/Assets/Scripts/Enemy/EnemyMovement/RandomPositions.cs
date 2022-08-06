@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class RandomPositions : MonoBehaviour, IEnemyMove
 {
-    public Transform [] positions;
-    public float speed;
+    [SerializeField]
+    private Transform [] positions;
+
+    [SerializeField]
+    private float speed;
 
     private int moveTimer = 0;
     private Vector3 lastPos;

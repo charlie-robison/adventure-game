@@ -6,9 +6,11 @@ using TMPro;
 
 public class ClothingInventory : MonoBehaviour, IInventory
 {
-    public GameObject player;
-    public GameObject clothingItemSlots;
-    public int numberOfSlots;
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject clothingItemSlots;
 
     private Dictionary<string, int> clothingItems;
     private Dictionary<string, IItem> allItems;

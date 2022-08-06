@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class UIManagement : MonoBehaviour
 {
-    public GameControls controls;
-    public GameObject inventoryCanvas;
+    [SerializeField]
+    private GameControls controls;
+
+    [SerializeField]
+    private GameObject inventoryCanvas;
 
     private bool enableInventory = false;
     private Vector2 inventorySelectorDirection;

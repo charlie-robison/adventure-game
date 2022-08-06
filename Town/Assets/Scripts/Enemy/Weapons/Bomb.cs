@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public GameObject bomb;
-    public GameObject explosion;
+    [SerializeField]
+    private GameObject bomb;
+
+    [SerializeField]
+    private GameObject explosion;
 
     void explode()
     {

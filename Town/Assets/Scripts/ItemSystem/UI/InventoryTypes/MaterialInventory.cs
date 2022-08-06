@@ -6,9 +6,11 @@ using TMPro;
 
 public class MaterialInventory : MonoBehaviour, IInventory
 {
-    public GameObject player;
-    public GameObject materialItemSlots;
-    public int numberOfSlots;
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject materialItemSlots;
 
     private Dictionary<string, int> materialItems;
     private Dictionary<string, IItem> allItems;

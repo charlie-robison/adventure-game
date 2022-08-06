@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class BombAttack : MonoBehaviour, IEnemyAttack
 {
-    public GameObject enemy;
-    public GameObject bombRight;
-    public GameObject bombLeft;
-    public GameObject bomb;
-    public Animator animator;
-    public float bombSpeed = 2f;
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private GameObject bombRight;
+
+    [SerializeField]
+    private GameObject bombLeft;
+
+    [SerializeField]
+    private GameObject bomb;
+
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private float bombSpeed = 2f;
 
     private float timer = 0;
     private bool isAttacking = false;

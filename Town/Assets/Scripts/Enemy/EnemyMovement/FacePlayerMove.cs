@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class FacePlayerMove : MonoBehaviour, IEnemyMove
 {
-    public GameObject enemy;
-    public GameObject player;
-    public float maxDistance;
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private float maxDistance;
 
     private PlayerCheck playerCheck = new PlayerCheck();
     private float turnSmoothTime = 0.05f;

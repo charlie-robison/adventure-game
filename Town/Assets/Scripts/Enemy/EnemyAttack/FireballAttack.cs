@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class FireballAttack : MonoBehaviour, IEnemyAttack
 {
-    public GameObject enemy;
-    public GameObject spawner;
-    public GameObject bullet;
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private GameObject spawner;
+
+    [SerializeField]
+    private GameObject bullet;
 
     private int attackTimer = 0;
     private float bulletSpeed = 5f;

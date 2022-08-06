@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject enemy;
-    public IEnemyMove enemyMove;
-    public IEnemyAttack enemyAttack;
-    public bool stopMove = false;
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private IEnemyMove enemyMove;
+
+    [SerializeField]
+    private IEnemyAttack enemyAttack;
+
+    [SerializeField]
+    private bool stopMove = false;
 
     void Start()
     {
@@ -26,6 +33,11 @@ public class Enemy : MonoBehaviour
         {
             enemyMove.move();
         }
+    }
+
+    public void setStopMove(bool newState)
+    {
+        stopMove = newState;
     }
 
     // Update is called once per frame

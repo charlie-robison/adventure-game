@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class FollowPlayerMove : MonoBehaviour, IEnemyMove
 {
-    public GameObject enemy;
-    public GameObject player;
-    public Animator animator;
-    public float speed;
-    public float playerMaxDistance;
+    [SerializeField]
+    private GameObject enemy;
+
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private float speed;
+
+    [SerializeField]
+    private float playerMaxDistance;
 
     private PlayerCheck playerCheck = new PlayerCheck();
     private Vector3 enemyPosition;

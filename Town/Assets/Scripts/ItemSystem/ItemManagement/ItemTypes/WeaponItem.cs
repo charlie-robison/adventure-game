@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class WeaponItem : MonoBehaviour, IItem
 {
-    public GameObject itemObject;
-    public GameObject weaponGameObject;
+    [SerializeField]
+    private GameObject itemObject;
 
-    public string itemName;
-    public string itemDesc;
-    public float itemPrice;
-    public int itemQuantity;
-    public GameObject itemDisplay;
-    public GameObject itemGameObject;
+    [SerializeField]
+    private GameObject weaponGameObject;
 
-    public int weaponPower;
-    public float weaponFrequency;
+    [SerializeField]
+    private string itemName;
+
+    [SerializeField]
+    private string itemDesc;
+
+    [SerializeField]
+    private float itemPrice;
+
+    [SerializeField]
+    private int itemQuantity;
+
+    [SerializeField]
+    private GameObject itemDisplay;
+
+    [SerializeField]
+    private GameObject itemGameObject;
+
+    [SerializeField]
+    private int weaponPower;
+
+    [SerializeField]
+    private float weaponFrequency;
 
     void Start()
     {

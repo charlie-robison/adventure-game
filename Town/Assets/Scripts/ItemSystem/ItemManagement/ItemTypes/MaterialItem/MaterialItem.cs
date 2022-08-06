@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class MaterialItem : MonoBehaviour, IItem
 {
-    public GameObject itemObject;
+    [SerializeField]
+    private GameObject itemObject;
 
-    public string itemName;
-    public string itemDesc;
-    public float itemPrice;
-    public int itemQuantity;
-    public GameObject itemDisplay;
-    public GameObject itemGameObject;
+    [SerializeField]
+    private string itemName;
 
-    public MaterialTypes materialType;
-    public int materialTypePower;
+    [SerializeField]
+    private string itemDesc;
+
+    [SerializeField]
+    private float itemPrice;
+
+    [SerializeField]
+    private int itemQuantity;
+
+    [SerializeField]
+    private GameObject itemDisplay;
+
+    [SerializeField]
+    private GameObject itemGameObject;
+
+    [SerializeField]
+    private MaterialTypes materialType;
+
+    [SerializeField]
+    private int materialTypePower;
 
     void Start()
     {

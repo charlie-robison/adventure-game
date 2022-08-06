@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameControls controls;
-    public GameObject gunHolster;
-    public GameObject weapon = null;
+    [SerializeField]
+    private GameControls controls;
+
+    [SerializeField]
+    private GameObject gunHolster;
+
+    [SerializeField]
+    private GameObject weapon = null;
 
     private IPlayerWeapon currentWeapon = null;
     private bool shotBullet = false;

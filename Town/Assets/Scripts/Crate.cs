@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
-    public GameObject[] possibleItems;
-    public int numberOfPossibleItems;
+    [SerializeField]
+    private GameObject[] possibleItems;
+
+    [SerializeField]
+    private int numberOfPossibleItems;
 
     public void spawnItems()
     {

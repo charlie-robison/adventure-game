@@ -7,10 +7,14 @@ using TMPro;
 /** Implements a Weapon Inventory. */
 public class WeaponInventory : MonoBehaviour, IInventory
 {
-    public GameObject player;
-    public GameObject weaponHolster;
-    public GameObject weaponItemSlots;
-    public int numberOfSlots;
+    [SerializeField]
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject weaponHolster;
+
+    [SerializeField]
+    private GameObject weaponItemSlots;
 
     private Dictionary<string, int> weaponItems;
     private Dictionary<string, IItem> allItems;

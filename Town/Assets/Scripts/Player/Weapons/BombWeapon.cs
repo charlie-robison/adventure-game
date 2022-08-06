@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BombWeapon : MonoBehaviour, IPlayerWeapon
 {
-    public Rigidbody rb;
-    public float maxDistance;
-    public float bombSpeed;
+    [SerializeField]
+    private Rigidbody rb;
+
+    [SerializeField]
+    private float maxDistance;
+
+    [SerializeField]
+    private float bombSpeed;
 
     private bool launchedBomb = false;
 
