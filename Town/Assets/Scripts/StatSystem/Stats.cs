@@ -8,7 +8,7 @@ public class Stats : MonoBehaviour
     private float hp;
 
     [SerializeField]
-    private readonly float maxHp;
+    private float maxHp;
 
     [SerializeField]
     private float attack;
@@ -27,27 +27,32 @@ public class Stats : MonoBehaviour
 
     public void setHp(float addedHp)
     {
-        this.hp += addedHp;
+        hp += addedHp;
+    }
+
+    public void setMaxHp(float addMaxHp)
+    {
+        maxHp += addMaxHp;
     }
 
     public void setAttack(float addedAttack)
     {
-        this.attack += addedAttack;
+        attack += addedAttack;
     }
 
     public void setDefense(float addedDefense)
     {
-        this.defense += addedDefense;
+        defense += addedDefense;
     }
 
     public void setSpeed(float addedSpeed)
     {
-        this.speed += addedSpeed;
+        speed += addedSpeed;
     }
 
     public void setAttackFrequency(float addedFrequency)
     {
-        this.attackFrequency += addedFrequency;
+        attackFrequency += addedFrequency;
     }
 
     public float getHp()
