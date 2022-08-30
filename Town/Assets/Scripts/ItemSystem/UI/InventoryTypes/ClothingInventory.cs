@@ -76,17 +76,25 @@ public class ClothingInventory : MonoBehaviour, IInventory
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
         ClothingItem itemInfo = (ClothingItem)allItems[itemList[currentSlotIndex]];
+        print(itemInfo.getClothingDefense());
 
         GameObject itemInfoUI = clothingItemSlots.transform.GetChild(14).gameObject;
 
         TMP_Text itemNameLabel = itemInfoUI.transform.GetChild(2).gameObject.GetComponent<TMP_Text>();
         TMP_Text itemDescLabel = itemInfoUI.transform.GetChild(3).gameObject.GetComponent<TMP_Text>();
-        TMP_Text itemQuantityLabel = itemInfoUI.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+        TMP_Text playerDefenseLabel = itemInfoUI.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+        TMP_Text playerDefenseAfterEquipLabel = itemInfoUI.transform.GetChild(6).gameObject.GetComponent<TMP_Text>();
 
         // Displays item information.
         itemNameLabel.text = itemInfo.getItemName();
         itemDescLabel.text = itemInfo.getItemDesc();
-        itemQuantityLabel.text = itemInfo.getClothingDefense().ToString();
+        playerDefenseLabel.text = player.GetComponent<Stats>().getDefense().ToString();
+        playerDefenseAfterEquipLabel.text = (player.GetComponent<Stats>().getDefense() + itemInfo.getClothingDefense()).ToString();
+
+        if (player.GetComponent<Stats>().getDefense() > (player.GetComponent<Stats>().getDefense() + itemInfo.getClothingDefense()))
+        {
+            playerDefenseAfterEquipLabel.color = Color.red;
+        }
 
         GameObject itemDisplay = clothingItemSlots.transform.GetChild(13).gameObject;
 
@@ -126,8 +134,9 @@ public class ClothingInventory : MonoBehaviour, IInventory
     public void useItem(int currentSlotIndex)
     {
         ClothingItem itemInfo = (ClothingItem)allItems[itemList[currentSlotIndex]];
+        player.GetComponent<Stats>().setDefense(itemInfo.getClothingDefense());
 
-        print("Your defense is now: " + itemInfo.getClothingDefense());
+        print("Your defense is now: " + player.GetComponent<Stats>().getDefense());
     }
 
     /** Drops the item selected. */
