@@ -3442,6 +3442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468880423}
   - component: {fileID: 1468880424}
+  - component: {fileID: 1468880425}
   m_Layer: 5
   m_Name: Health-Bar
   m_TagString: Untagged
@@ -3516,12 +3517,25 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1468880425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468880422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89798fccd26e741c5ae7df23a9647f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1468880424}
 --- !u!1001 &1493989103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5692,7 +5706,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5196259230042861456, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: field of view
-      value: 23.89
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861456, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -5720,7 +5734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.141149
+      value: 0.70114905
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5728,7 +5742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8451395
+      value: -3.9051394
       objectReference: {fileID: 0}
     - target: {fileID: 5196259230042861463, guid: e9696da4498f840fea9735894d71c10c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6155,6 +6169,10 @@ PrefabInstance:
       propertyPath: maxHp
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8383344489451261, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1468880422}
     - target: {fileID: 2311789536705486741, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
       propertyPath: m_RootOrder
       value: 2

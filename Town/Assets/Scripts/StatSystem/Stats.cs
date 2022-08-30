@@ -25,14 +25,17 @@ public class Stats : MonoBehaviour
     [SerializeField]
     private GameObject healthUI;
 
+
     public void setHp(float addedHp)
     {
         hp += addedHp;
+        healthUI.GetComponent<HealthBarUI>().setHealthUI(hp);
     }
 
     public void setMaxHp(float addMaxHp)
     {
         maxHp += addMaxHp;
+        healthUI.GetComponent<HealthBarUI>().setMaxHealthUI(maxHp);
     }
 
     public void setAttack(float addedAttack)
@@ -83,10 +86,5 @@ public class Stats : MonoBehaviour
     public float getAttackFrequency()
     {
         return attackFrequency;
-    }
-
-    public GameObject getHealthUI()
-    {
-        return healthUI;
     }
 }
