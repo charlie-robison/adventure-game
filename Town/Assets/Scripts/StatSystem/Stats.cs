@@ -5,6 +5,9 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     [SerializeField]
+    private GameObject currentObject;
+
+    [SerializeField]
     private float hp;
 
     [SerializeField]
@@ -25,6 +28,12 @@ public class Stats : MonoBehaviour
     [SerializeField]
     private GameObject healthUI;
 
+    private void Start()
+    {
+        // Sets Health Bar UI to default HP values.
+        healthUI.GetComponent<HealthBarUI>().setHealthUI(hp);
+        healthUI.GetComponent<HealthBarUI>().setMaxHealthUI(maxHp);
+    }
 
     public void setHp(float addedHp)
     {
@@ -86,5 +95,13 @@ public class Stats : MonoBehaviour
     public float getAttackFrequency()
     {
         return attackFrequency;
+    }
+
+    private void Update()
+    {
+        if (hp <= 0f)
+        {
+            Destroy(currentObject);
+        }
     }
 }

@@ -6167,8 +6167,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8383344489451261, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8383344489451261, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8383344489451261, guid: 25ba02074059947ec9937731e640d7f7, type: 3}
       propertyPath: healthUI

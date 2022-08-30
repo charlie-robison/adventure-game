@@ -8,7 +8,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            col.GetComponent<Stats>().setHp(-5);
+            col.GetComponent<Stats>().setHp(-3);
         }
     }
 }
