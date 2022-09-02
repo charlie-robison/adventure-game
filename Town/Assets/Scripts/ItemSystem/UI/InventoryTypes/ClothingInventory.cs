@@ -157,12 +157,6 @@ public class ClothingInventory : MonoBehaviour, IInventory
         TMP_Text playerDefenseLabel = itemInfoUI.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
         TMP_Text playerDefenseAfterEquipLabel = itemInfoUI.transform.GetChild(6).gameObject.GetComponent<TMP_Text>();
 
-        // Unequips all slots.
-        /* foreach (Transform child in clothingItemSlots.transform)
-        {
-            child.transform.GetChild(2).gameObject.SetActive(false);
-        } */
-
         // Checks if slot is already equipped.
         if (clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.activeSelf)
         {
@@ -182,6 +176,14 @@ public class ClothingInventory : MonoBehaviour, IInventory
         }
         else
         {
+            // Unequips all slots.
+            for (int i = 0; i < 12; i++)
+            {
+                GameObject slot = clothingItemSlots.transform.GetChild(i).gameObject;
+                print(slot.name);
+                slot.transform.GetChild(2).gameObject.SetActive(false);
+            }
+
             // Equips the slot that is being equipped.
             clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.SetActive(true);
 
