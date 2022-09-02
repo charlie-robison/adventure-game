@@ -90,14 +90,29 @@ public class ClothingInventory : MonoBehaviour, IInventory
         playerDefenseLabel.text = player.GetComponent<Stats>().getDefense().ToString();
         playerDefenseAfterEquipLabel.text = (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()).ToString();
 
-        // Checks if the player's current defense is greater than the player's base defense plus the new clothing defense.
-        if (player.GetComponent<Stats>().getDefense() > (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()))
+        // Checks if the slot is equipped.
+        if (clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.activeSelf)
         {
-            playerDefenseAfterEquipLabel.color = Color.red;
+            // Disables playerDefenseAfterEquipLabel and arrow for equipped slot.
+            itemInfoUI.transform.GetChild(5).gameObject.SetActive(false);
+            itemInfoUI.transform.GetChild(6).gameObject.SetActive(false);
+            itemInfoUI.transform.GetChild(7).gameObject.SetActive(false);
         }
         else
         {
-            playerDefenseAfterEquipLabel.color = Color.white;
+            itemInfoUI.transform.GetChild(5).gameObject.SetActive(true);
+            itemInfoUI.transform.GetChild(6).gameObject.SetActive(true);
+            itemInfoUI.transform.GetChild(7).gameObject.SetActive(true);
+
+            // Checks if the player's current defense is greater than the player's base defense plus the new clothing defense.
+            if (player.GetComponent<Stats>().getDefense() > (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()))
+            {
+                playerDefenseAfterEquipLabel.color = Color.red;
+            }
+            else
+            {
+                playerDefenseAfterEquipLabel.color = Color.white;
+            }
         }
 
         GameObject itemDisplay = clothingItemSlots.transform.GetChild(13).gameObject;
@@ -138,12 +153,49 @@ public class ClothingInventory : MonoBehaviour, IInventory
     public void useItem(int currentSlotIndex)
     {
         ClothingItem itemInfo = (ClothingItem)allItems[itemList[currentSlotIndex]];
+        GameObject itemInfoUI = clothingItemSlots.transform.GetChild(14).gameObject;
+        TMP_Text playerDefenseLabel = itemInfoUI.transform.GetChild(4).gameObject.GetComponent<TMP_Text>();
+        TMP_Text playerDefenseAfterEquipLabel = itemInfoUI.transform.GetChild(6).gameObject.GetComponent<TMP_Text>();
 
-        // Resets defense of player to base defense then adds the defense from the clothing.
-        player.GetComponent<Stats>().resetDefense();
-        player.GetComponent<Stats>().setDefense(itemInfo.getClothingDefense());
+        // Unequips all slots.
+        /* foreach (Transform child in clothingItemSlots.transform)
+        {
+            child.transform.GetChild(2).gameObject.SetActive(false);
+        } */
 
-        print("Your defense is now: " + player.GetComponent<Stats>().getDefense());
+        // Checks if slot is already equipped.
+        if (clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.activeSelf)
+        {
+            // Unequips the item.
+            clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.SetActive(false);
+
+            // Disables playerDefenseAfterEquipLabel and arrow for equipped slot.
+            itemInfoUI.transform.GetChild(5).gameObject.SetActive(true);
+            itemInfoUI.transform.GetChild(6).gameObject.SetActive(true);
+            itemInfoUI.transform.GetChild(7).gameObject.SetActive(true);
+
+            // Resets defense of player to base defense then adds the defense from the clothing.
+            player.GetComponent<Stats>().resetDefense();
+
+            playerDefenseLabel.text = player.GetComponent<Stats>().getDefense().ToString();
+            playerDefenseAfterEquipLabel.text = (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()).ToString();
+        }
+        else
+        {
+            // Equips the slot that is being equipped.
+            clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.SetActive(true);
+
+            // Disables playerDefenseAfterEquipLabel and arrow for equipped slot.
+            itemInfoUI.transform.GetChild(5).gameObject.SetActive(false);
+            itemInfoUI.transform.GetChild(6).gameObject.SetActive(false);
+            itemInfoUI.transform.GetChild(7).gameObject.SetActive(false);
+
+            // Resets defense of player to base defense then adds the defense from the clothing.
+            player.GetComponent<Stats>().resetDefense();
+            player.GetComponent<Stats>().setDefense(itemInfo.getClothingDefense());
+
+            playerDefenseLabel.text = player.GetComponent<Stats>().getDefense().ToString();
+        }
     }
 
     /** Drops the item selected. */
