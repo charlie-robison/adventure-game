@@ -28,11 +28,17 @@ public class Stats : MonoBehaviour
     [SerializeField]
     private GameObject healthUI;
 
+    private float baseAttack;
+    private float baseDefense;
+
     private void Start()
     {
         // Sets Health Bar UI to default HP values.
         healthUI.GetComponent<HealthBarUI>().setHealthUI(hp);
         healthUI.GetComponent<HealthBarUI>().setMaxHealthUI(maxHp);
+
+        baseAttack = attack;
+        baseDefense = defense;
     }
 
     public void setHp(float addedHp)
@@ -67,6 +73,16 @@ public class Stats : MonoBehaviour
         attackFrequency += addedFrequency;
     }
 
+    public void resetAttack()
+    {
+        attack = baseAttack;
+    }
+
+    public void resetDefense()
+    {
+        defense = baseDefense;
+    }
+
     public float getHp()
     {
         return hp;
@@ -95,6 +111,16 @@ public class Stats : MonoBehaviour
     public float getAttackFrequency()
     {
         return attackFrequency;
+    }
+
+    public float getBaseAttack()
+    {
+        return baseAttack;
+    }
+
+    public float getBaseDefense()
+    {
+        return baseDefense;
     }
 
     private void Update()

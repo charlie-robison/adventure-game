@@ -76,7 +76,6 @@ public class ClothingInventory : MonoBehaviour, IInventory
     public void presentSelectedItemInfo(int currentSlotIndex)
     {
         ClothingItem itemInfo = (ClothingItem)allItems[itemList[currentSlotIndex]];
-        print(itemInfo.getClothingDefense());
 
         GameObject itemInfoUI = clothingItemSlots.transform.GetChild(14).gameObject;
 
@@ -89,9 +88,10 @@ public class ClothingInventory : MonoBehaviour, IInventory
         itemNameLabel.text = itemInfo.getItemName();
         itemDescLabel.text = itemInfo.getItemDesc();
         playerDefenseLabel.text = player.GetComponent<Stats>().getDefense().ToString();
-        playerDefenseAfterEquipLabel.text = (player.GetComponent<Stats>().getDefense() + itemInfo.getClothingDefense()).ToString();
+        playerDefenseAfterEquipLabel.text = (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()).ToString();
 
-        if (player.GetComponent<Stats>().getDefense() > (player.GetComponent<Stats>().getDefense() + itemInfo.getClothingDefense()))
+        // Checks if the player's current defense is greater than the player's base defense plus the new clothing defense.
+        if (player.GetComponent<Stats>().getDefense() > (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()))
         {
             playerDefenseAfterEquipLabel.color = Color.red;
         }
@@ -134,6 +134,9 @@ public class ClothingInventory : MonoBehaviour, IInventory
     public void useItem(int currentSlotIndex)
     {
         ClothingItem itemInfo = (ClothingItem)allItems[itemList[currentSlotIndex]];
+
+        // Resets defense of player to base defense then adds the defense from the clothing.
+        player.GetComponent<Stats>().resetDefense();
         player.GetComponent<Stats>().setDefense(itemInfo.getClothingDefense());
 
         print("Your defense is now: " + player.GetComponent<Stats>().getDefense());
