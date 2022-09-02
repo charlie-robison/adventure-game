@@ -95,6 +95,10 @@ public class ClothingInventory : MonoBehaviour, IInventory
         {
             playerDefenseAfterEquipLabel.color = Color.red;
         }
+        else
+        {
+            playerDefenseAfterEquipLabel.color = Color.white;
+        }
 
         GameObject itemDisplay = clothingItemSlots.transform.GetChild(13).gameObject;
 
