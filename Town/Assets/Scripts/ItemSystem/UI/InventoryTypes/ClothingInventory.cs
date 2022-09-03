@@ -106,6 +106,10 @@ public class ClothingInventory : MonoBehaviour, IInventory
             {
                 playerDefenseAfterEquipLabel.color = Color.red;
             }
+            else if (player.GetComponent<Stats>().getDefense() < (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()))
+            {
+                playerDefenseAfterEquipLabel.color = Color.green;
+            }
             else
             {
                 playerDefenseAfterEquipLabel.color = Color.white;
