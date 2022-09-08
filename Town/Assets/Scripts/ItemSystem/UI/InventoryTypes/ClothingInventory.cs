@@ -24,7 +24,7 @@ public class ClothingInventory : MonoBehaviour, IInventory
 
         int slotIndex = 0;
 
-        // Checks if the player has any weapons.
+        // Checks if the player has any items.
         if (clothingItems != null && clothingItems.Count > 0)
         {
             itemList = new string[clothingItems.Count];
@@ -94,12 +94,12 @@ public class ClothingInventory : MonoBehaviour, IInventory
         if (clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.activeSelf)
         {
             // Disables playerDefenseAfterEquipLabel and arrow for equipped slot.
-            manageEquippedUI(false, currentSlotIndex);
+            manageEquippedUI(false);
         }
         else
         {
             // Enables playerDefenseAfterEquipLabel and arrow for equipped slot.
-            manageEquippedUI(true, currentSlotIndex);
+            manageEquippedUI(true);
 
             // Checks if the player's current defense is greater than the player's base defense plus the new clothing defense.
             if (player.GetComponent<Stats>().getDefense() > (player.GetComponent<Stats>().getBaseDefense() + itemInfo.getClothingDefense()))
@@ -165,7 +165,7 @@ public class ClothingInventory : MonoBehaviour, IInventory
             clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.SetActive(false);
 
             // Enables playerDefenseAfterEquipLabel and arrow for equipped slot.
-            manageEquippedUI(true, currentSlotIndex);
+            manageEquippedUI(true);
 
             // Resets defense of player to base defense then adds the defense from the clothing.
             player.GetComponent<Stats>().resetDefense();
@@ -186,7 +186,7 @@ public class ClothingInventory : MonoBehaviour, IInventory
             clothingItemSlots.transform.GetChild(currentSlotIndex).GetChild(2).gameObject.SetActive(true);
 
             // Disables playerDefenseAfterEquipLabel and arrow for equipped slot.
-            manageEquippedUI(false, currentSlotIndex);
+            manageEquippedUI(false);
 
             // Resets defense of player to base defense then adds the defense from the clothing.
             player.GetComponent<Stats>().resetDefense();
@@ -201,6 +201,13 @@ public class ClothingInventory : MonoBehaviour, IInventory
     {
         ClothingItem itemInfo = (ClothingItem)allItems[itemList[currentSlotIndex]];
         int numberOfItemRemaining = clothingItems[itemInfo.getItemName()] - numberDropped;
+
+        // Unequips all slots.
+        for (int i = 0; i < 12; i++)
+        {
+            GameObject slot = clothingItemSlots.transform.GetChild(i).gameObject;
+            slot.transform.GetChild(2).gameObject.SetActive(false);
+        }
 
         // Checks if there is no more of that item remaining.
         if (numberOfItemRemaining == 0)
@@ -244,7 +251,7 @@ public class ClothingInventory : MonoBehaviour, IInventory
     }
 
     /** Manages UI for when slot is equipped. */
-    private void manageEquippedUI(bool state, int currentSlotIndex)
+    private void manageEquippedUI(bool state)
     {
         GameObject itemInfoUI = clothingItemSlots.transform.GetChild(14).gameObject;
 
